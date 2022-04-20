@@ -1,0 +1,25 @@
+version: "3.6"
+
+services:
+  core:
+    extends:
+      file: ./deploy/docker-compose.yml
+      service: core-service
+  auth:
+    extends:
+      file: ./deploy/docker-compose.yml
+      service: auth-service
+
+  web:
+    extends:
+      file: ./deploy/docker-compose.yml
+      service: web-service
+  database:
+    extends:
+      file: ./deploy/docker-compose.yml
+      service: database
+
+  rabbitmq:
+    extends:
+      file: ./deploy/docker-compose.yml
+      service: rabbitmq
