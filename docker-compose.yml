@@ -23,3 +23,8 @@ services:
     extends:
       file: ./deploy/docker-compose.yml
       service: rabbitmq
+
+  adminer:
+    extends:
+      file: ./deploy/docker-compose.yml
+      service: adminer

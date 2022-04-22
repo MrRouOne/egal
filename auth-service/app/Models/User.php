@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\CreateUserEvent;
 use App\Exceptions\EmptyPasswordException;
 use App\Exceptions\PasswordHashException;
 use Egal\Auth\Tokens\UserMasterRefreshToken;
@@ -18,12 +19,12 @@ use Staudenmeir\EloquentHasManyDeep\HasManyDeep;
 use Staudenmeir\EloquentHasManyDeep\HasRelationships;
 
 /**
- * @property $id            {@property-type field}  {@primary-key}
- * @property $email         {@property-type field}  {@validation-rules required|string|email|unique:users,email}
- * @property $password      {@property-type field}  {@validation-rules required|string}
- * @property $phone         {@property-type field}  {@validation-rules required|string}
- * @property $last_name     {@property-type field}  {@validation-rules required|string}
- * @property $first_name    {@property-type field}  {@validation-rules required|string}
+ * @property $id            {@property-type field}          {@primary-key}
+ * @property $email         {@property-type field}          {@validation-rules required|string|email|unique:users,email}
+ * @property $password      {@property-type field}          {@validation-rules required|string}
+ * @property $phone         {@property-type fake-field}     {@validation-rules string}
+ * @property $last_name     {@property-type fake-field}     {@validation-rules string}
+ * @property $first_name    {@property-type fake-field}     {@validation-rules string}
  * @property $created_at    {@property-type field}
  * @property $updated_at    {@property-type field}
  *
@@ -34,6 +35,7 @@ use Staudenmeir\EloquentHasManyDeep\HasRelationships;
  * @action login                        {@statuses-access guest}
  * @action loginToService               {@statuses-access guest}
  * @action refreshUserMasterToken       {@statuses-access guest}
+ * @action getItems                     {@statuses-access guest|logged}
  */
 class User extends BaseUser
 {
@@ -51,6 +53,10 @@ class User extends BaseUser
         'updated_at',
     ];
 
+    protected $dispatchesEvents = [
+        'creating' => CreateUserEvent::class,
+    ];
+
     public static function actionRegister(array $attributes = []): User
     {
         if (!$attributes['password']) {
@@ -66,6 +72,9 @@ class User extends BaseUser
         }
 
         $user->setAttribute('password', $hashedPassword);
+        $user->setAttribute('phone', $attributes['phone']);
+        $user->setAttribute('last_name', $attributes['last_name']);
+        $user->setAttribute('first_name', $attributes['first_name']);
         $user->save();
 
         return $user;

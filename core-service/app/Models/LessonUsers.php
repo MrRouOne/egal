@@ -6,16 +6,18 @@ use Egal\Model\Model as EgalModel;
 
 /**
  * @property $id {@property-type field} {@prymary-key}
- * @property $name {@property-type field} {@validation-rules required|string}
+ * @property $user_id {@property-type field} {@validation-rules required|int}
+ * @property $lesson_id {@property-type field} {@validation-rules required|int}
+ * @property $is_passed {@property-type field} {@validation-rules required|boolean}
  * @property $created_at {@property-type field}
  * @property $updated_at {@property-type field}
  *
  * @action getMetadata {@statuses-access guest|logged}
  * @action getItem {@statuses-access guest|logged}
- * @action getItems {@statuses-access logged} {@roles-access super_first_role|super_second_role}
- * @action create {@statuses-access logged} {@roles-access super_first_role,super_second_role}
- * @action update {@statuses-access logged} {@permissions-access super_first_permission|super_second_permission}
- * @action delete {@statuses-access logged} {@permissions-access super_first_permission,super_second_permission}
+ * @action getItems {@statuses-access guest}
+ * @action create {@statuses-access guest}
+ * @action update {@statuses-access guest}
+ * @action delete {@statuses-access guest}
  */
 class LessonUsers extends EgalModel
 {

@@ -13,10 +13,10 @@ class CreateLessonUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('lesson__users', function (Blueprint $table) {
+        Schema::create('lesson_users', function (Blueprint $table) {
 
             $table->bigIncrements('id');
-            $table->foreignUuid('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignid('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('lesson_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->boolean('is_passed')->nullable(false)->default(false);
             $table->timestamps();
@@ -30,6 +30,6 @@ class CreateLessonUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lesson__users');
+        Schema::dropIfExists('lesson_users');
     }
 }

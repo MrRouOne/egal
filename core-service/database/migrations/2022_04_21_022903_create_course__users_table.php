@@ -13,9 +13,9 @@ class CreateCourseUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('course__users', function (Blueprint $table) {
+        Schema::create('course_users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->foreignUuid('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignid('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('course_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->integer('percentage_passing')->nullable(false)->default(0);
             $table->timestamps();
@@ -29,6 +29,6 @@ class CreateCourseUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('course__users');
+        Schema::dropIfExists('course_users');
     }
 }

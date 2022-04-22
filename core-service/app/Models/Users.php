@@ -9,22 +9,22 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 /**
  * @property $id {@property-type field} {@prymary-key}
  * @property $phone {@property-type field} {@validation-rules required|string}
- * @property $last_name {@property-type field} {@validation-rules string}
- * @property $first_name {@property-type field} {@validation-rules string}
+ * @property $last_name {@property-type field} {@validation-rules required|string}
+ * @property $first_name {@property-type field} {@validation-rules required|string}
  * @property $created_at {@property-type field}
  * @property $updated_at {@property-type field}
  *
  * @action getMetadata {@statuses-access guest|logged}
  * @action getItem {@statuses-access guest|logged}
- * @action getItems {@statuses-access logged} {@roles-access super_first_role|super_second_role}
+ * @action getItems {@statuses-access guest|logged}
  * @action create {@statuses-access guest|logged}
- * @action update {@statuses-access logged} {@permissions-access super_first_permission|super_second_permission}
- * @action delete {@statuses-access logged} {@permissions-access super_first_permission,super_second_permission}
+ * @action update {@statuses-access guest|logged}
+ * @action delete {@statuses-access guest|logged}
  */
 class Users extends EgalModel
 {
     protected $fillable = [
-        'id',
+//        'id',
         'phone',
         'last_name',
         'first_name',
