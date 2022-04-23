@@ -3243,3 +3243,173 @@ HINT:  Use DROP ... CASCADE to drop the dependent objects too. at /app/vendor/il
 #26 /app/artisan(35): Laravel\\Lumen\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #27 {main}
 "} 
+[2022-04-22 11:46:47] production.ERROR: str_replace(): Argument #1 ($search) must be of type array|string, bool given {"exception":"[object] (TypeError(code: 0): str_replace(): Argument #1 ($search) must be of type array|string, bool given at /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php:311)
+[stacktrace]
+#0 /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php(311): str_replace(false, '', 'create')
+#1 /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php(81): Egal\\Model\\Metadata\\ModelMetadata->scanActionsFromClassDocBlock(Object(ReflectionClass), Object(phpDocumentor\\Reflection\\DocBlock))
+#2 /app/vendor/egal/framework/src/Model/ModelManager.php(102): Egal\\Model\\Metadata\\ModelMetadata->__construct('App\\\\Models\\\\User...')
+#3 /app/vendor/egal/framework/src/Model/ModelManager.php(21): Egal\\Model\\ModelManager->scanModels()
+#4 /app/vendor/egal/framework/src/Model/ServiceProvider.php(39): Egal\\Model\\ModelManager->__construct()
+#5 /app/vendor/illuminate/container/Container.php(873): Egal\\Model\\ServiceProvider->Egal\\Model\\{closure}(Object(Egal\\Core\\Application), Array)
+#6 /app/vendor/illuminate/container/Container.php(758): Illuminate\\Container\\Container->build(Object(Closure))
+#7 /app/vendor/illuminate/container/Container.php(694): Illuminate\\Container\\Container->resolve('Egal\\\\Model\\\\Mode...', Array)
+#8 /app/vendor/laravel/lumen-framework/src/Application.php(300): Illuminate\\Container\\Container->make('Egal\\\\Model\\\\Mode...', Array)
+#9 /app/vendor/laravel/lumen-framework/src/helpers.php(42): Laravel\\Lumen\\Application->make('Egal\\\\Model\\\\Mode...', Array)
+#10 /app/vendor/egal/framework/src/Model/ModelManager.php(26): app('Egal\\\\Model\\\\Mode...')
+#11 /app/vendor/egal/framework/src/Model/ModelManager.php(62): Egal\\Model\\ModelManager::getInstance()
+#12 /app/vendor/egal/framework/src/Model/ServiceProvider.php(42): Egal\\Model\\ModelManager::loadModel('Egal\\\\Model\\\\Mode...')
+#13 /app/vendor/laravel/lumen-framework/src/Application.php(233): Egal\\Model\\ServiceProvider->register()
+#14 /app/vendor/egal/framework/src/Core/ServiceProvider.php(47): Laravel\\Lumen\\Application->register(Object(Egal\\Model\\ServiceProvider))
+#15 /app/vendor/laravel/lumen-framework/src/Application.php(233): Egal\\Core\\ServiceProvider->register()
+#16 /app/bootstrap/app.php(68): Laravel\\Lumen\\Application->register(Object(Egal\\Core\\ServiceProvider))
+#17 /app/artisan(18): require('/app/bootstrap/...')
+#18 {main}
+"} 
+[2022-04-22 11:46:50] production.ERROR: str_replace(): Argument #1 ($search) must be of type array|string, bool given {"exception":"[object] (TypeError(code: 0): str_replace(): Argument #1 ($search) must be of type array|string, bool given at /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php:311)
+[stacktrace]
+#0 /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php(311): str_replace(false, '', 'create')
+#1 /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php(81): Egal\\Model\\Metadata\\ModelMetadata->scanActionsFromClassDocBlock(Object(ReflectionClass), Object(phpDocumentor\\Reflection\\DocBlock))
+#2 /app/vendor/egal/framework/src/Model/ModelManager.php(102): Egal\\Model\\Metadata\\ModelMetadata->__construct('App\\\\Models\\\\User...')
+#3 /app/vendor/egal/framework/src/Model/ModelManager.php(21): Egal\\Model\\ModelManager->scanModels()
+#4 /app/vendor/egal/framework/src/Model/ServiceProvider.php(39): Egal\\Model\\ModelManager->__construct()
+#5 /app/vendor/illuminate/container/Container.php(873): Egal\\Model\\ServiceProvider->Egal\\Model\\{closure}(Object(Egal\\Core\\Application), Array)
+#6 /app/vendor/illuminate/container/Container.php(758): Illuminate\\Container\\Container->build(Object(Closure))
+#7 /app/vendor/illuminate/container/Container.php(694): Illuminate\\Container\\Container->resolve('Egal\\\\Model\\\\Mode...', Array)
+#8 /app/vendor/laravel/lumen-framework/src/Application.php(300): Illuminate\\Container\\Container->make('Egal\\\\Model\\\\Mode...', Array)
+#9 /app/vendor/laravel/lumen-framework/src/helpers.php(42): Laravel\\Lumen\\Application->make('Egal\\\\Model\\\\Mode...', Array)
+#10 /app/vendor/egal/framework/src/Model/ModelManager.php(26): app('Egal\\\\Model\\\\Mode...')
+#11 /app/vendor/egal/framework/src/Model/ModelManager.php(62): Egal\\Model\\ModelManager::getInstance()
+#12 /app/vendor/egal/framework/src/Model/ServiceProvider.php(42): Egal\\Model\\ModelManager::loadModel('Egal\\\\Model\\\\Mode...')
+#13 /app/vendor/laravel/lumen-framework/src/Application.php(233): Egal\\Model\\ServiceProvider->register()
+#14 /app/vendor/egal/framework/src/Core/ServiceProvider.php(47): Laravel\\Lumen\\Application->register(Object(Egal\\Model\\ServiceProvider))
+#15 /app/vendor/laravel/lumen-framework/src/Application.php(233): Egal\\Core\\ServiceProvider->register()
+#16 /app/bootstrap/app.php(68): Laravel\\Lumen\\Application->register(Object(Egal\\Core\\ServiceProvider))
+#17 /app/artisan(18): require('/app/bootstrap/...')
+#18 {main}
+"} 
+[2022-04-22 11:47:26] production.ERROR: str_replace(): Argument #1 ($search) must be of type array|string, bool given {"exception":"[object] (TypeError(code: 0): str_replace(): Argument #1 ($search) must be of type array|string, bool given at /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php:311)
+[stacktrace]
+#0 /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php(311): str_replace(false, '', 'create')
+#1 /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php(81): Egal\\Model\\Metadata\\ModelMetadata->scanActionsFromClassDocBlock(Object(ReflectionClass), Object(phpDocumentor\\Reflection\\DocBlock))
+#2 /app/vendor/egal/framework/src/Model/ModelManager.php(102): Egal\\Model\\Metadata\\ModelMetadata->__construct('App\\\\Models\\\\User...')
+#3 /app/vendor/egal/framework/src/Model/ModelManager.php(21): Egal\\Model\\ModelManager->scanModels()
+#4 /app/vendor/egal/framework/src/Model/ServiceProvider.php(39): Egal\\Model\\ModelManager->__construct()
+#5 /app/vendor/illuminate/container/Container.php(873): Egal\\Model\\ServiceProvider->Egal\\Model\\{closure}(Object(Egal\\Core\\Application), Array)
+#6 /app/vendor/illuminate/container/Container.php(758): Illuminate\\Container\\Container->build(Object(Closure))
+#7 /app/vendor/illuminate/container/Container.php(694): Illuminate\\Container\\Container->resolve('Egal\\\\Model\\\\Mode...', Array)
+#8 /app/vendor/laravel/lumen-framework/src/Application.php(300): Illuminate\\Container\\Container->make('Egal\\\\Model\\\\Mode...', Array)
+#9 /app/vendor/laravel/lumen-framework/src/helpers.php(42): Laravel\\Lumen\\Application->make('Egal\\\\Model\\\\Mode...', Array)
+#10 /app/vendor/egal/framework/src/Model/ModelManager.php(26): app('Egal\\\\Model\\\\Mode...')
+#11 /app/vendor/egal/framework/src/Model/ModelManager.php(62): Egal\\Model\\ModelManager::getInstance()
+#12 /app/vendor/egal/framework/src/Model/ServiceProvider.php(42): Egal\\Model\\ModelManager::loadModel('Egal\\\\Model\\\\Mode...')
+#13 /app/vendor/laravel/lumen-framework/src/Application.php(233): Egal\\Model\\ServiceProvider->register()
+#14 /app/vendor/egal/framework/src/Core/ServiceProvider.php(47): Laravel\\Lumen\\Application->register(Object(Egal\\Model\\ServiceProvider))
+#15 /app/vendor/laravel/lumen-framework/src/Application.php(233): Egal\\Core\\ServiceProvider->register()
+#16 /app/bootstrap/app.php(68): Laravel\\Lumen\\Application->register(Object(Egal\\Core\\ServiceProvider))
+#17 /app/artisan(18): require('/app/bootstrap/...')
+#18 {main}
+"} 
+[2022-04-22 11:47:29] production.ERROR: str_replace(): Argument #1 ($search) must be of type array|string, bool given {"exception":"[object] (TypeError(code: 0): str_replace(): Argument #1 ($search) must be of type array|string, bool given at /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php:311)
+[stacktrace]
+#0 /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php(311): str_replace(false, '', 'create')
+#1 /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php(81): Egal\\Model\\Metadata\\ModelMetadata->scanActionsFromClassDocBlock(Object(ReflectionClass), Object(phpDocumentor\\Reflection\\DocBlock))
+#2 /app/vendor/egal/framework/src/Model/ModelManager.php(102): Egal\\Model\\Metadata\\ModelMetadata->__construct('App\\\\Models\\\\User...')
+#3 /app/vendor/egal/framework/src/Model/ModelManager.php(21): Egal\\Model\\ModelManager->scanModels()
+#4 /app/vendor/egal/framework/src/Model/ServiceProvider.php(39): Egal\\Model\\ModelManager->__construct()
+#5 /app/vendor/illuminate/container/Container.php(873): Egal\\Model\\ServiceProvider->Egal\\Model\\{closure}(Object(Egal\\Core\\Application), Array)
+#6 /app/vendor/illuminate/container/Container.php(758): Illuminate\\Container\\Container->build(Object(Closure))
+#7 /app/vendor/illuminate/container/Container.php(694): Illuminate\\Container\\Container->resolve('Egal\\\\Model\\\\Mode...', Array)
+#8 /app/vendor/laravel/lumen-framework/src/Application.php(300): Illuminate\\Container\\Container->make('Egal\\\\Model\\\\Mode...', Array)
+#9 /app/vendor/laravel/lumen-framework/src/helpers.php(42): Laravel\\Lumen\\Application->make('Egal\\\\Model\\\\Mode...', Array)
+#10 /app/vendor/egal/framework/src/Model/ModelManager.php(26): app('Egal\\\\Model\\\\Mode...')
+#11 /app/vendor/egal/framework/src/Model/ModelManager.php(62): Egal\\Model\\ModelManager::getInstance()
+#12 /app/vendor/egal/framework/src/Model/ServiceProvider.php(42): Egal\\Model\\ModelManager::loadModel('Egal\\\\Model\\\\Mode...')
+#13 /app/vendor/laravel/lumen-framework/src/Application.php(233): Egal\\Model\\ServiceProvider->register()
+#14 /app/vendor/egal/framework/src/Core/ServiceProvider.php(47): Laravel\\Lumen\\Application->register(Object(Egal\\Model\\ServiceProvider))
+#15 /app/vendor/laravel/lumen-framework/src/Application.php(233): Egal\\Core\\ServiceProvider->register()
+#16 /app/bootstrap/app.php(68): Laravel\\Lumen\\Application->register(Object(Egal\\Core\\ServiceProvider))
+#17 /app/artisan(18): require('/app/bootstrap/...')
+#18 {main}
+"} 
+[2022-04-22 11:48:11] production.ERROR: Call to undefined method phpDocumentor\Reflection\DocBlock\Tags\InvalidTag::getDescription() {"exception":"[object] (Error(code: 0): Call to undefined method phpDocumentor\\Reflection\\DocBlock\\Tags\\InvalidTag::getDescription() at /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php:304)
+[stacktrace]
+#0 /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php(81): Egal\\Model\\Metadata\\ModelMetadata->scanActionsFromClassDocBlock(Object(ReflectionClass), Object(phpDocumentor\\Reflection\\DocBlock))
+#1 /app/vendor/egal/framework/src/Model/ModelManager.php(102): Egal\\Model\\Metadata\\ModelMetadata->__construct('App\\\\Models\\\\User...')
+#2 /app/vendor/egal/framework/src/Model/ModelManager.php(21): Egal\\Model\\ModelManager->scanModels()
+#3 /app/vendor/egal/framework/src/Model/ServiceProvider.php(39): Egal\\Model\\ModelManager->__construct()
+#4 /app/vendor/illuminate/container/Container.php(873): Egal\\Model\\ServiceProvider->Egal\\Model\\{closure}(Object(Egal\\Core\\Application), Array)
+#5 /app/vendor/illuminate/container/Container.php(758): Illuminate\\Container\\Container->build(Object(Closure))
+#6 /app/vendor/illuminate/container/Container.php(694): Illuminate\\Container\\Container->resolve('Egal\\\\Model\\\\Mode...', Array)
+#7 /app/vendor/laravel/lumen-framework/src/Application.php(300): Illuminate\\Container\\Container->make('Egal\\\\Model\\\\Mode...', Array)
+#8 /app/vendor/laravel/lumen-framework/src/helpers.php(42): Laravel\\Lumen\\Application->make('Egal\\\\Model\\\\Mode...', Array)
+#9 /app/vendor/egal/framework/src/Model/ModelManager.php(26): app('Egal\\\\Model\\\\Mode...')
+#10 /app/vendor/egal/framework/src/Model/ModelManager.php(62): Egal\\Model\\ModelManager::getInstance()
+#11 /app/vendor/egal/framework/src/Model/ServiceProvider.php(42): Egal\\Model\\ModelManager::loadModel('Egal\\\\Model\\\\Mode...')
+#12 /app/vendor/laravel/lumen-framework/src/Application.php(233): Egal\\Model\\ServiceProvider->register()
+#13 /app/vendor/egal/framework/src/Core/ServiceProvider.php(47): Laravel\\Lumen\\Application->register(Object(Egal\\Model\\ServiceProvider))
+#14 /app/vendor/laravel/lumen-framework/src/Application.php(233): Egal\\Core\\ServiceProvider->register()
+#15 /app/bootstrap/app.php(68): Laravel\\Lumen\\Application->register(Object(Egal\\Core\\ServiceProvider))
+#16 /app/artisan(18): require('/app/bootstrap/...')
+#17 {main}
+"} 
+[2022-04-22 11:48:13] production.ERROR: Call to undefined method phpDocumentor\Reflection\DocBlock\Tags\InvalidTag::getDescription() {"exception":"[object] (Error(code: 0): Call to undefined method phpDocumentor\\Reflection\\DocBlock\\Tags\\InvalidTag::getDescription() at /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php:304)
+[stacktrace]
+#0 /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php(81): Egal\\Model\\Metadata\\ModelMetadata->scanActionsFromClassDocBlock(Object(ReflectionClass), Object(phpDocumentor\\Reflection\\DocBlock))
+#1 /app/vendor/egal/framework/src/Model/ModelManager.php(102): Egal\\Model\\Metadata\\ModelMetadata->__construct('App\\\\Models\\\\User...')
+#2 /app/vendor/egal/framework/src/Model/ModelManager.php(21): Egal\\Model\\ModelManager->scanModels()
+#3 /app/vendor/egal/framework/src/Model/ServiceProvider.php(39): Egal\\Model\\ModelManager->__construct()
+#4 /app/vendor/illuminate/container/Container.php(873): Egal\\Model\\ServiceProvider->Egal\\Model\\{closure}(Object(Egal\\Core\\Application), Array)
+#5 /app/vendor/illuminate/container/Container.php(758): Illuminate\\Container\\Container->build(Object(Closure))
+#6 /app/vendor/illuminate/container/Container.php(694): Illuminate\\Container\\Container->resolve('Egal\\\\Model\\\\Mode...', Array)
+#7 /app/vendor/laravel/lumen-framework/src/Application.php(300): Illuminate\\Container\\Container->make('Egal\\\\Model\\\\Mode...', Array)
+#8 /app/vendor/laravel/lumen-framework/src/helpers.php(42): Laravel\\Lumen\\Application->make('Egal\\\\Model\\\\Mode...', Array)
+#9 /app/vendor/egal/framework/src/Model/ModelManager.php(26): app('Egal\\\\Model\\\\Mode...')
+#10 /app/vendor/egal/framework/src/Model/ModelManager.php(62): Egal\\Model\\ModelManager::getInstance()
+#11 /app/vendor/egal/framework/src/Model/ServiceProvider.php(42): Egal\\Model\\ModelManager::loadModel('Egal\\\\Model\\\\Mode...')
+#12 /app/vendor/laravel/lumen-framework/src/Application.php(233): Egal\\Model\\ServiceProvider->register()
+#13 /app/vendor/egal/framework/src/Core/ServiceProvider.php(47): Laravel\\Lumen\\Application->register(Object(Egal\\Model\\ServiceProvider))
+#14 /app/vendor/laravel/lumen-framework/src/Application.php(233): Egal\\Core\\ServiceProvider->register()
+#15 /app/bootstrap/app.php(68): Laravel\\Lumen\\Application->register(Object(Egal\\Core\\ServiceProvider))
+#16 /app/artisan(18): require('/app/bootstrap/...')
+#17 {main}
+"} 
+[2022-04-22 13:30:51] production.ERROR: Trait "Staudenmeir\EloquentHasManyDeep\HasRelationships" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"Staudenmeir\\EloquentHasManyDeep\\HasRelationships\" not found at /app/app/Models/Users.php:29)
+[stacktrace]
+#0 {main}
+"} 
+[2022-04-22 13:30:56] production.ERROR: Trait "Staudenmeir\EloquentHasManyDeep\HasRelationships" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"Staudenmeir\\EloquentHasManyDeep\\HasRelationships\" not found at /app/app/Models/Users.php:29)
+[stacktrace]
+#0 {main}
+"} 
+[2022-04-22 13:31:00] production.ERROR: Trait "Staudenmeir\EloquentHasManyDeep\HasRelationships" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"Staudenmeir\\EloquentHasManyDeep\\HasRelationships\" not found at /app/app/Models/Users.php:29)
+[stacktrace]
+#0 {main}
+"} 
+[2022-04-22 13:31:04] production.ERROR: Trait "Staudenmeir\EloquentHasManyDeep\HasRelationships" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"Staudenmeir\\EloquentHasManyDeep\\HasRelationships\" not found at /app/app/Models/Users.php:29)
+[stacktrace]
+#0 {main}
+"} 
+[2022-04-22 13:31:08] production.ERROR: Trait "Staudenmeir\EloquentHasManyDeep\HasRelationships" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"Staudenmeir\\EloquentHasManyDeep\\HasRelationships\" not found at /app/app/Models/Users.php:29)
+[stacktrace]
+#0 {main}
+"} 
+[2022-04-22 13:31:13] production.ERROR: Trait "Staudenmeir\EloquentHasManyDeep\HasRelationships" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"Staudenmeir\\EloquentHasManyDeep\\HasRelationships\" not found at /app/app/Models/Users.php:29)
+[stacktrace]
+#0 {main}
+"} 
+[2022-04-22 13:31:20] production.ERROR: Trait "Staudenmeir\EloquentHasManyDeep\HasRelationships" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"Staudenmeir\\EloquentHasManyDeep\\HasRelationships\" not found at /app/app/Models/Users.php:29)
+[stacktrace]
+#0 {main}
+"} 
+[2022-04-22 13:31:30] production.ERROR: Trait "Staudenmeir\EloquentHasManyDeep\HasRelationships" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"Staudenmeir\\EloquentHasManyDeep\\HasRelationships\" not found at /app/app/Models/Users.php:29)
+[stacktrace]
+#0 {main}
+"} 
+[2022-04-22 13:31:46] production.ERROR: Trait "Staudenmeir\EloquentHasManyDeep\HasRelationships" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"Staudenmeir\\EloquentHasManyDeep\\HasRelationships\" not found at /app/app/Models/Users.php:29)
+[stacktrace]
+#0 {main}
+"} 
+[2022-04-22 13:32:14] production.ERROR: Trait "Staudenmeir\EloquentHasManyDeep\HasRelationships" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"Staudenmeir\\EloquentHasManyDeep\\HasRelationships\" not found at /app/app/Models/Users.php:29)
+[stacktrace]
+#0 {main}
+"} 

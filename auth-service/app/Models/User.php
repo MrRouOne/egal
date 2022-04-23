@@ -15,6 +15,7 @@ use Egal\Model\Traits\UsesUuidKey;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
 use Staudenmeir\EloquentHasManyDeep\HasManyDeep;
 use Staudenmeir\EloquentHasManyDeep\HasRelationships;
 
@@ -40,7 +41,6 @@ use Staudenmeir\EloquentHasManyDeep\HasRelationships;
 class User extends BaseUser
 {
 
-    use UsesUuidKey;
     use HasFactory;
     use HasRelationships;
 
@@ -57,6 +57,9 @@ class User extends BaseUser
         'creating' => CreateUserEvent::class,
     ];
 
+    protected $primaryKey = 'id';
+    public $incrementing = false;
+
     public static function actionRegister(array $attributes = []): User
     {
         if (!$attributes['password']) {
@@ -71,6 +74,7 @@ class User extends BaseUser
             throw new PasswordHashException();
         }
 
+        $user->setAttribute("id", Str::uuid());
         $user->setAttribute('password', $hashedPassword);
         $user->setAttribute('phone', $attributes['phone']);
         $user->setAttribute('last_name', $attributes['last_name']);
@@ -98,6 +102,7 @@ class User extends BaseUser
         $umrt = new UserMasterRefreshToken();
         $umrt->setSigningKey(config('app.service_key'));
         $umrt->setAuthIdentification($user->getAuthIdentifier());
+
 
         return [
             'user_master_token' => $umt->generateJWT(),

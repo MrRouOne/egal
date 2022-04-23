@@ -16,7 +16,7 @@ class CreateLessonUsersTable extends Migration
         Schema::create('lesson_users', function (Blueprint $table) {
 
             $table->bigIncrements('id');
-            $table->foreignid('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignUuid('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('lesson_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->boolean('is_passed')->nullable(false)->default(false);
             $table->timestamps();
