@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+use App\Events\LessonUsersUpdatedEvent;
+use App\Events\LessonUsersUpdatingEvent;
+use Egal\Model\Exceptions\ObjectNotFoundException;
 use Egal\Model\Model as EgalModel;
 
 /**
@@ -12,12 +15,9 @@ use Egal\Model\Model as EgalModel;
  * @property $created_at {@property-type field}
  * @property $updated_at {@property-type field}
  *
- * @action getMetadata {@roles-access admin}
- * @action getItem {@roles-access admin}
- * @action getItems {@roles-access admin}
- * @action create {@roles-access admin}
- * @action update {@roles-access admin}
- * @action delete {@roles-access admin}
+ * @action create {@statuses-access guest}
+ * @action update {@roles-access user}
+ * @action getItem {@statuses-access guest}
  */
 class LessonUsers extends EgalModel
 {
@@ -31,4 +31,27 @@ class LessonUsers extends EgalModel
         'created_at',
         'updated_at',
     ];
+
+    protected $dispatchesEvents = [
+        'updating' => LessonUsersUpdatingEvent::class,
+        'updated' => LessonUsersUpdatedEvent::class,
+    ];
+
+    public static function getCompletedLessonsByCourseId($course_id, $user_id)
+    {
+        $all_lessons = Lessons::getIdsByCourseId($course_id);
+
+        $instance = new static();
+        $instance->makeIsInstanceForAction();
+
+        $items = $instance->newQuery()
+            ->makeModelIsInstanceForAction()
+            ->whereIn('lesson_id', $all_lessons)->where(['user_id' => $user_id, 'is_passed' => true])->count();
+
+        if (!$items) {
+            throw ObjectNotFoundException::make($course_id);
+        }
+
+        return $items;
+    }
 }

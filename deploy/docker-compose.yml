@@ -56,7 +56,8 @@ services:
     tty: true
     environment:
       APP_SERVICE_NAME: auth
-      APP_SERVICE_KEY: uZsLnAJz35FWUTVx@eg#Xirv6I*jcw2Y
+      APP_SERVICE_KEY: uZsLnAJz35FWUTVx@eg#Xirv6I*jcw2y
+      APP_SERVICES: core:uiA3ZsU#x@ecwgJrv6ITjLV*nzX5FW2Y
       DB_DATABSE: auth
       DB_HOST: ${PROJECT_NAME}-database
       DB_PASSWORD: ${DATABASE_PASSWORD:-password}

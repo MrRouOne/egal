@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Egal\Model\Exceptions\ObjectNotFoundException;
 use Egal\Model\Model as EgalModel;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -16,12 +17,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property $created_at {@property-type field}
  * @property $updated_at {@property-type field}
  *
- * @action getMetadata {@statuses-access guest|logged}
- * @action getItem {@statuses-access guest|logged}
- * @action getItems {@statuses-access guest|logged}
- * @action create {@statuses-access guest|logged}
- * @action update {@statuses-access guest}
- * @action delete {@statuses-access guest}
+ * @action getMetadata {@statuses-access logged}    {@roles-access admin}
+ * @action getItem {@statuses-access logged|guest}        {@roles-access admin}
+ * @action getItems {@statuses-access logged}       {@roles-access admin}
+ * @action create {@statuses-access logged}         {@roles-access admin}
+ * @action update {@statuses-access logged}         {@roles-access admin}
+ * @action delete {@statuses-access logged}         {@roles-access admin}
  */
 class Courses extends EgalModel
 {

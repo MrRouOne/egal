@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Carbon\Carbon;
+use Egal\Model\Exceptions\ObjectNotFoundException;
 use Egal\Model\Model as EgalModel;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -16,12 +17,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property $created_at {@property-type field}
  * @property $updated_at {@property-type field}
  *
- * @action getMetadata {@roles-access admin}
- * @action getItem {@roles-access admin}
- * @action getItems {@roles-access admin}
- * @action create {@roles-access admin}
- * @action update {@roles-access admin}
- * @action delete {@roles-access admin}
+ * @action getMetadata {@statuses-access logged}    {@roles-access admin}
+ * @action getItem {@statuses-access logged|guest}        {@roles-access admin}
+ * @action getItems {@statuses-access logged}       {@roles-access admin}
+ * @action create {@statuses-access logged}         {@roles-access admin}
+ * @action update {@statuses-access logged}         {@roles-access admin}
+ * @action delete {@statuses-access logged}         {@roles-access admin}
  */
 class Lessons extends EgalModel
 {
@@ -40,8 +41,24 @@ class Lessons extends EgalModel
         return $this->belongsTo(Courses::class);
     }
 
-    public function lessons(): belongsToMany
+    public function users(): belongsToMany
     {
         return $this->belongsToMany(Users::class, 'lesson_users', 'lesson_id', 'user_id');
+    }
+
+    public static function getIdsByCourseId($id)
+    {
+        $instance = new static();
+        $instance->makeIsInstanceForAction();
+
+        $items = $instance->newQuery()
+            ->makeModelIsInstanceForAction()
+            ->where(["course_id" => $id])->get('id');
+
+        if (!$items) {
+            throw ObjectNotFoundException::make($id);
+        }
+
+        return $items->toArray();
     }
 }

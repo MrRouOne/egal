@@ -18,13 +18,12 @@ use Staudenmeir\EloquentHasManyDeep\HasRelationships;
  * @property $created_at {@property-type field}
  * @property $updated_at {@property-type field}
  *
- * @action test {@statuses-access guest|logged}
- * @action getMetadata {@statuses-access guest|logged}
- * @action getItem {@statuses-access guest|logged}
- * @action getItems {@statuses-access guest|logged}
- * @action create {@statuses-access guest}                  {@services-access auth}
- * @action update {@statuses-access admin}
- * @action delete {@statuses-access admin}
+ * @action getMetadata {@statuses-access logged}    {@roles-access admin}
+ * @action getItem {@statuses-access logged}        {@roles-access admin}
+ * @action getItems {@statuses-access logged}       {@roles-access admin}
+ * @action create {@statuses-access guest}
+ * @action update {@statuses-access logged}         {@roles-access admin}
+ * @action delete {@statuses-access logged}         {@roles-access admin}
  */
 class Users extends EgalModel
 {
