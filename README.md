@@ -19,3 +19,6 @@
 Запуск проекта
 
     docker-compose up -d --build
+
+    docker exec project-core-service php artisan migrate --seed --force;
+    docker exec project-auth-service php artisan migrate --seed --force
