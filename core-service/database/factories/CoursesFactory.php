@@ -2,21 +2,19 @@
 
 namespace Database\Factories;
 
-use App\Models\Permission;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class CourseFactory extends Factory
+class CoursesFactory extends Factory
 {
-
-    protected $model = Permission::class;
-
     public function definition(): array
     {
+        $date = $this->faker->dateTimeBetween('now', '+14 days');
+
         return [
             'title' => $this->faker->word,
             'student_capacity' => random_int(10,35),
-            'start_date' => $this->faker->date,
-            'end_date' => $this->faker->date,
+            'start_date' => $date,
+            'end_date' => $this->faker->dateTimeBetween($date, '+14 days'),
             'has_certificate' => random_int(0,1),
         ];
     }

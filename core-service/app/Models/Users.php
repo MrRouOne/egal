@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use AWS\CRT\HTTP\Response;
+use Egal\Model\Exceptions\ObjectNotFoundException;
+use Egal\Model\Exceptions\UpdateException;
 use Egal\Model\Model as EgalModel;
 use Egal\Model\Traits\UsesUuidKey;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -11,7 +13,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Staudenmeir\EloquentHasManyDeep\HasRelationships;
 
 /**
- * @property $id {@property-type field} {@validation-rules required|uuid}
+ * @property $id {@property-type field} {@validation-rules required|uuid|unique:users,id}
  * @property $phone {@property-type field} {@validation-rules required|string}
  * @property $last_name {@property-type field} {@validation-rules required|string}
  * @property $first_name {@property-type field} {@validation-rules required|string}
@@ -21,10 +23,11 @@ use Staudenmeir\EloquentHasManyDeep\HasRelationships;
  * @action getMetadata {@statuses-access logged}    {@roles-access admin}
  * @action getItem {@statuses-access logged}        {@roles-access admin}
  * @action getItems {@statuses-access logged}       {@roles-access admin}
- * @action create {@statuses-access guest}
+ * @action create {@statuses-access logged}         {@services-access auth}
  * @action update {@statuses-access logged}         {@roles-access admin}
  * @action delete {@statuses-access logged}         {@roles-access admin}
  */
+
 class Users extends EgalModel
 {
     use HasFactory;

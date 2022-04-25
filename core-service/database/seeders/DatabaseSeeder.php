@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Courses;
+use App\Models\Lessons;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,7 +16,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
+        $this->call(CoursesSeeder::class);
+        $this->call(LessonsUsers::class);
     }
 
 }

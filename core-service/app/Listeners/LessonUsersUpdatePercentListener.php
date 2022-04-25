@@ -46,9 +46,7 @@ class LessonUsersUpdatePercentListener
         $course_id = Lessons::actionGetItem($attributes['lesson_id'],["course"])['course']['id'];
         $all_lessons = count(Lessons::getIdsByCourseId($course_id));
         $completed_lessons = LessonUsers::getCompletedLessonsByCourseId($course_id,$attributes['user_id']);
-        var_dump(CourseUsers::getItemByUserAndCourse($course_id,$attributes['user_id']));
         $id = CourseUsers::getItemByUserAndCourse($course_id,$attributes['user_id'])[0]['id'];
-        var_dump($id);
 
         CourseUsers::actionUpdate($id,['percentage_passing'=> round(100*$completed_lessons/$all_lessons)]);
     }

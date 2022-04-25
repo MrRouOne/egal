@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Egal\Model\Exceptions\ObjectNotFoundException;
 use Egal\Model\Model as EgalModel;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
@@ -26,6 +27,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class Courses extends EgalModel
 {
+    use HasFactory;
     protected $fillable = [
         'title',
         'student_capacity',

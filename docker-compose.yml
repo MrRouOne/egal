@@ -5,10 +5,18 @@ services:
     extends:
       file: ./deploy/docker-compose.yml
       service: core-service
+    depends_on:
+      - rabbitmq
+      - database
+
   auth:
     extends:
       file: ./deploy/docker-compose.yml
       service: auth-service
+    depends_on:
+      - rabbitmq
+      - database
+      - core
 
   web:
     extends:

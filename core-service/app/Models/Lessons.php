@@ -2,13 +2,11 @@
 
 namespace App\Models;
 
-use Carbon\Carbon;
 use Egal\Model\Exceptions\ObjectNotFoundException;
 use Egal\Model\Model as EgalModel;
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property $id {@property-type field} {@prymary-key}
@@ -20,12 +18,13 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @action getMetadata {@statuses-access logged}    {@roles-access admin}
  * @action getItem {@statuses-access logged|guest}        {@roles-access admin}
  * @action getItems {@statuses-access logged}       {@roles-access admin}
- * @action create {@statuses-access logged}         {@roles-access admin}
+ * @action create {@statuses-access logged}         {@roles-access admin}       {@services-access core}
  * @action update {@statuses-access logged}         {@roles-access admin}
  * @action delete {@statuses-access logged}         {@roles-access admin}
  */
 class Lessons extends EgalModel
 {
+    use HasFactory;
     protected $fillable = [
         'course_id',
         'theme',

@@ -58,7 +58,7 @@ class CreateUserListener
                 ]
             ],
         );
-        $request->send();
+        $request->call();
 
         $event->user->offsetUnset('first_name');
         $event->user->offsetUnset('last_name');
