@@ -3,18 +3,9 @@
 namespace App\Listeners;
 
 use App\Events\CourseUsersCreatedEvent;
-use App\Events\CourseUsersCreatingEvent;
-use App\Exceptions\CapacityException;
 use App\Models\Courses;
-use App\Models\CourseUsers;
 use App\Models\LessonUsers;
-use App\Rules\CorrectUserIdRule;
-use Egal\Core\Exceptions\RequestException;
-use Egal\Core\Listeners\GlobalEventListener;
-use Egal\Core\Listeners\EventListener;
-use Egal\Core\Session\Session;
-use Egal\Model\Exceptions\ValidateException;
-use Illuminate\Support\Facades\Validator;
+use Egal\Model\Exceptions\ObjectNotFoundException;
 
 class CourseUsersRecordToLessonsListener
 {
@@ -29,9 +20,8 @@ class CourseUsersRecordToLessonsListener
     }
 
     /**
-     * Handle the event.
-     *
      * @param CourseUsersCreatedEvent $event
+     * @throws ObjectNotFoundException
      */
     public function handle(CourseUsersCreatedEvent $event): void
     {

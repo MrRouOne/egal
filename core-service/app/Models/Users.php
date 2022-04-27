@@ -2,15 +2,9 @@
 
 namespace App\Models;
 
-use AWS\CRT\HTTP\Response;
-use Egal\Model\Exceptions\ObjectNotFoundException;
-use Egal\Model\Exceptions\UpdateException;
 use Egal\Model\Model as EgalModel;
-use Egal\Model\Traits\UsesUuidKey;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Staudenmeir\EloquentHasManyDeep\HasRelationships;
 
 /**
  * @property $id {@property-type field} {@validation-rules required|uuid|unique:users,id}
@@ -23,7 +17,7 @@ use Staudenmeir\EloquentHasManyDeep\HasRelationships;
  * @action getMetadata {@statuses-access logged}    {@roles-access admin}
  * @action getItem {@statuses-access logged}        {@roles-access admin}
  * @action getItems {@statuses-access logged}       {@roles-access admin}
- * @action create {@statuses-access logged}         {@services-access auth}
+ * @action create {@statuses-access logged}         {@services-access auth-service}
  * @action update {@statuses-access logged}         {@roles-access admin}
  * @action delete {@statuses-access logged}         {@roles-access admin}
  */
@@ -48,11 +42,17 @@ class Users extends EgalModel
     public $incrementing = false;
 
 
+    /**
+     * @return BelongsToMany
+     */
     public function courses(): belongsToMany
     {
         return $this->belongsToMany(Courses::class, 'course_users', 'user_id', 'course_id');
     }
 
+    /**
+     * @return BelongsToMany
+     */
     public function lessons(): belongsToMany
     {
         return $this->belongsToMany(Lessons::class, 'lesson_users', 'user_id', 'lesson_id');

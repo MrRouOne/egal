@@ -4,11 +4,10 @@ namespace App\Listeners;
 
 use App\Events\CreateUserEvent;
 use App\Rules\PhoneRule;
-use Egal\Core\Exceptions\RequestException;
-use Egal\Core\Listeners\GlobalEventListener;
-use Egal\Core\Listeners\EventListener;
 use Egal\Model\Exceptions\ValidateException;
-use Illuminate\Support\Facades\Validator;
+use App\Helpers\ValidateHelper;
+use Illuminate\Support\Str;
+use Egal\Core\Communication\Request;
 
 class CreateUserListener
 {
@@ -26,26 +25,22 @@ class CreateUserListener
      * Handle the event.
      *
      * @param CreateUserEvent $event
+     * @throws ValidateException
      */
     public function handle(CreateUserEvent $event): void
     {
+        $event->user->setAttribute("id", Str::uuid());
         $attributes = $event->user->getAttributes();
 
-        $validator = Validator::make($attributes, [
+        $validate = new ValidateHelper($attributes, [
             "id" =>  'required',
             "first_name" =>  'required|string',
             "last_name" =>  'required|string',
             "phone" => [new PhoneRule, 'required'],
         ]);
+        $validate->validate();
 
-        if ($validator->fails()) {
-            $exception = new ValidateException();
-            $exception->setMessageBag($validator->errors());
-
-            throw $exception;
-        }
-
-        $request = new \Egal\Core\Communication\Request(
+        $request = new Request(
             'core',
             'Users',
             'create',

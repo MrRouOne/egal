@@ -3,13 +3,8 @@
 namespace App\Listeners;
 
 use App\Events\CourseUsersCreatingEvent;
-use App\Models\Courses;
-use App\Models\CourseUsers;
+use App\Helpers\ValidateHelper;
 use App\Rules\CorrectUserIdRule;
-use Egal\Core\Exceptions\RequestException;
-use Egal\Core\Listeners\GlobalEventListener;
-use Egal\Core\Listeners\EventListener;
-use Egal\Core\Session\Session;
 use Egal\Model\Exceptions\ValidateException;
 use Illuminate\Support\Facades\Validator;
 
@@ -26,23 +21,15 @@ class CourseUsersCheckIdListener
     }
 
     /**
-     * Handle the event.
-     *
      * @param CourseUsersCreatingEvent $event
+     * @throws ValidateException
      */
     public function handle(CourseUsersCreatingEvent $event): void
     {
         $attributes = $event->data->getAttributes();
 
-        $validator = Validator::make($attributes, [
-            "user_id" => [new CorrectUserIdRule, 'required'],
-        ]);
-
-        if ($validator->fails()) {
-            $exception = new ValidateException();
-            $exception->setMessageBag($validator->errors());
-
-            throw $exception;
-        }
+        $validate = new ValidateHelper($attributes, [
+            "user_id" => [new CorrectUserIdRule, 'required']]);
+        $validate->validate();
     }
 }

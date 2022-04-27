@@ -10,6 +10,9 @@ class RoleFactory extends Factory
 
     protected $model = Role::class;
 
+    /**
+     * @return array
+     */
     public function definition(): array
     {
         return [

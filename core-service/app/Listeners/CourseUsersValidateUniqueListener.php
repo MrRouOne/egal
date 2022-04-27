@@ -3,14 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\CourseUsersCreatingEvent;
-use App\Exceptions\CapacityException;
-use App\Models\Courses;
-use App\Models\CourseUsers;
-use App\Rules\CorrectUserIdRule;
-use Egal\Core\Exceptions\RequestException;
-use Egal\Core\Listeners\GlobalEventListener;
-use Egal\Core\Listeners\EventListener;
-use Egal\Core\Session\Session;
+use App\Helpers\ValidateHelper;
 use Egal\Model\Exceptions\ValidateException;
 use Illuminate\Support\Facades\Validator;
 
@@ -27,9 +20,8 @@ class CourseUsersValidateUniqueListener
     }
 
     /**
-     * Handle the event.
-     *
      * @param CourseUsersCreatingEvent $event
+     * @throws ValidateException
      */
     public function handle(CourseUsersCreatingEvent $event): void
     {
@@ -37,15 +29,9 @@ class CourseUsersValidateUniqueListener
         $attributes = $event->data->getAttributes();
         $course_id = $attributes['course_id'];
 
-        $validator = Validator::make($attributes, [
+        $validate = new ValidateHelper($attributes, [
             "user_id" => "required|uuid|unique:course_users,user_id,null,null,course_id,$course_id",
         ]);
-
-        if ($validator->fails()) {
-            $exception = new ValidateException();
-            $exception->setMessageBag($validator->errors());
-
-            throw $exception;
-        }
+        $validate->validate();
     }
 }

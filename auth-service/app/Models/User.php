@@ -7,15 +7,11 @@ use App\Exceptions\EmptyPasswordException;
 use App\Exceptions\PasswordHashException;
 use Egal\Auth\Tokens\UserMasterRefreshToken;
 use Egal\Auth\Tokens\UserMasterToken;
-use Egal\Auth\Tokens\UserServiceToken;
 use Egal\AuthServiceDependencies\Exceptions\LoginException;
-use Egal\AuthServiceDependencies\Exceptions\UserNotIdentifiedException;
 use Egal\AuthServiceDependencies\Models\User as BaseUser;
-use Egal\Model\Traits\UsesUuidKey;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Str;
 use Staudenmeir\EloquentHasManyDeep\HasManyDeep;
 use Staudenmeir\EloquentHasManyDeep\HasRelationships;
 
@@ -40,7 +36,6 @@ use Staudenmeir\EloquentHasManyDeep\HasRelationships;
  */
 class User extends BaseUser
 {
-
     use HasFactory;
     use HasRelationships;
 
@@ -60,6 +55,13 @@ class User extends BaseUser
     protected $primaryKey = 'id';
     public $incrementing = false;
 
+
+    /**
+     * @param array $attributes
+     * @return User
+     * @throws EmptyPasswordException
+     * @throws PasswordHashException
+     */
     public static function actionRegister(array $attributes = []): User
     {
         if (!$attributes['password']) {
@@ -74,7 +76,6 @@ class User extends BaseUser
             throw new PasswordHashException();
         }
 
-        $user->setAttribute("id", Str::uuid());
         $user->setAttribute('password', $hashedPassword);
         $user->setAttribute('phone', $attributes['phone']);
         $user->setAttribute('last_name', $attributes['last_name']);
@@ -84,6 +85,12 @@ class User extends BaseUser
         return $user;
     }
 
+    /**
+     * @param string $email
+     * @param string $password
+     * @return array
+     * @throws LoginException
+     */
     public static function actionLogin(string $email, string $password): array
     {
         /** @var BaseUser $user */
@@ -103,18 +110,23 @@ class User extends BaseUser
         $umrt->setSigningKey(config('app.service_key'));
         $umrt->setAuthIdentification($user->getAuthIdentifier());
 
-
         return [
             'user_master_token' => $umt->generateJWT(),
             'user_master_refresh_token' => $umrt->generateJWT()
         ];
     }
 
+    /**
+     * @return BelongsToMany
+     */
     public function roles(): BelongsToMany
     {
         return $this->belongsToMany(Role::class, 'user_roles');
     }
 
+    /**
+     * @return HasManyDeep
+     */
     public function permissions(): HasManyDeep
     {
         return $this->hasManyDeep(
@@ -137,11 +149,17 @@ class User extends BaseUser
         });
     }
 
+    /**
+     * @return array
+     */
     protected function getRoles(): array
     {
         return array_unique($this->roles->pluck('id')->toArray());
     }
 
+    /**
+     * @return array
+     */
     protected function getPermissions(): array
     {
         return array_unique($this->permissions->pluck('id')->toArray());

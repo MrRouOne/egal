@@ -19,6 +19,8 @@ use Egal\Core\Exceptions\RequestException;
 use Egal\Core\Listeners\GlobalEventListener;
 use Egal\Core\Listeners\EventListener;
 use Egal\Core\Session\Session;
+use Egal\Model\Exceptions\ObjectNotFoundException;
+use Egal\Model\Exceptions\UpdateException;
 use Egal\Model\Exceptions\ValidateException;
 use Illuminate\Support\Facades\Validator;
 
@@ -35,19 +37,19 @@ class LessonUsersUpdatePercentListener
     }
 
     /**
-     * Handle the event.
-     *
      * @param LessonUsersUpdatedEvent $event
+     * @throws ObjectNotFoundException
+     * @throws UpdateException
      */
     public function handle(LessonUsersUpdatedEvent $event): void
     {
         $attributes = $event->data->getAttributes();
 
-        $course_id = Lessons::actionGetItem($attributes['lesson_id'],["course"])['course']['id'];
+        $course_id = Lessons::actionGetItem($attributes['lesson_id'], ["course"])['course']['id'];
         $all_lessons = count(Lessons::getIdsByCourseId($course_id));
-        $completed_lessons = LessonUsers::getCompletedLessonsByCourseId($course_id,$attributes['user_id']);
-        $id = CourseUsers::getItemByUserAndCourse($course_id,$attributes['user_id'])[0]['id'];
+        $completed_lessons = LessonUsers::getCompletedLessonsByCourseId($course_id, $attributes['user_id']);
+        $id = CourseUsers::getItemByUserAndCourse($course_id, $attributes['user_id'])[0]['id'];
 
-        CourseUsers::actionUpdate($id,['percentage_passing'=> round(100*$completed_lessons/$all_lessons)]);
+        CourseUsers::actionUpdate($id, ['percentage_passing' => round(100 * $completed_lessons / $all_lessons)]);
     }
 }

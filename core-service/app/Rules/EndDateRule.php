@@ -2,12 +2,17 @@
 
 namespace App\Rules;
 
-use Egal\Core\Session\Session;
 use Egal\Validation\Rules\Rule as EgalRule;
 
 class EndDateRule extends EgalRule
 {
 
+    /**
+     * @param $attribute
+     * @param $value
+     * @param null $parameters
+     * @return bool
+     */
     public function validate($attribute, $value, $parameters = null): bool
     {
         $current_date = date("Y-m-d");

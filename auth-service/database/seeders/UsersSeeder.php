@@ -8,8 +8,6 @@ use Illuminate\Support\Str;
 
 class UsersSeeder extends Seeder
 {
-
-
     public function run()
     {
         User::factory()->count(5)->create();

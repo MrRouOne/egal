@@ -2,22 +2,10 @@
 
 namespace App\Listeners;
 
-use App\Events\CourseUsersCreatingEvent;
 use App\Events\LessonUsersUpdatingEvent;
-use App\Exceptions\CapacityException;
 use App\Exceptions\ForbiddenFieldsException;
-use App\Models\Courses;
-use App\Models\CourseUsers;
-use App\Models\Lessons;
 use App\Models\LessonUsers;
-use App\Rules\CorrectUserIdRule;
-use App\Rules\ForbiddenFieldRule;
-use Egal\Core\Exceptions\RequestException;
-use Egal\Core\Listeners\GlobalEventListener;
-use Egal\Core\Listeners\EventListener;
-use Egal\Core\Session\Session;
-use Egal\Model\Exceptions\ValidateException;
-use Illuminate\Support\Facades\Validator;
+use Egal\Model\Exceptions\ObjectNotFoundException;
 
 class LessonUsersCheckFieldsListener
 {
@@ -32,9 +20,9 @@ class LessonUsersCheckFieldsListener
     }
 
     /**
-     * Handle the event.
-     *
      * @param LessonUsersUpdatingEvent $event
+     * @throws ForbiddenFieldsException
+     * @throws ObjectNotFoundException
      */
     public function handle(LessonUsersUpdatingEvent $event): void
     {
@@ -42,8 +30,7 @@ class LessonUsersCheckFieldsListener
         $lesson = LessonUsers::actionGetItem($attributes['id']);
 
         if ($attributes['user_id'] !== $lesson['user_id'] or $attributes['lesson_id'] !== $lesson['lesson_id']) {
-            $exception = new ForbiddenFieldsException();
-            throw $exception;
+            throw new ForbiddenFieldsException();
         }
 
     }

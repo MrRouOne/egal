@@ -32,12 +32,18 @@ class CourseUsers extends EgalModel
         'updated_at',
     ];
 
-    protected $dispatchesEvents = [
+    protected array $dispatchesEvents = [
         'creating' => CourseUsersCreatingEvent::class,
         'created' => CourseUsersCreatedEvent::class,
     ];
 
-    public static function getItemByUserAndCourse($course_id, $user_id): array
+    /**
+     * @param int $course_id
+     * @param int $user_id
+     * @return array
+     * @throws ObjectNotFoundException
+     */
+    public static function getItemByUserAndCourse(int $course_id, int $user_id): array
     {
         $instance = new static();
         $instance->makeIsInstanceForAction();

@@ -2,21 +2,11 @@
 
 namespace App\Listeners;
 
-use App\Events\CourseUsersCreatingEvent;
 use App\Events\LessonUsersUpdatingEvent;
-use App\Exceptions\CapacityException;
-use App\Exceptions\ForbiddenFieldsException;
-use App\Models\Courses;
-use App\Models\CourseUsers;
+use App\Helpers\ValidateHelper;
 use App\Models\Lessons;
-use App\Models\LessonUsers;
-use App\Rules\CorrectUserIdRule;
 use App\Rules\EndDateRule;
-use App\Rules\ForbiddenFieldRule;
-use Egal\Core\Exceptions\RequestException;
-use Egal\Core\Listeners\GlobalEventListener;
-use Egal\Core\Listeners\EventListener;
-use Egal\Core\Session\Session;
+use Egal\Model\Exceptions\ObjectNotFoundException;
 use Egal\Model\Exceptions\ValidateException;
 use Illuminate\Support\Facades\Validator;
 
@@ -33,24 +23,19 @@ class LessonUsersCheckFinishCourseListener
     }
 
     /**
-     * Handle the event.
-     *
      * @param LessonUsersUpdatingEvent $event
+     * @throws ValidateException
+     * @throws ObjectNotFoundException
      */
     public function handle(LessonUsersUpdatingEvent $event): void
     {
         $attributes = $event->data->getAttributes();
 
         $course =  Lessons::actionGetItem($attributes['lesson_id'],["course"])['course'];
-        $validator = Validator::make($course, [
+
+        $validate = new ValidateHelper($course, [
             "end_date" => [new EndDateRule],
         ]);
-
-        if ($validator->fails()) {
-            $exception = new ValidateException();
-            $exception->setMessageBag($validator->errors());
-
-            throw $exception;
-        }
+        $validate->validate();
     }
 }

@@ -10,6 +10,9 @@ class PermissionFactory extends Factory
 
     protected $model = Permission::class;
 
+    /**
+     * @return array
+     */
     public function definition(): array
     {
         return [

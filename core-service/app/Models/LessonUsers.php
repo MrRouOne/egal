@@ -30,12 +30,19 @@ class LessonUsers extends EgalModel
         'updated_at',
     ];
 
-    protected $dispatchesEvents = [
+    protected array $dispatchesEvents = [
         'updating' => LessonUsersUpdatingEvent::class,
         'updated' => LessonUsersUpdatedEvent::class,
     ];
 
-    public static function getCompletedLessonsByCourseId($course_id, $user_id)
+
+    /**
+     * @param int $course_id
+     * @param int $user_id
+     * @return int
+     * @throws ObjectNotFoundException
+     */
+    public static function getCompletedLessonsByCourseId(int $course_id, int $user_id): int
     {
         $all_lessons = Lessons::getIdsByCourseId($course_id);
 

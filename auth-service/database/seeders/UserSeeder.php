@@ -11,16 +11,9 @@ use Illuminate\Support\Str;
 
 class UserSeeder extends Seeder
 {
-    protected $faker;
-
-    public function __construct()
-    {
-        $this->faker = Container::getInstance()->make(Generator::class);
-    }
-
     public function run()
     {
-        $userScheme = [
+        $userData = [
             'id' => Str::uuid(),
             'email' => 'user@gmail.com',
             'password' => Hash::make('user'),
@@ -30,8 +23,8 @@ class UserSeeder extends Seeder
 
         ];
 
-        if (!User::query()->where('email', $userScheme['email'])->first()) {
-             User::query()->create($userScheme);
+        if (!User::query()->where('email', $userData['email'])->first()) {
+             User::query()->create($userData);
         }
     }
 }

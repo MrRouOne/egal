@@ -3,17 +3,9 @@
 namespace App\Listeners;
 
 use App\Events\CourseUsersCreatedEvent;
-use App\Events\CourseUsersCreatingEvent;
-use App\Exceptions\CapacityException;
 use App\Models\Courses;
-use App\Models\CourseUsers;
-use App\Rules\CorrectUserIdRule;
-use Egal\Core\Exceptions\RequestException;
-use Egal\Core\Listeners\GlobalEventListener;
-use Egal\Core\Listeners\EventListener;
-use Egal\Core\Session\Session;
-use Egal\Model\Exceptions\ValidateException;
-use Illuminate\Support\Facades\Validator;
+use Egal\Model\Exceptions\ObjectNotFoundException;
+use Egal\Model\Exceptions\UpdateException;
 
 class CourseUsersUpdateCapacityListener
 {
@@ -28,9 +20,9 @@ class CourseUsersUpdateCapacityListener
     }
 
     /**
-     * Handle the event.
-     *
      * @param CourseUsersCreatedEvent $event
+     * @throws ObjectNotFoundException
+     * @throws UpdateException
      */
     public function handle(CourseUsersCreatedEvent $event): void
     {

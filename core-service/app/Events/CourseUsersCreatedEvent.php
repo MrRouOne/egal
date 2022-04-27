@@ -3,7 +3,6 @@
 namespace App\Events;
 
 use App\Models\CourseUsers;
-use App\Models\User;
 use Egal\Core\Events\Event;
 use Illuminate\Queue\SerializesModels;
 
@@ -17,6 +16,5 @@ class CourseUsersCreatedEvent extends Event
     {
         $this->data = $data;
     }
-
 
 }
