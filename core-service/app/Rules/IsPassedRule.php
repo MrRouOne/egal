@@ -15,7 +15,7 @@ class IsPassedRule extends EgalRule
      */
     public function validate($attribute, $value, $parameters = null): bool
     {
-        return $value === true;
+        return (bool) $value;
     }
 
     /**

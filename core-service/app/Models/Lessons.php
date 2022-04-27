@@ -51,25 +51,4 @@ class Lessons extends EgalModel
     {
         return $this->belongsToMany(Users::class, 'lesson_users', 'lesson_id', 'user_id');
     }
-
-    /**
-     * @param $id
-     * @return array
-     * @throws ObjectNotFoundException
-     */
-    public static function getIdsByCourseId($id): array
-    {
-        $instance = new static();
-        $instance->makeIsInstanceForAction();
-
-        $items = $instance->newQuery()
-            ->makeModelIsInstanceForAction()
-            ->where(["course_id" => $id])->get('id');
-
-        if (!$items) {
-            throw ObjectNotFoundException::make($id);
-        }
-
-        return $items->toArray();
-    }
 }

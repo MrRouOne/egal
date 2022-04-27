@@ -7,18 +7,14 @@ use Illuminate\Support\Facades\Validator;
 
 class ValidateHelper
 {
-    protected array $attributes;
-    protected array $rules;
-
-    public function __construct(array $attributes, array $rules)
+    /**
+     * @param array $attributes
+     * @param array $rules
+     * @throws ValidateException
+     */
+    public static function validate(array $attributes, array $rules)
     {
-        $this->attributes = $attributes;
-        $this->rules = $rules;
-    }
-
-    public function validate()
-    {
-        $validator = Validator::make($this->attributes, $this->rules);
+        $validator = Validator::make($attributes, $rules);
 
         if ($validator->fails()) {
             $exception = new ValidateException();

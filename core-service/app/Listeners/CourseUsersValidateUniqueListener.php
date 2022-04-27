@@ -10,16 +10,6 @@ use Illuminate\Support\Facades\Validator;
 class CourseUsersValidateUniqueListener
 {
     /**
-     * Create the event listener.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-
-    }
-
-    /**
      * @param CourseUsersCreatingEvent $event
      * @throws ValidateException
      */
@@ -29,9 +19,9 @@ class CourseUsersValidateUniqueListener
         $attributes = $event->data->getAttributes();
         $course_id = $attributes['course_id'];
 
-        $validate = new ValidateHelper($attributes, [
+        $validate = new ValidateHelper;
+        $validate->validate($attributes, [
             "user_id" => "required|uuid|unique:course_users,user_id,null,null,course_id,$course_id",
         ]);
-        $validate->validate();
     }
 }

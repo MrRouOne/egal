@@ -4,6 +4,7 @@ namespace App\Listeners;
 
 use App\Events\LessonUsersUpdatingEvent;
 use App\Helpers\ValidateHelper;
+use App\Models\Courses;
 use App\Models\Lessons;
 use App\Rules\EndDateRule;
 use Egal\Model\Exceptions\ObjectNotFoundException;
@@ -13,16 +14,6 @@ use Illuminate\Support\Facades\Validator;
 class LessonUsersCheckFinishCourseListener
 {
     /**
-     * Create the event listener.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-
-    }
-
-    /**
      * @param LessonUsersUpdatingEvent $event
      * @throws ValidateException
      * @throws ObjectNotFoundException
@@ -31,11 +22,10 @@ class LessonUsersCheckFinishCourseListener
     {
         $attributes = $event->data->getAttributes();
 
-        $course =  Lessons::actionGetItem($attributes['lesson_id'],["course"])['course'];
-
-        $validate = new ValidateHelper($course, [
+        $course = Courses::query()->find(Lessons::query()->find($attributes['lesson_id'])['course_id'])->toArray();
+        $validate = new ValidateHelper;
+        $validate->validate($course, [
             "end_date" => [new EndDateRule],
         ]);
-        $validate->validate();
     }
 }

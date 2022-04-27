@@ -14,7 +14,7 @@ class PhoneRule extends EgalRule
      */
     public function validate($attribute, $value, $parameters = null): bool
     {
-        return preg_match('/^\+?[1-9]{1}\(?[0-9]{3}\)?[0-9]{3}-[0-9]{2}-[0-9]{2}$/', $value) && strlen($value) >= 10;
+        return strlen($value) >= 10 and preg_match('/^\+?[1-9]{1}\(?[0-9]{3}\)?[0-9]{3}-[0-9]{2}-[0-9]{2}$/', $value);
     }
 
     /**

@@ -10,16 +10,6 @@ use Egal\Model\Exceptions\UpdateException;
 class CourseUsersUpdateCapacityListener
 {
     /**
-     * Create the event listener.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-
-    }
-
-    /**
      * @param CourseUsersCreatedEvent $event
      * @throws ObjectNotFoundException
      * @throws UpdateException
@@ -27,7 +17,7 @@ class CourseUsersUpdateCapacityListener
     public function handle(CourseUsersCreatedEvent $event): void
     {
         $course_id = $event->data->getAttributes()['course_id'];
-        $current_capacity = Courses::actionGetItem($course_id)['student_capacity'];
+        $current_capacity = Courses::query()->find($course_id)['student_capacity'];
         Courses::actionUpdate($course_id,["student_capacity" => $current_capacity-1]);
     }
 }

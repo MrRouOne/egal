@@ -30,33 +30,9 @@ class LessonUsers extends EgalModel
         'updated_at',
     ];
 
-    protected array $dispatchesEvents = [
+    protected $dispatchesEvents = [
         'updating' => LessonUsersUpdatingEvent::class,
         'updated' => LessonUsersUpdatedEvent::class,
     ];
 
-
-    /**
-     * @param int $course_id
-     * @param int $user_id
-     * @return int
-     * @throws ObjectNotFoundException
-     */
-    public static function getCompletedLessonsByCourseId(int $course_id, int $user_id): int
-    {
-        $all_lessons = Lessons::getIdsByCourseId($course_id);
-
-        $instance = new static();
-        $instance->makeIsInstanceForAction();
-
-        $items = $instance->newQuery()
-            ->makeModelIsInstanceForAction()
-            ->whereIn('lesson_id', $all_lessons)->where(['user_id' => $user_id, 'is_passed' => true])->count();
-
-        if (!$items) {
-            throw ObjectNotFoundException::make($course_id);
-        }
-
-        return $items;
-    }
 }

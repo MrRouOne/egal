@@ -11,16 +11,6 @@ use Illuminate\Support\Facades\Validator;
 class LessonUsersCheckIdListener
 {
     /**
-     * Create the event listener.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-
-    }
-
-    /**
      * @param LessonUsersUpdatingEvent $event
      * @throws ValidateException
      */
@@ -28,9 +18,9 @@ class LessonUsersCheckIdListener
     {
         $attributes = $event->data->getAttributes();
 
-        $validate = new ValidateHelper($attributes, [
+        $validate = new ValidateHelper;
+        $validate->validate($attributes, [
             "user_id" => [new CorrectUserIdRule, 'required'],
         ]);
-        $validate->validate();
     }
 }

@@ -8,9 +8,7 @@ use Illuminate\Queue\SerializesModels;
 
 class CourseUsersCreatingEvent extends Event
 {
-    use SerializesModels;
-
-    public $data;
+    public CourseUsers $data;
 
     public function __construct(CourseUsers $data)
     {

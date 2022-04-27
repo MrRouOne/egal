@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @action getMetadata {@statuses-access logged}    {@roles-access admin}
  * @action getItem {@statuses-access logged}        {@roles-access admin}
  * @action getItems {@statuses-access logged}       {@roles-access admin}
- * @action create {@statuses-access logged}         {@services-access auth-service}
+ * @action create {@statuses-access logged}         {@services-access auth-service|auth}
  * @action update {@statuses-access logged}         {@roles-access admin}
  * @action delete {@statuses-access logged}         {@roles-access admin}
  */

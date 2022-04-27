@@ -27,16 +27,6 @@ use Illuminate\Support\Facades\Validator;
 class LessonUsersUpdatePercentListener
 {
     /**
-     * Create the event listener.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-
-    }
-
-    /**
      * @param LessonUsersUpdatedEvent $event
      * @throws ObjectNotFoundException
      * @throws UpdateException
@@ -45,11 +35,14 @@ class LessonUsersUpdatePercentListener
     {
         $attributes = $event->data->getAttributes();
 
-        $course_id = Lessons::actionGetItem($attributes['lesson_id'], ["course"])['course']['id'];
-        $all_lessons = count(Lessons::getIdsByCourseId($course_id));
-        $completed_lessons = LessonUsers::getCompletedLessonsByCourseId($course_id, $attributes['user_id']);
-        $id = CourseUsers::getItemByUserAndCourse($course_id, $attributes['user_id'])[0]['id'];
+        $course_id = Courses::query()->find(Lessons::query()->find($attributes['lesson_id'])['course_id'])['id'];
+        $all_lessons = Lessons::query()->where(["course_id" => $course_id])->get('id');
+        $completed_lessons = LessonUsers::query()->whereIn('lesson_id', $all_lessons)->where([
+            'user_id' => $attributes['user_id'],
+            'is_passed' => true
+        ])->count();
 
-        CourseUsers::actionUpdate($id, ['percentage_passing' => round(100 * $completed_lessons / $all_lessons)]);
+        CourseUsers::query()->where(['user_id' => $attributes['user_id'], 'course_id' => $course_id])
+            ->update(['percentage_passing' => round(100 * $completed_lessons / count($all_lessons))]);
     }
 }

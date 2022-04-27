@@ -10,5 +10,5 @@ services:
     depends_on:
       - rabbitmq
       - database
-      - core
+      - core-service
 

@@ -7,7 +7,6 @@ use App\Events\CourseUsersCreatingEvent;
 use Egal\Model\Exceptions\ObjectNotFoundException;
 use Egal\Model\Model as EgalModel;
 
-
 /**
  * @property $id {@property-type field} {@prymary-key}
  * @property $user_id {@property-type field}
@@ -32,30 +31,30 @@ class CourseUsers extends EgalModel
         'updated_at',
     ];
 
-    protected array $dispatchesEvents = [
+    protected $dispatchesEvents = [
         'creating' => CourseUsersCreatingEvent::class,
         'created' => CourseUsersCreatedEvent::class,
     ];
 
-    /**
-     * @param int $course_id
-     * @param int $user_id
-     * @return array
-     * @throws ObjectNotFoundException
-     */
-    public static function getItemByUserAndCourse(int $course_id, int $user_id): array
-    {
-        $instance = new static();
-        $instance->makeIsInstanceForAction();
-
-        $item = $instance->newQuery()
-            ->makeModelIsInstanceForAction()
-            ->where(['user_id' => $user_id, 'course_id' => $course_id])->get();
-
-        if (!$item) {
-            throw ObjectNotFoundException::make($course_id);
-        }
-
-        return $item->toArray();
-    }
+//    /**
+//     * @param int $course_id
+//     * @param int $user_id
+//     * @return array
+//     * @throws ObjectNotFoundException
+//     */
+//    public static function getItemByUserAndCourse(int $course_id, int $user_id): array
+//    {
+//        $instance = new static();
+//        $instance->makeIsInstanceForAction();
+//
+//        $item = $instance->newQuery()
+//            ->makeModelIsInstanceForAction()
+//            ->where(['user_id' => $user_id, 'course_id' => $course_id])->get();
+//
+//        if (!$item) {
+//            throw ObjectNotFoundException::make($course_id);
+//        }
+//
+//        return $item->toArray();
+//    }
 }

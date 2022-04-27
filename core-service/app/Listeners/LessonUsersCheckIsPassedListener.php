@@ -14,16 +14,6 @@ use Illuminate\Support\Facades\Validator;
 class LessonUsersCheckIsPassedListener
 {
     /**
-     * Create the event listener.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-
-    }
-
-    /**
      * @param LessonUsersUpdatingEvent $event
      * @throws AlreadyCompleteException
      * @throws ValidateException
@@ -33,12 +23,12 @@ class LessonUsersCheckIsPassedListener
     {
         $attributes = $event->data->getAttributes();
 
-        $validate = new ValidateHelper($attributes, [
+        $validate = new ValidateHelper;
+        $validate->validate($attributes, [
             "is_passed" => [new IsPassedRule()],
         ]);
-        $validate->validate();
 
-        if (LessonUsers::actionGetItem($attributes['id'])['is_passed']) {
+        if (LessonUsers::query()->find($attributes['id'])['is_passed']) {
             $exception = new AlreadyCompleteException();
             throw $exception;
         }
