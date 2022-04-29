@@ -4,19 +4,21 @@ namespace App\Listeners;
 
 use App\Events\CourseUsersCreatingEvent;
 use App\Exceptions\CapacityException;
+use App\Helpers\AbstractEvent;
+use App\Helpers\AbstractListener;
 use App\Models\Courses;
 use Egal\Model\Exceptions\ObjectNotFoundException;
 
-class CourseUsersCheckCapacityListener
+class CourseUsersCheckCapacityListener extends AbstractListener
 {
     /**
-     * @param CourseUsersCreatingEvent $event
+     * @param AbstractEvent $event
      * @throws CapacityException
-     * @throws ObjectNotFoundException
      */
-    public function handle(CourseUsersCreatingEvent $event): void
+    public function handle(AbstractEvent $event): void
     {
-        $course_id = $event->data->getAttributes()['course_id'];
+        parent::handle($event);
+        $course_id = $event->getModel()->getAttributes()['course_id'];
 
         if (Courses::query()->find($course_id)['student_capacity'] === 0) {
             throw new CapacityException();

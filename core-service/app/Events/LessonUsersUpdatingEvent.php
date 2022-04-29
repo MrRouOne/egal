@@ -2,17 +2,18 @@
 
 namespace App\Events;
 
+use App\Helpers\AbstractEvent;
 use App\Models\LessonUsers;
 use Egal\Core\Events\Event;
 use Illuminate\Queue\SerializesModels;
 
-class LessonUsersUpdatingEvent extends Event
+class LessonUsersUpdatingEvent extends AbstractEvent
 {
-    public LessonUsers $data;
-
+    /**
+     * @param LessonUsers $data
+     */
     public function __construct(LessonUsers $data)
     {
-        $this->data = $data;
+        parent::__construct($data);
     }
-
 }

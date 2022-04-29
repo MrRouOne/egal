@@ -8,6 +8,8 @@ use App\Events\LessonUsersUpdatingEvent;
 use App\Exceptions\AlreadyCompleteException;
 use App\Exceptions\CapacityException;
 use App\Exceptions\ForbiddenFieldsException;
+use App\Helpers\AbstractEvent;
+use App\Helpers\AbstractListener;
 use App\Models\Courses;
 use App\Models\CourseUsers;
 use App\Models\Lessons;
@@ -24,16 +26,15 @@ use Egal\Model\Exceptions\UpdateException;
 use Egal\Model\Exceptions\ValidateException;
 use Illuminate\Support\Facades\Validator;
 
-class LessonUsersUpdatePercentListener
+class LessonUsersUpdatePercentListener extends AbstractListener
 {
     /**
-     * @param LessonUsersUpdatedEvent $event
-     * @throws ObjectNotFoundException
-     * @throws UpdateException
+     * @param AbstractEvent $event
      */
-    public function handle(LessonUsersUpdatedEvent $event): void
+    public function handle(AbstractEvent $event): void
     {
-        $attributes = $event->data->getAttributes();
+        parent::handle($event);
+        $attributes = $event->getModel()->getAttributes();
 
         $course_id = Courses::query()->find(Lessons::query()->find($attributes['lesson_id'])['course_id'])['id'];
         $all_lessons = Lessons::query()->where(["course_id" => $course_id])->get('id');

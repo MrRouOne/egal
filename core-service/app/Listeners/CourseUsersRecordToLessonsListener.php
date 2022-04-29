@@ -3,21 +3,23 @@
 namespace App\Listeners;
 
 use App\Events\CourseUsersCreatedEvent;
+use App\Helpers\AbstractEvent;
+use App\Helpers\AbstractListener;
 use App\Models\Courses;
 use App\Models\Lessons;
 use App\Models\LessonUsers;
 use Egal\Model\Exceptions\ObjectNotFoundException;
 
-class CourseUsersRecordToLessonsListener
+class CourseUsersRecordToLessonsListener extends AbstractListener
 {
     /**
-     * @param CourseUsersCreatedEvent $event
-     * @throws ObjectNotFoundException
+     * @param AbstractEvent $event
      */
-    public function handle(CourseUsersCreatedEvent $event): void
+    public function handle(AbstractEvent $event): void
     {
-        $course_id = $event->data->getAttributes()['course_id'];
-        $user_id = $event->data->getAttributes()['user_id'];
+        parent::handle($event);
+        $course_id = $event->getModel()->getAttributes()['course_id'];
+        $user_id = $event->getModel()->getAttributes()['user_id'];
 
         $lessons = Lessons::query()->where('course_id',$course_id)->get();
         foreach ($lessons as $lesson) {

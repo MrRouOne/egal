@@ -4,19 +4,21 @@ namespace App\Listeners;
 
 use App\Events\LessonUsersUpdatingEvent;
 use App\Exceptions\ForbiddenFieldsException;
+use App\Helpers\AbstractEvent;
+use App\Helpers\AbstractListener;
 use App\Models\LessonUsers;
 use Egal\Model\Exceptions\ObjectNotFoundException;
 
-class LessonUsersCheckFieldsListener
+class LessonUsersCheckFieldsListener extends AbstractListener
 {
     /**
-     * @param LessonUsersUpdatingEvent $event
+     * @param AbstractEvent $event
      * @throws ForbiddenFieldsException
-     * @throws ObjectNotFoundException
      */
-    public function handle(LessonUsersUpdatingEvent $event): void
+    public function handle(AbstractEvent $event): void
     {
-        $attributes = $event->data->getAttributes();
+        parent::handle($event);
+        $attributes = $event->getModel()->getAttributes();
         $lesson = LessonUsers::query()->find($attributes['id']);
 
         if ($attributes['user_id'] !== $lesson['user_id'] or $attributes['lesson_id'] !== $lesson['lesson_id']) {

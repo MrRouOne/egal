@@ -3,6 +3,8 @@
 namespace App\Listeners;
 
 use App\Events\LessonUsersUpdatingEvent;
+use App\Helpers\AbstractEvent;
+use App\Helpers\AbstractListener;
 use App\Helpers\ValidateHelper;
 use App\Models\Courses;
 use App\Models\Lessons;
@@ -11,16 +13,16 @@ use Egal\Model\Exceptions\ObjectNotFoundException;
 use Egal\Model\Exceptions\ValidateException;
 use Illuminate\Support\Facades\Validator;
 
-class LessonUsersCheckFinishCourseListener
+class LessonUsersCheckFinishCourseListener extends AbstractListener
 {
     /**
-     * @param LessonUsersUpdatingEvent $event
+     * @param AbstractEvent $event
      * @throws ValidateException
-     * @throws ObjectNotFoundException
      */
-    public function handle(LessonUsersUpdatingEvent $event): void
+    public function handle(AbstractEvent $event): void
     {
-        $attributes = $event->data->getAttributes();
+        parent::handle($event);
+        $attributes = $event->getModel()->getAttributes();
 
         $course = Courses::query()->find(Lessons::query()->find($attributes['lesson_id'])['course_id'])->toArray();
         $validate = new ValidateHelper;

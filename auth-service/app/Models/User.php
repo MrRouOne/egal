@@ -64,6 +64,20 @@ class User extends BaseUser
         );
     }
 
+    protected function createdAt(): Attribute
+    {
+        return new Attribute(
+            get: fn($value) => date_format(date_create($value), "Y-d-m"),
+        );
+    }
+
+    protected function updatedAt(): Attribute
+    {
+        return new Attribute(
+            get: fn($value) => date_format(date_create($value), "Y-d-m"),
+        );
+    }
+
     /**
      * @param array $attributes
      * @return User

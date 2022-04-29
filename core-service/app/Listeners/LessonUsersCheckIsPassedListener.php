@@ -4,6 +4,8 @@ namespace App\Listeners;
 
 use App\Events\LessonUsersUpdatingEvent;
 use App\Exceptions\AlreadyCompleteException;
+use App\Helpers\AbstractEvent;
+use App\Helpers\AbstractListener;
 use App\Helpers\ValidateHelper;
 use App\Models\LessonUsers;
 use App\Rules\IsPassedRule;
@@ -11,17 +13,17 @@ use Egal\Model\Exceptions\ObjectNotFoundException;
 use Egal\Model\Exceptions\ValidateException;
 use Illuminate\Support\Facades\Validator;
 
-class LessonUsersCheckIsPassedListener
+class LessonUsersCheckIsPassedListener extends AbstractListener
 {
     /**
-     * @param LessonUsersUpdatingEvent $event
+     * @param AbstractEvent $event
      * @throws AlreadyCompleteException
      * @throws ValidateException
-     * @throws ObjectNotFoundException
      */
-    public function handle(LessonUsersUpdatingEvent $event): void
+    public function handle(AbstractEvent $event): void
     {
-        $attributes = $event->data->getAttributes();
+        parent::handle($event);
+        $attributes = $event->getModel()->getAttributes();
 
         $validate = new ValidateHelper;
         $validate->validate($attributes, [

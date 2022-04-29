@@ -669,3 +669,63 @@
 #10 /app/artisan(18): require('/app/bootstrap/...')
 #11 {main}
 "} 
+[2022-04-29 14:05:37] production.ERROR: scandir(DebugModels/): Failed to open directory: No such file or directory {"exception":"[object] (ErrorException(code: 0): scandir(DebugModels/): Failed to open directory: No such file or directory at /app/app/Providers/DebugModelsServiceProvider.php:42)
+[stacktrace]
+#0 /app/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(47): Laravel\\Lumen\\Application->handleError(2, 'scandir(DebugMo...', '/app/app/Provid...', 42)
+#1 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'scandir(DebugMo...', '/app/app/Provid...', 42)
+#2 /app/app/Providers/DebugModelsServiceProvider.php(42): scandir('DebugModels/')
+#3 /app/app/Providers/DebugModelsServiceProvider.php(19): App\\Providers\\DebugModelsServiceProvider->scanModels('DebugModels/')
+#4 /app/vendor/laravel/lumen-framework/src/Application.php(223): App\\Providers\\DebugModelsServiceProvider->__construct(Object(Egal\\Core\\Application))
+#5 /app/bootstrap/app.php(70): Laravel\\Lumen\\Application->register('App\\\\Providers\\\\D...')
+#6 /app/artisan(18): require('/app/bootstrap/...')
+#7 {main}
+"} 
+[2022-04-29 14:05:39] production.ERROR: scandir(DebugModels/): Failed to open directory: No such file or directory {"exception":"[object] (ErrorException(code: 0): scandir(DebugModels/): Failed to open directory: No such file or directory at /app/app/Providers/DebugModelsServiceProvider.php:42)
+[stacktrace]
+#0 /app/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(47): Laravel\\Lumen\\Application->handleError(2, 'scandir(DebugMo...', '/app/app/Provid...', 42)
+#1 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'scandir(DebugMo...', '/app/app/Provid...', 42)
+#2 /app/app/Providers/DebugModelsServiceProvider.php(42): scandir('DebugModels/')
+#3 /app/app/Providers/DebugModelsServiceProvider.php(19): App\\Providers\\DebugModelsServiceProvider->scanModels('DebugModels/')
+#4 /app/vendor/laravel/lumen-framework/src/Application.php(223): App\\Providers\\DebugModelsServiceProvider->__construct(Object(Egal\\Core\\Application))
+#5 /app/bootstrap/app.php(70): Laravel\\Lumen\\Application->register('App\\\\Providers\\\\D...')
+#6 /app/artisan(18): require('/app/bootstrap/...')
+#7 {main}
+"} 
+[2022-04-29 14:05:42] production.ERROR: scandir(DebugModels/): Failed to open directory: No such file or directory {"exception":"[object] (ErrorException(code: 0): scandir(DebugModels/): Failed to open directory: No such file or directory at /app/app/Providers/DebugModelsServiceProvider.php:42)
+[stacktrace]
+#0 /app/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(47): Laravel\\Lumen\\Application->handleError(2, 'scandir(DebugMo...', '/app/app/Provid...', 42)
+#1 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'scandir(DebugMo...', '/app/app/Provid...', 42)
+#2 /app/app/Providers/DebugModelsServiceProvider.php(42): scandir('DebugModels/')
+#3 /app/app/Providers/DebugModelsServiceProvider.php(19): App\\Providers\\DebugModelsServiceProvider->scanModels('DebugModels/')
+#4 /app/vendor/laravel/lumen-framework/src/Application.php(223): App\\Providers\\DebugModelsServiceProvider->__construct(Object(Egal\\Core\\Application))
+#5 /app/bootstrap/app.php(70): Laravel\\Lumen\\Application->register('App\\\\Providers\\\\D...')
+#6 /app/artisan(18): require('/app/bootstrap/...')
+#7 {main}
+"} 
+[2022-04-29 14:33:07] production.INFO: Event App\Events\CourseUsersCreatingEvent was fired with model: App\Models\CourseUsers(Changes: , Dirty: 1) 
+Serialized model:  [{"user_id":"d762c890-11fc-42e0-af44-c72057fc53e7","course_id":2}] 
+[2022-04-29 14:33:07] production.INFO: Listener: App\Listeners\CourseUsersValidateUniqueListener. Event: App\Events\CourseUsersCreatingEvent  
+[2022-04-29 14:36:42] production.INFO: Event App\Events\CourseUsersCreatingEvent was fired with model: App\Models\CourseUsers(Changes: , Dirty: 1) 
+Serialized model:  [{"user_id":"d762c890-11fc-42e0-af44-c72057fc53e7","course_id":2}] 
+[2022-04-29 14:36:42] production.INFO: Listener: App\Listeners\CourseUsersValidateUniqueListener. Event: App\Events\CourseUsersCreatingEvent  
+[2022-04-29 14:40:11] production.INFO: Event App\Events\CourseUsersCreatingEvent was fired with model: App\Models\CourseUsers(Changes: , Dirty: 1) 
+Serialized model:  [{"user_id":"d762c890-11fc-42e0-af44-c72057fc53e7","course_id":2}] 
+[2022-04-29 14:40:11] production.INFO: Listener: App\Listeners\CourseUsersValidateUniqueListener. Event: App\Events\CourseUsersCreatingEvent  
+[2022-04-29 14:40:11] production.INFO: Listener: App\Listeners\CourseUsersCheckIdListener. Event: App\Events\CourseUsersCreatingEvent  
+[2022-04-29 14:40:11] production.INFO: Listener: App\Listeners\CourseUsersCheckCapacityListener. Event: App\Events\CourseUsersCreatingEvent  
+[2022-04-29 14:40:11] production.INFO: Event App\Events\CourseUsersCreatedEvent was fired with model: App\Models\CourseUsers(Changes: , Dirty: 1) 
+Serialized model:  [{"user_id":"d762c890-11fc-42e0-af44-c72057fc53e7","course_id":2,"id":1}] 
+[2022-04-29 14:40:11] production.INFO: Listener: App\Listeners\CourseUsersUpdateCapacityListener. Event: App\Events\CourseUsersCreatedEvent  
+[2022-04-29 14:40:11] production.INFO: Listener: App\Listeners\CourseUsersRecordToLessonsListener. Event: App\Events\CourseUsersCreatedEvent  
+[2022-04-29 14:43:04] production.INFO: Event App\Events\CourseUsersCreatingEvent was fired with model: App\Models\CourseUsers(Changes: , Dirty: 1) 
+Serialized model:  [{"user_id":"d762c890-11fc-42e0-af44-c72057fc53e7","course_id":2}] 
+[2022-04-29 14:43:04] production.INFO: Listener: App\Listeners\CourseUsersValidateUniqueListener. Event: App\Events\CourseUsersCreatingEvent  
+[2022-04-29 14:43:34] production.INFO: Event App\Events\CourseUsersCreatingEvent was fired with model: App\Models\CourseUsers(Changes: , Dirty: 1) 
+Serialized model:  [{"user_id":"6df49a7f-ffc4-40cb-a124-643d42fcdc27","course_id":2}] 
+[2022-04-29 14:43:34] production.INFO: Listener: App\Listeners\CourseUsersValidateUniqueListener. Event: App\Events\CourseUsersCreatingEvent  
+[2022-04-29 14:43:34] production.INFO: Listener: App\Listeners\CourseUsersCheckIdListener. Event: App\Events\CourseUsersCreatingEvent  
+[2022-04-29 14:43:34] production.INFO: Listener: App\Listeners\CourseUsersCheckCapacityListener. Event: App\Events\CourseUsersCreatingEvent  
+[2022-04-29 14:43:34] production.INFO: Event App\Events\CourseUsersCreatedEvent was fired with model: App\Models\CourseUsers(Changes: , Dirty: 1) 
+Serialized model:  [{"user_id":"6df49a7f-ffc4-40cb-a124-643d42fcdc27","course_id":2,"id":2}] 
+[2022-04-29 14:43:34] production.INFO: Listener: App\Listeners\CourseUsersUpdateCapacityListener. Event: App\Events\CourseUsersCreatedEvent  
+[2022-04-29 14:43:34] production.INFO: Listener: App\Listeners\CourseUsersRecordToLessonsListener. Event: App\Events\CourseUsersCreatedEvent  

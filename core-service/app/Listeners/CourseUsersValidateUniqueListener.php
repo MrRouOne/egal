@@ -3,20 +3,22 @@
 namespace App\Listeners;
 
 use App\Events\CourseUsersCreatingEvent;
+use App\Helpers\AbstractEvent;
+use App\Helpers\AbstractListener;
 use App\Helpers\ValidateHelper;
 use Egal\Model\Exceptions\ValidateException;
 use Illuminate\Support\Facades\Validator;
 
-class CourseUsersValidateUniqueListener
+class CourseUsersValidateUniqueListener extends AbstractListener
 {
     /**
-     * @param CourseUsersCreatingEvent $event
+     * @param AbstractEvent $event
      * @throws ValidateException
      */
-    public function handle(CourseUsersCreatingEvent $event): void
+    public function handle(AbstractEvent $event): void
     {
-
-        $attributes = $event->data->getAttributes();
+        parent::handle($event);
+        $attributes = $event->getModel()->getAttributes();
         $course_id = $attributes['course_id'];
 
         $validate = new ValidateHelper;

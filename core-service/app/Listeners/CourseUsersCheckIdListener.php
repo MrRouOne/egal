@@ -3,20 +3,23 @@
 namespace App\Listeners;
 
 use App\Events\CourseUsersCreatingEvent;
+use App\Helpers\AbstractEvent;
+use App\Helpers\AbstractListener;
 use App\Helpers\ValidateHelper;
 use App\Rules\CorrectUserIdRule;
 use Egal\Model\Exceptions\ValidateException;
 use Illuminate\Support\Facades\Validator;
 
-class CourseUsersCheckIdListener
+class CourseUsersCheckIdListener extends AbstractListener
 {
     /**
-     * @param CourseUsersCreatingEvent $event
+     * @param AbstractEvent $event
      * @throws ValidateException
      */
-    public function handle(CourseUsersCreatingEvent $event): void
+    public function handle(AbstractEvent $event): void
     {
-        $attributes = $event->data->getAttributes();
+        parent::handle($event);
+        $attributes = $event->getModel()->getAttributes();
 
         $validate = new ValidateHelper;
         $validate->validate($attributes, [
