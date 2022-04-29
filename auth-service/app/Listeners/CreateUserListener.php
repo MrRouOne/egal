@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\CreateUserEvent;
+use App\Exceptions\PasswordHashException;
 use App\Rules\PhoneRule;
 use Egal\Model\Exceptions\ValidateException;
 use App\Helpers\ValidateHelper;
@@ -49,5 +50,6 @@ class CreateUserListener
         $event->user->offsetUnset('first_name');
         $event->user->offsetUnset('last_name');
         $event->user->offsetUnset('phone');
+
     }
 }

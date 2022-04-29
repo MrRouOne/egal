@@ -9,6 +9,7 @@ use Egal\Auth\Tokens\UserMasterRefreshToken;
 use Egal\Auth\Tokens\UserMasterToken;
 use Egal\AuthServiceDependencies\Exceptions\LoginException;
 use Egal\AuthServiceDependencies\Models\User as BaseUser;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Collection;
@@ -55,6 +56,13 @@ class User extends BaseUser
     protected $primaryKey = 'id';
     public $incrementing = false;
 
+    protected function password(): Attribute
+    {
+        return new Attribute(
+            get: fn($value) => ucfirst($value),
+            set: fn($value) => password_hash($value, PASSWORD_BCRYPT)
+        );
+    }
 
     /**
      * @param array $attributes
@@ -67,17 +75,10 @@ class User extends BaseUser
         if (!$attributes['password']) {
             throw new EmptyPasswordException();
         }
-
         $user = new static();
         $user->setAttribute('email', $attributes['email']);
-        $hashedPassword = password_hash($attributes['password'], PASSWORD_BCRYPT);
-
-        if (!$hashedPassword) {
-            throw new PasswordHashException();
-        }
-
-        $user->setAttribute('password', $hashedPassword);
         $user->setAttribute('phone', $attributes['phone']);
+        $user->setAttribute('password', $attributes['password']);
         $user->setAttribute('last_name', $attributes['last_name']);
         $user->setAttribute('first_name', $attributes['first_name']);
         $user->save();

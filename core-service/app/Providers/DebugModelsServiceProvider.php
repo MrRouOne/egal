@@ -1,46 +1,81 @@
-<?php
+<?php /** @noinspection PhpMissingFieldTypeInspection */
 
 namespace App\Providers;
 
-use App\Helpers\ModelManagerHelper;
-use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
+use Egal\Model\ModelManager;
+use Illuminate\Support\ServiceProvider;
 
-/**
- * @package Egal\Model
- */
-class DebugModelsServiceProvider extends IlluminateServiceProvider
+class DebugModelsServiceProvider extends ServiceProvider
 {
-    /**
-     * Указывает, отложена ли загрузка провайдера.
-     *
-     * @noinspection PhpUnusedPropertyInspection
-     * @var bool
-     */
-    protected bool $defer = true;
+    public string $class;
+    public bool $debugMode;
+    public string $dir;
 
-    /**
-     * Команды для регистрации.
-     *
-     * @var array
-     */
-    protected array $commands = [];
-
-    /**
-     * @throws \Egal\Model\Exceptions\LoadModelImpossiblyException
-     * @throws \ReflectionException
-     */
-    public function register(): void
+    public function __construct($app)
     {
-        if ($this->app->runningInConsole()) {
-            $this->commands([]);
-        }
-
-        $this->app->singleton(ModelManagerHelper::class, function (): ModelManagerHelper {
-            return new ModelManagerHelper();
-        });
-
-        ModelManagerHelper::loadModel(ModelManagerHelper::class);
-        $this->commands([]);
+        parent::__construct($app);
+        $this->setDir();
+        $this->setDebugModel();
+        $this->scanModels($this->dir);
     }
 
+    protected function setDir()
+    {
+        $this->dir = env('DEBUG_MODEL_ROOT');
+    }
+
+    protected function setDebugModel()
+    {
+        $this->debugMode = env('DEBUG_MODEL_INCLUDE', false);
+    }
+
+    protected function scanModels(?string $dir = null): void
+    {
+        $baseDir = base_path('app/DebugModels/');
+
+        if ($dir === null) {
+            $dir = $baseDir;
+        }
+
+        $modelsNamespace = 'App\DebugModels\\';
+
+        foreach (scandir($dir) as $dirItem) {
+            $itemPath = str_replace('//', '/', $dir . '/' . $dirItem);
+
+            if ($dirItem === '.' || $dirItem === '..') {
+                continue;
+            }
+
+            if (is_dir($itemPath)) {
+                $this->scanModels($itemPath);
+            }
+
+            if (!str_contains($dirItem, '.php')) {
+                continue;
+            }
+
+            $classShortName = str_replace('.php', '', $dirItem);
+            if (!preg_match("/^[a-z]+(Debug)$/i", $classShortName)) {
+                continue;
+            }
+            $class = str_replace($dir, '', $itemPath);
+            $class = str_replace($dirItem, $classShortName, $class);
+            $class = str_replace('/', '\\', $class);
+            $this->class = $modelsNamespace . $class;
+        }
+    }
+
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public
+    function register(): void
+    {
+        if ($this->debugMode) {
+            ModelManager::loadModel($this->class);
+            $this->commands([]);
+        }
+    }
 }
