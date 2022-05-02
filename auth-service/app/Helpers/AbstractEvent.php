@@ -3,6 +3,7 @@
 namespace App\Helpers;
 
 use Egal\Core\Events\Event;
+use Egal\Core\Session\Session;
 use Egal\Model\Model;
 use Illuminate\Support\Facades\Log;
 
@@ -11,9 +12,6 @@ abstract class AbstractEvent extends Event
 {
     private Model $model;
 
-    /**
-     * @param Model $model
-     */
     public function __construct(Model $model)
     {
         Log::info(
@@ -28,9 +26,6 @@ abstract class AbstractEvent extends Event
         $this->setModel($model);
     }
 
-    /**
-     * @param Model $model
-     */
     public function setModel(Model $model)
     {
         $this->model = $model;

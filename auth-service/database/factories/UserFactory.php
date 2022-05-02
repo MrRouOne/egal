@@ -22,9 +22,9 @@ class UserFactory extends Factory
             'id' => Str::uuid(),
             'email' => $this->faker->email,
             'password' => Hash::make(Str::random(10)),
-            'phone' => "+" . random_int(1, 8) . "(" . random_int(100, 999) . ")" . random_int(100, 999) . "-" . random_int(10, 99) . "-" . random_int(10, 99),
-            'first_name' => $this->faker->firstName,
-            'last_name' => $this->faker->lastName,
+//            'phone' =>  $this->faker->phoneNumber,
+//            'first_name' => $this->faker->firstName,
+//            'last_name' => $this->faker->lastName,
         ];
     }
 

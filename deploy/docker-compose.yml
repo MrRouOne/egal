@@ -25,6 +25,7 @@ services:
       RABBITMQ_USER: ${RABBITMQ_USERNAME:-admin}
       RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD:-password}
       WAIT_HOSTS: ${PROJECT_NAME}-rabbitmq:5672
+    restart: on-failure
 
   database:
     container_name: ${PROJECT_NAME}-database

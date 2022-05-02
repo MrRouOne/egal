@@ -2,13 +2,12 @@
 
 namespace App\Providers;
 
+use App\Listeners\RegisterUserListener;
 use Egal\Core\Events\EventServiceProvider as ServiceProvider;
-use App\Listeners\CreateUserListener;
 use App\Events\CreateUserEvent;
 
 class EventServiceProvider extends ServiceProvider
 {
-
     /**
      * The event listener mappings for the application.
      *
@@ -16,8 +15,8 @@ class EventServiceProvider extends ServiceProvider
      */
     protected $listen = [
         CreateUserEvent::class => [
-            CreateUserListener::class
-        ]
+            RegisterUserListener::class
+        ],
     ];
 
     /**

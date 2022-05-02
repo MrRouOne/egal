@@ -3,8 +3,9 @@
 namespace App\Models;
 
 use App\Events\CreateUserEvent;
-use App\Exceptions\EmptyPasswordException;
-use App\Exceptions\PasswordHashException;
+use App\Helpers\ValidateHelper;
+use App\Rules\PasswordVerifyRule;
+use App\Rules\UserRule;
 use Egal\Auth\Tokens\UserMasterRefreshToken;
 use Egal\Auth\Tokens\UserMasterToken;
 use Egal\AuthServiceDependencies\Exceptions\LoginException;
@@ -18,8 +19,8 @@ use Staudenmeir\EloquentHasManyDeep\HasRelationships;
 
 /**
  * @property $id            {@property-type field}          {@primary-key}
- * @property $email         {@property-type field}          {@validation-rules required|string|email|unique:users,email}
- * @property $password      {@property-type field}          {@validation-rules required|string}
+ * @property $email         {@property-type field}          {@validation-rules string}
+ * @property $password      {@property-type field}          {@validation-rules string}
  * @property $phone         {@property-type fake-field}     {@validation-rules string}
  * @property $last_name     {@property-type fake-field}     {@validation-rules string}
  * @property $first_name    {@property-type fake-field}     {@validation-rules string}
@@ -49,13 +50,20 @@ class User extends BaseUser
         'updated_at',
     ];
 
-    protected $dispatchesEvents = [
-        'creating' => CreateUserEvent::class,
+    protected $casts = [
+        'last_entry' => 'array',
     ];
 
     protected $primaryKey = 'id';
     public $incrementing = false;
 
+    protected $dispatchesEvents = [
+        'creating' => CreateUserEvent::class,
+    ];
+
+    /**
+     * @return Attribute
+     */
     protected function password(): Attribute
     {
         return new Attribute(
@@ -64,6 +72,9 @@ class User extends BaseUser
         );
     }
 
+    /**
+     * @return Attribute
+     */
     protected function createdAt(): Attribute
     {
         return new Attribute(
@@ -71,6 +82,9 @@ class User extends BaseUser
         );
     }
 
+    /**
+     * @return Attribute
+     */
     protected function updatedAt(): Attribute
     {
         return new Attribute(
@@ -79,24 +93,12 @@ class User extends BaseUser
     }
 
     /**
-     * @param array $attributes
      * @return User
-     * @throws EmptyPasswordException
-     * @throws PasswordHashException
      */
-    public static function actionRegister(array $attributes = []): User
+    public static function actionRegister(): User
     {
-        if (!$attributes['password']) {
-            throw new EmptyPasswordException();
-        }
         $user = new static();
-        $user->setAttribute('email', $attributes['email']);
-        $user->setAttribute('phone', $attributes['phone']);
-        $user->setAttribute('password', $attributes['password']);
-        $user->setAttribute('last_name', $attributes['last_name']);
-        $user->setAttribute('first_name', $attributes['first_name']);
         $user->save();
-
         return $user;
     }
 
@@ -108,22 +110,31 @@ class User extends BaseUser
      */
     public static function actionLogin(string $email, string $password): array
     {
-        /** @var BaseUser $user */
-        $user = self::query()
-            ->where('email', '=', $email)
-            ->first();
+        $data = [
+            "user" => self::query()
+                ->where('email', '=', $email)
+                ->first(),
+            "password" => $password,
+            "email" => $email
+        ];
 
-        if (!$user || !password_verify($password, $user->getAttribute('password'))) {
-            throw new LoginException('Incorrect Email or password!');
-        }
+        $validate = new ValidateHelper;
+        $validate->validate($data, [
+            "user" => new UserRule(),
+            "password" => new PasswordVerifyRule,
+        ]);
 
         $umt = new UserMasterToken();
         $umt->setSigningKey(config('app.service_key'));
-        $umt->setAuthIdentification($user->getAuthIdentifier());
+        $umt->setAuthIdentification($data['user']->getAuthIdentifier());
+
+        $data['user']->setAttribute('last_entry', date("Y-d-m h:m:s"));
+        $data['user']->save();
+
 
         $umrt = new UserMasterRefreshToken();
         $umrt->setSigningKey(config('app.service_key'));
-        $umrt->setAuthIdentification($user->getAuthIdentifier());
+        $umrt->setAuthIdentification($data['user']->getAuthIdentifier());
 
         return [
             'user_master_token' => $umt->generateJWT(),

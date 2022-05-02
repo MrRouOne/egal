@@ -25,5 +25,4 @@ WORKDIR /app
 
 CMD /wait && composer update --no-interaction --no-progress --no-autoloader --no-cache \
 #    && composer dump-autoload \
-    && php artisan migrate --force && php artisan cache:clear \
-    && php artisan egal:run
+    && php artisan cache:clear && php artisan egal:run

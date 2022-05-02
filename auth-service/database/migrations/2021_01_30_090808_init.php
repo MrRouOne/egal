@@ -14,6 +14,7 @@ class Init extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->timestamps();
+            $table->jsonb('last_entry')->nullable(true);
         });
 
         Schema::create('roles', function (Blueprint $table) {

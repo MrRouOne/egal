@@ -2,35 +2,41 @@
 
 namespace App\Listeners;
 
-use App\Events\CreateUserEvent;
-use App\Exceptions\PasswordHashException;
-use App\Rules\PhoneRule;
+use App\Exceptions\EmptyPasswordException;
+use App\Helpers\AbstractEvent;
+use App\Helpers\AbstractListener;
 use Egal\Model\Exceptions\ValidateException;
 use App\Helpers\ValidateHelper;
 use Illuminate\Support\Str;
 use Egal\Core\Communication\Request;
 
-class CreateUserListener
+class RegisterUserListener extends AbstractListener
 {
     /**
-     * Handle the event.
-     *
-     * @param CreateUserEvent $event
+     * @param AbstractEvent $event
+     * @throws EmptyPasswordException
      * @throws ValidateException
      */
-    public function handle(CreateUserEvent $event): void
+    public function handle(AbstractEvent $event): void
     {
-        $event->user->setAttribute("id", Str::uuid());
-        $attributes = $event->user->getAttributes();
+        parent::handle($event);
+
+        $attributes = $event->getAttributes();
+        if (!$attributes['password']) {
+            throw new EmptyPasswordException();
+        }
 
         $validate = new ValidateHelper;
         $validate->validate($attributes, [
-
-            "id" => 'required',
+            "email" => "required|string|email|unique:users,email",
             "first_name" => 'required|string',
             "last_name" => 'required|string',
-            "phone" => [new PhoneRule, 'required'],
+            "phone" => 'required',
         ]);
+
+        $event->user->setAttribute("id", Str::uuid());
+        $event->user->setAttribute('email', $attributes['email']);
+        $event->user->setAttribute('password', $attributes['password']);
 
         $request = new Request(
             'core',
@@ -38,7 +44,7 @@ class CreateUserListener
             'create',
             [
                 "attributes" => [
-                    "id" => $attributes['id'],
+                    "id" => $event->user['id'],
                     "first_name" => $attributes['first_name'],
                     "last_name" => $attributes['last_name'],
                     "phone" => $attributes['phone'],
@@ -46,10 +52,5 @@ class CreateUserListener
             ],
         );
         $request->call();
-
-        $event->user->offsetUnset('first_name');
-        $event->user->offsetUnset('last_name');
-        $event->user->offsetUnset('phone');
-
     }
 }
