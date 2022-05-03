@@ -57,5 +57,4 @@ class Users extends EgalModel
     {
         return $this->belongsToMany(Lessons::class, 'lesson_users', 'user_id', 'lesson_id');
     }
-
 }
