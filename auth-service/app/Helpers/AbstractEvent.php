@@ -10,10 +10,13 @@ use Illuminate\Support\Facades\Log;
 
 abstract class AbstractEvent extends Event
 {
+    // лучше protected
     private Model $model;
 
     public function __construct(Model $model)
     {
+        // Используй функцию sprintf или vsprintf для форматированного  вывода строки
+        // changed и dirty взаимоисключающие состояния модели, одновременно будет заполнено или первое или второе, выводим не пустой массив атрибутов
         Log::info(
             'Event ' . get_class($this)
             . ' was fired with model: '
@@ -26,6 +29,7 @@ abstract class AbstractEvent extends Event
         $this->setModel($model);
     }
 
+    // указать возвращаемый тип
     public function setModel(Model $model)
     {
         $this->model = $model;
@@ -37,3 +41,4 @@ abstract class AbstractEvent extends Event
     }
 
 }
+// лишний отступ

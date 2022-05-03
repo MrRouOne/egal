@@ -21,6 +21,7 @@ class CourseUsersCheckIdListener extends AbstractListener
         parent::handle($event);
         $attributes = $event->getModel()->getAttributes();
 
+        // статика
         $validate = new ValidateHelper;
         $validate->validate($attributes, [
             "user_id" => [new CorrectUserIdRule, 'required']]);

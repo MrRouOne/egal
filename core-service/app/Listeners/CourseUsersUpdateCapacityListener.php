@@ -2,6 +2,7 @@
 
 namespace App\Listeners;
 
+// неиспользуемые import
 use App\Events\CourseUsersCreatedEvent;
 use App\Helpers\AbstractEvent;
 use App\Helpers\AbstractListener;
@@ -20,6 +21,7 @@ class CourseUsersUpdateCapacityListener extends AbstractListener
     {
         parent::handle($event);
         $course_id = $event->getModel()->getAttributes()['course_id'];
+        // упадет если нет курса
         $current_capacity = Courses::query()->find($course_id)['student_capacity'];
         Courses::actionUpdate($course_id,["student_capacity" => $current_capacity-1]);
     }

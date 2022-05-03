@@ -2,6 +2,7 @@
 
 namespace App\Listeners;
 
+// неиспользуемые import
 use App\Events\CourseUsersCreatedEvent;
 use App\Helpers\AbstractEvent;
 use App\Helpers\AbstractListener;
@@ -23,6 +24,7 @@ class CourseUsersRecordToLessonsListener extends AbstractListener
 
         $lessons = Lessons::query()->where('course_id',$course_id)->get();
         foreach ($lessons as $lesson) {
+            // нам точно стоит вызывать action?
             LessonUsers::actionCreate(["user_id" => $user_id, "lesson_id" => $lesson['id'], "is_passed" => false]);
         }
     }

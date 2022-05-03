@@ -27,5 +27,5 @@ use Illuminate\Support\Collection;
 class UserDebug extends User
 {
     protected $table = 'users';
-
+// Лишний отступ
 }

@@ -21,6 +21,7 @@ class DebugModelsServiceProvider extends ServiceProvider
 
     protected function setDir()
     {
+        // вынести в config
         $this->dir = env('DEBUG_MODEL_ROOT');
     }
 
@@ -33,10 +34,12 @@ class DebugModelsServiceProvider extends ServiceProvider
     {
         $baseDir = base_path('app/DebugModels/');
 
+        // тернарный оператор или оператор ??
         if ($dir === null) {
             $dir = $baseDir;
         }
 
+        // namespace зависит от директории, соответственно формируем на основе baseDir
         $modelsNamespace = 'App\DebugModels\\';
 
         foreach (scandir($dir) as $dirItem) {
@@ -61,6 +64,7 @@ class DebugModelsServiceProvider extends ServiceProvider
             $class = str_replace($dir, '', $itemPath);
             $class = str_replace($dirItem, $classShortName, $class);
             $class = str_replace('/', '\\', $class);
+            // классов может быть много
             $this->class = $modelsNamespace . $class;
         }
     }
@@ -74,6 +78,7 @@ class DebugModelsServiceProvider extends ServiceProvider
     {
         if ($this->debugMode) {
             ModelManager::loadModel($this->class);
+            // зачем?
             $this->commands([]);
         }
     }

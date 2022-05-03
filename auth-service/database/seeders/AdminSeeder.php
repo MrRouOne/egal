@@ -17,9 +17,11 @@ class AdminSeeder extends Seeder
         $userData = [
             'id' => Str::uuid(),
             'email' => 'admin@gmail.com',
+            // будет хешироваться хеш
             'password' => Hash::make('admin'),
         ];
 
+        // уменьшаем вложенность
         if (!User::query()->where('email', $userData['email'])->first()) {
             User::query()->create($userData)->roles()->attach('admin');
 

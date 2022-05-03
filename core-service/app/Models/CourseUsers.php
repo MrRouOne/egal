@@ -36,6 +36,8 @@ class CourseUsers extends EgalModel
         'created' => CourseUsersCreatedEvent::class,
     ];
 
+    // удаляем неиспользуемые фрагменты
+    // все будет в истории гита
 //    /**
 //     * @param int $course_id
 //     * @param int $user_id

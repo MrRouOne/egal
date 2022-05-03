@@ -11,3 +11,4 @@ abstract class AbstractListener
         Log::info('Listener: ' . get_class($this) . '. Event: ' . get_class($event));
     }
 }
+// лишний отступ

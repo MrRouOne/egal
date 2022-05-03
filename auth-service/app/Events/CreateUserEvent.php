@@ -18,6 +18,7 @@ class CreateUserEvent extends AbstractEvent
     {
         parent::__construct($user);
         $this->user = $user;
+        // лучше вынести в helper
         $this->attributes = Session::getActionMessage()->getParameters()['attributes'];
     }
 
@@ -28,5 +29,5 @@ class CreateUserEvent extends AbstractEvent
     {
         return $this->attributes;
     }
-
+// лишний отступ
 }

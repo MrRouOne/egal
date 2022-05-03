@@ -2,6 +2,7 @@
 
 namespace App\Listeners;
 
+// неиспользуемые import
 use App\Events\CourseUsersCreatingEvent;
 use App\Helpers\AbstractEvent;
 use App\Helpers\AbstractListener;
@@ -21,6 +22,7 @@ class CourseUsersValidateUniqueListener extends AbstractListener
         $attributes = $event->getModel()->getAttributes();
         $course_id = $attributes['course_id'];
 
+        // статика
         $validate = new ValidateHelper;
         $validate->validate($attributes, [
             "user_id" => "required|uuid|unique:course_users,user_id,null,null,course_id,$course_id",

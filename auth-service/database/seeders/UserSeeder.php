@@ -16,9 +16,11 @@ class UserSeeder extends Seeder
         $userData = [
             'id' => Str::uuid(),
             'email' => 'user@gmail.com',
+            // будет хешироваться хеш
             'password' => Hash::make('user'),
         ];
 
+        // уменьшаем вложенность
         if (!User::query()->where('email', $userData['email'])->first()) {
             User::query()->create($userData);
 

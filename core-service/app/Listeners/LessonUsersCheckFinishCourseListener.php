@@ -2,6 +2,7 @@
 
 namespace App\Listeners;
 
+// неиспользуемые import
 use App\Events\LessonUsersUpdatingEvent;
 use App\Helpers\AbstractEvent;
 use App\Helpers\AbstractListener;
@@ -24,7 +25,9 @@ class LessonUsersCheckFinishCourseListener extends AbstractListener
         parent::handle($event);
         $attributes = $event->getModel()->getAttributes();
 
+        // упадет если нет lesson
         $course = Courses::query()->find(Lessons::query()->find($attributes['lesson_id'])['course_id'])->toArray();
+        // статика
         $validate = new ValidateHelper;
         $validate->validate($course, [
             "end_date" => [new EndDateRule],

@@ -2,6 +2,7 @@
 
 namespace App\Listeners;
 
+// неиспользуемые import
 use App\Events\CourseUsersCreatingEvent;
 use App\Events\LessonUsersUpdatedEvent;
 use App\Events\LessonUsersUpdatingEvent;
@@ -36,6 +37,7 @@ class LessonUsersUpdatePercentListener extends AbstractListener
         parent::handle($event);
         $attributes = $event->getModel()->getAttributes();
 
+        // упадет если нет курса
         $course_id = Courses::query()->find(Lessons::query()->find($attributes['lesson_id'])['course_id'])['id'];
         $all_lessons = Lessons::query()->where(["course_id" => $course_id])->get('id');
         $completed_lessons = LessonUsers::query()->whereIn('lesson_id', $all_lessons)->where([

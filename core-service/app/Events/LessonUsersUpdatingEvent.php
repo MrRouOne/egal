@@ -9,6 +9,7 @@ use Illuminate\Queue\SerializesModels;
 
 class LessonUsersUpdatingEvent extends AbstractEvent
 {
+    // необязательно декларировать
     /**
      * @param LessonUsers $data
      */

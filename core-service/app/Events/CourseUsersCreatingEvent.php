@@ -7,6 +7,7 @@ use App\Models\CourseUsers;
 
 class CourseUsersCreatingEvent extends AbstractEvent
 {
+    // необязательно декларировать
     /**
      * @param CourseUsers $data
      */

@@ -28,6 +28,7 @@ class UsersSeeder extends Seeder
                 'password' => Hash::make($this->faker->password),
             ];
 
+            // уменьшаем вложенность
             if (!User::query()->where('email', $userData['email'])->first()) {
                 User::query()->create($userData);
 

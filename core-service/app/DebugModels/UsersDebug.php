@@ -25,3 +25,4 @@ class UsersDebug extends Users
     protected $table = 'users';
 
 }
+// лишний отступ

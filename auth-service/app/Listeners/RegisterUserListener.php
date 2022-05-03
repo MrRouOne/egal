@@ -22,11 +22,13 @@ class RegisterUserListener extends AbstractListener
         parent::handle($event);
 
         $attributes = $event->getAttributes();
+        // через custom rule и стандартный валидатор
         if (!$attributes['password']) {
             throw new EmptyPasswordException();
         }
 
         $validate = new ValidateHelper;
+        // метод статический, зачем создавать instance
         $validate->validate($attributes, [
             "email" => "required|string|email|unique:users,email",
             "first_name" => 'required|string',

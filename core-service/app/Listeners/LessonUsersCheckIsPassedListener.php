@@ -2,6 +2,7 @@
 
 namespace App\Listeners;
 
+// неиспользуемые import
 use App\Events\LessonUsersUpdatingEvent;
 use App\Exceptions\AlreadyCompleteException;
 use App\Helpers\AbstractEvent;
@@ -25,12 +26,15 @@ class LessonUsersCheckIsPassedListener extends AbstractListener
         parent::handle($event);
         $attributes = $event->getModel()->getAttributes();
 
+        // статика
         $validate = new ValidateHelper;
         $validate->validate($attributes, [
             "is_passed" => [new IsPassedRule()],
         ]);
 
+        // упадет если нет lesson_user
         if (LessonUsers::query()->find($attributes['id'])['is_passed']) {
+           // можно сразу throw
             $exception = new AlreadyCompleteException();
             throw $exception;
         }

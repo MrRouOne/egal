@@ -2,6 +2,7 @@
 
 namespace App\Listeners;
 
+// неиспользуемые import
 use App\Events\LessonUsersUpdatingEvent;
 use App\Helpers\AbstractEvent;
 use App\Helpers\AbstractListener;
@@ -21,6 +22,7 @@ class LessonUsersCheckIdListener extends AbstractListener
         parent::handle($event);
         $attributes = $event->getModel()->getAttributes();
 
+        // статика
         $validate = new ValidateHelper;
         $validate->validate($attributes, [
             "user_id" => [new CorrectUserIdRule, 'required'],

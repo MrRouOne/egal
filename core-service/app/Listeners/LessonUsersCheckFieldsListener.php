@@ -2,6 +2,7 @@
 
 namespace App\Listeners;
 
+// неиспользуемые import
 use App\Events\LessonUsersUpdatingEvent;
 use App\Exceptions\ForbiddenFieldsException;
 use App\Helpers\AbstractEvent;
@@ -19,11 +20,12 @@ class LessonUsersCheckFieldsListener extends AbstractListener
     {
         parent::handle($event);
         $attributes = $event->getModel()->getAttributes();
+        // упадет если нет lesson
         $lesson = LessonUsers::query()->find($attributes['id']);
 
         if ($attributes['user_id'] !== $lesson['user_id'] or $attributes['lesson_id'] !== $lesson['lesson_id']) {
             throw new ForbiddenFieldsException();
         }
-
+// лишний отступ
     }
 }

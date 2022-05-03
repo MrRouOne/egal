@@ -7,6 +7,7 @@ use App\Models\LessonUsers;
 
 class LessonUsersUpdatedEvent extends AbstractEvent
 {
+    // необязательно декларировать
     /**
      * @param LessonUsers $data
      */

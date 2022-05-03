@@ -21,7 +21,9 @@ class UserFactory extends Factory
         return [
             'id' => Str::uuid(),
             'email' => $this->faker->email,
+            // из за мутатора будет хешировать хеш
             'password' => Hash::make(Str::random(10)),
+            // Удаляем неиспользуемые фрагменты
 //            'phone' =>  $this->faker->phoneNumber,
 //            'first_name' => $this->faker->firstName,
 //            'last_name' => $this->faker->lastName,

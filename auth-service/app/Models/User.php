@@ -67,7 +67,9 @@ class User extends BaseUser
     protected function password(): Attribute
     {
         return new Attribute(
+            // зачем getter?)
             get: fn($value) => ucfirst($value),
+            // добавить типы
             set: fn($value) => password_hash($value, PASSWORD_BCRYPT)
         );
     }
@@ -78,6 +80,7 @@ class User extends BaseUser
     protected function createdAt(): Attribute
     {
         return new Attribute(
+            // добваить типы
             get: fn($value) => date_format(date_create($value), "Y-d-m"),
         );
     }
@@ -88,15 +91,18 @@ class User extends BaseUser
     protected function updatedAt(): Attribute
     {
         return new Attribute(
+        // добваить типы
             get: fn($value) => date_format(date_create($value), "Y-d-m"),
         );
     }
 
+    // добавить array attributes = []
     /**
      * @return User
      */
     public static function actionRegister(): User
     {
+        // вызов actionCreate($attributes)
         $user = new static();
         $user->save();
         return $user;
@@ -119,6 +125,7 @@ class User extends BaseUser
         ];
 
         $validate = new ValidateHelper;
+        // статика
         $validate->validate($data, [
             "user" => new UserRule(),
             "password" => new PasswordVerifyRule,
@@ -128,6 +135,7 @@ class User extends BaseUser
         $umt->setSigningKey(config('app.service_key'));
         $umt->setAuthIdentification($data['user']->getAuthIdentifier());
 
+        // нужно добавлять в массив, а не перезаписывать
         $data['user']->setAttribute('last_entry', date("Y-d-m h:m:s"));
         $data['user']->save();
 
