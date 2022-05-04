@@ -7,37 +7,24 @@ use Illuminate\Support\ServiceProvider;
 
 class DebugModelsServiceProvider extends ServiceProvider
 {
-    public string $class;
-    public bool $debugMode;
-    public string $dir;
+    public array $class;
 
     public function __construct($app)
     {
         parent::__construct($app);
-        $this->setDir();
-        $this->setDebugModel();
-        $this->scanModels($this->dir);
-    }
-
-    protected function setDir()
-    {
-        $this->dir = env('DEBUG_MODEL_ROOT', 'app/DebugModels/');
-    }
-
-    protected function setDebugModel()
-    {
-        $this->debugMode = env('DEBUG_MODEL_INCLUDE', false);
+        config(['app.debug_model_root' => 'app/DebugModels/']);
+        config(['app.debug_model_include' => true]);
+        $this->scanModels(config('app.debug_model_root', 'app/DebugModels/'));
     }
 
     protected function scanModels(?string $dir = null): void
     {
-        $baseDir = base_path($this->dir);
+        $baseDir = base_path(config('app.debug_model_root', 'app/DebugModels/'));
 
         $dir === null ?: $dir = $baseDir;
 
-        $modelsNamespace = str_replace('/', '\\', $this->dir);
+        $modelsNamespace = str_replace('/', '\\', config('app.debug_model_root', 'app/DebugModels/'));
         $modelsNamespace[0] = strtoupper($modelsNamespace[0]);
-
 
         foreach (scandir($dir) as $dirItem) {
             $itemPath = str_replace('//', '/', $dir . '/' . $dirItem);
@@ -62,7 +49,8 @@ class DebugModelsServiceProvider extends ServiceProvider
             $class = str_replace($dir, '', $itemPath);
             $class = str_replace($dirItem, $classShortName, $class);
             $class = str_replace('/', '\\', $class);
-            $this->class = $modelsNamespace . $class;
+
+            $this->class[] = $modelsNamespace . $class;
         }
     }
 
@@ -73,9 +61,12 @@ class DebugModelsServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        if ($this->debugMode) {
-            ModelManager::loadModel($this->class);
-            $this->commands([]);
+        if (!config('app.debug_model_include', false)) {
+            return;
+        }
+
+        for ($i = 0; $i < count($this->class); $i++) {
+            ModelManager::loadModel($this->class[$i]);
         }
     }
 }

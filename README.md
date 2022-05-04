@@ -6,7 +6,8 @@
 
 Установка зависимостей
 
-    Создайте файл .env в и заполните его данными из файла .env.example
+    Создайте файл .env и заполните его данными из файла .env.example
+    (как в корне проекта, так и в сервисах)
 
     CMD:
     cd auth-service && composer update --ignore-platform-reqs && cd ..

@@ -23,6 +23,7 @@ RUN apk add --no-cache --virtual .run-deps $RUN_DEPS
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 WORKDIR /app
 
-CMD /wait && composer update --no-interaction --no-progress --no-autoloader --no-cache \
+CMD /wait
+#    && composer update --no-interaction --no-progress --no-autoloader --no-cache \
 #    && composer dump-autoload \
     && php artisan cache:clear && php artisan egal:run

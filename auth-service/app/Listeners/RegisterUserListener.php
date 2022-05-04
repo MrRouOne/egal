@@ -22,12 +22,9 @@ class RegisterUserListener extends AbstractListener
         parent::handle($event);
 
         $attributes = $event->attributes;
-        if (!$attributes['password']) {
-            throw new EmptyPasswordException();
-        }
 
-        $validate = new ValidateHelper;
-        $validate->validate($attributes, [
+        ValidateHelper::validate($attributes, [
+            "password" => "required",
             "email" => "required|string|email|unique:users,email",
             "first_name" => 'required|string',
             "last_name" => 'required|string',

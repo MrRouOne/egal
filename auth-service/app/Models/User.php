@@ -93,7 +93,6 @@ class User extends BaseUser
 
     public static function actionRegister(array $attributes = [])
     {
-
         return static::actionCreate($attributes);
     }
 
