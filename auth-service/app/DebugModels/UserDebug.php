@@ -7,8 +7,8 @@ use Illuminate\Support\Collection;
 
 /**
  * @property $id            {@property-type field}          {@primary-key}
- * @property $email         {@property-type field}          {@validation-rules required|string|email|unique:users,email}
- * @property $password      {@property-type field}          {@validation-rules required|string}
+ * @property $email         {@property-type field}          {@validation-rules string}
+ * @property $password      {@property-type field}          {@validation-rules string}
  * @property $phone         {@property-type fake-field}     {@validation-rules string}
  * @property $last_name     {@property-type fake-field}     {@validation-rules string}
  * @property $first_name    {@property-type fake-field}     {@validation-rules string}
@@ -27,5 +27,4 @@ use Illuminate\Support\Collection;
 class UserDebug extends User
 {
     protected $table = 'users';
-
 }

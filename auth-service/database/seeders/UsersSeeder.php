@@ -28,24 +28,28 @@ class UsersSeeder extends Seeder
                 'password' => Hash::make($this->faker->password),
             ];
 
-            if (!User::query()->where('email', $userData['email'])->first()) {
-                User::query()->create($userData);
-
-                $request = new Request(
-                    'core',
-                    'Users',
-                    'create',
-                    [
-                        'attributes' => [
-                            'id' => $userData['id'],
-                            'phone' => $this->faker->phoneNumber,
-                            'first_name' => $this->faker->firstName,
-                            'last_name' => $this->faker->lastName,
-                        ]]
-                );
-
-                $request->call();
+            if (User::query()->where('email', $userData['email'])->first()) {
+                continue;
             }
+
+            $dispatch = User::getEventDispatcher();
+            User::unsetEventDispatcher();
+            User::query()->create($userData);
+            User::setEventDispatcher($dispatch);
+
+            $request = new Request(
+                'core',
+                'Users',
+                'create',
+                [
+                    'attributes' => [
+                        'id' => $userData['id'],
+                        'phone' => $this->faker->phoneNumber,
+                        'first_name' => $this->faker->firstName,
+                        'last_name' => $this->faker->lastName,
+                    ]]
+            );
+            $request->call();
         }
     }
 }

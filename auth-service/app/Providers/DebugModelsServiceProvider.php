@@ -21,7 +21,7 @@ class DebugModelsServiceProvider extends ServiceProvider
 
     protected function setDir()
     {
-        $this->dir = env('DEBUG_MODEL_ROOT');
+        $this->dir = env('DEBUG_MODEL_ROOT', 'app/DebugModels/');
     }
 
     protected function setDebugModel()
@@ -31,13 +31,13 @@ class DebugModelsServiceProvider extends ServiceProvider
 
     protected function scanModels(?string $dir = null): void
     {
-        $baseDir = base_path('app/DebugModels/');
+        $baseDir = base_path($this->dir);
 
-        if ($dir === null) {
-            $dir = $baseDir;
-        }
+        $dir === null ?: $dir = $baseDir;
 
-        $modelsNamespace = 'App\DebugModels\\';
+        $modelsNamespace = str_replace('/', '\\', $this->dir);
+        $modelsNamespace[0] = strtoupper($modelsNamespace[0]);
+
 
         foreach (scandir($dir) as $dirItem) {
             $itemPath = str_replace('//', '/', $dir . '/' . $dirItem);
@@ -58,6 +58,7 @@ class DebugModelsServiceProvider extends ServiceProvider
             if (!preg_match("/^[a-z]+(Debug)$/i", $classShortName)) {
                 continue;
             }
+
             $class = str_replace($dir, '', $itemPath);
             $class = str_replace($dirItem, $classShortName, $class);
             $class = str_replace('/', '\\', $class);

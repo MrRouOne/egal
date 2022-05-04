@@ -2,13 +2,10 @@
 
 namespace App\Listeners;
 
-use App\Events\CourseUsersCreatedEvent;
 use App\Helpers\AbstractEvent;
 use App\Helpers\AbstractListener;
-use App\Models\Courses;
 use App\Models\Lessons;
 use App\Models\LessonUsers;
-use Egal\Model\Exceptions\ObjectNotFoundException;
 
 class CourseUsersRecordToLessonsListener extends AbstractListener
 {
@@ -23,7 +20,7 @@ class CourseUsersRecordToLessonsListener extends AbstractListener
 
         $lessons = Lessons::query()->where('course_id',$course_id)->get();
         foreach ($lessons as $lesson) {
-            LessonUsers::actionCreate(["user_id" => $user_id, "lesson_id" => $lesson['id'], "is_passed" => false]);
+            LessonUsers::query()->create(["user_id" => $user_id, "lesson_id" => $lesson['id'], "is_passed" => false]);
         }
     }
 }

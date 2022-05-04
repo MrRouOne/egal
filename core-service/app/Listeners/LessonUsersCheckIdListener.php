@@ -2,13 +2,11 @@
 
 namespace App\Listeners;
 
-use App\Events\LessonUsersUpdatingEvent;
 use App\Helpers\AbstractEvent;
 use App\Helpers\AbstractListener;
 use App\Helpers\ValidateHelper;
 use App\Rules\CorrectUserIdRule;
 use Egal\Model\Exceptions\ValidateException;
-use Illuminate\Support\Facades\Validator;
 
 class LessonUsersCheckIdListener extends AbstractListener
 {
@@ -21,8 +19,7 @@ class LessonUsersCheckIdListener extends AbstractListener
         parent::handle($event);
         $attributes = $event->getModel()->getAttributes();
 
-        $validate = new ValidateHelper;
-        $validate->validate($attributes, [
+        ValidateHelper::validate($attributes, [
             "user_id" => [new CorrectUserIdRule, 'required'],
         ]);
     }

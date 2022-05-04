@@ -15,18 +15,15 @@ abstract class AbstractEvent extends Event
     public function __construct(Model $model)
     {
         Log::info(
-            'Event ' . get_class($this)
-            . ' was fired with model: '
-            . get_class($model)
-            . '(Changes: ' . $model->wasChanged()
-            . ', Dirty: ' . $model->isDirty()
-            . ") \nSerialized model: "
-            , [$model->toArray()]
+            sprintf("Event [%s] was fired with model [%s]. [%s]. Serialized model [%s]", get_class($this), get_class($model),
+                $model->wasChanged() ? "Changes: true" : "Dirty: true",
+                empty($model->toArray()) ? "[]" : $model
+            )
         );
         $this->setModel($model);
     }
 
-    public function setModel(Model $model)
+    public function setModel(Model $model): void
     {
         $this->model = $model;
     }

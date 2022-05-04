@@ -2,7 +2,6 @@
 
 namespace App\Listeners;
 
-use App\Events\CourseUsersCreatedEvent;
 use App\Helpers\AbstractEvent;
 use App\Helpers\AbstractListener;
 use App\Models\Courses;
@@ -20,7 +19,7 @@ class CourseUsersUpdateCapacityListener extends AbstractListener
     {
         parent::handle($event);
         $course_id = $event->getModel()->getAttributes()['course_id'];
-        $current_capacity = Courses::query()->find($course_id)['student_capacity'];
+        $current_capacity = Courses::query()->findOrFail($course_id)['student_capacity'];
         Courses::actionUpdate($course_id,["student_capacity" => $current_capacity-1]);
     }
 }

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Log;
 
 abstract class AbstractEvent extends Event
 {
-    private Model $model;
+    protected Model $model;
 
     /**
      * @param Model $model
@@ -17,13 +17,10 @@ abstract class AbstractEvent extends Event
     public function __construct(Model $model)
     {
         Log::info(
-            'Event ' . get_class($this)
-            . ' was fired with model: '
-            . get_class($model)
-            . '(Changes: ' . $model->wasChanged()
-            . ', Dirty: ' . $model->isDirty()
-            . ") \nSerialized model: "
-            , [$model->toArray()]
+            sprintf("Event [%s] was fired with model [%s]. [%s]. Serialized model [%s]", get_class($this), get_class($model),
+                $model->wasChanged() ? "Changes: true" : "Dirty: true",
+                empty($model->toArray()) ? "[]" : $model
+            )
         );
         $this->setModel($model);
     }
@@ -31,7 +28,7 @@ abstract class AbstractEvent extends Event
     /**
      * @param Model $model
      */
-    public function setModel(Model $model)
+    public function setModel(Model $model): void
     {
         $this->model = $model;
     }
@@ -40,5 +37,4 @@ abstract class AbstractEvent extends Event
     {
         return $this->model;
     }
-
 }

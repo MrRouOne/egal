@@ -23,5 +23,4 @@ use App\Models\Users;
 class UsersDebug extends Users
 {
     protected $table = 'users';
-
 }

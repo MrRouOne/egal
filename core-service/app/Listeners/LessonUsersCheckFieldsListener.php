@@ -2,12 +2,10 @@
 
 namespace App\Listeners;
 
-use App\Events\LessonUsersUpdatingEvent;
 use App\Exceptions\ForbiddenFieldsException;
 use App\Helpers\AbstractEvent;
 use App\Helpers\AbstractListener;
 use App\Models\LessonUsers;
-use Egal\Model\Exceptions\ObjectNotFoundException;
 
 class LessonUsersCheckFieldsListener extends AbstractListener
 {
@@ -19,11 +17,10 @@ class LessonUsersCheckFieldsListener extends AbstractListener
     {
         parent::handle($event);
         $attributes = $event->getModel()->getAttributes();
-        $lesson = LessonUsers::query()->find($attributes['id']);
+        $lesson = LessonUsers::query()->findOrFail($attributes['id']);
 
         if ($attributes['user_id'] !== $lesson['user_id'] or $attributes['lesson_id'] !== $lesson['lesson_id']) {
             throw new ForbiddenFieldsException();
         }
-
     }
 }

@@ -3,8 +3,8 @@
 namespace App\Events;
 
 use App\Helpers\AbstractEvent;
+use App\Helpers\Session;
 use App\Models\User;
-use Egal\Core\Session\Session;
 
 class CreateUserEvent extends AbstractEvent
 {
@@ -18,15 +18,6 @@ class CreateUserEvent extends AbstractEvent
     {
         parent::__construct($user);
         $this->user = $user;
-        $this->attributes = Session::getActionMessage()->getParameters()['attributes'];
+        $this->attributes = Session::getAttributes();
     }
-
-    /**
-     * @return array
-     */
-    public function getAttributes(): array
-    {
-        return $this->attributes;
-    }
-
 }

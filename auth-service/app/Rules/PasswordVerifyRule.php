@@ -18,6 +18,9 @@ class PasswordVerifyRule extends EgalRule
     {
         $email = Session::getActionMessage()->getParameters()['email'];
         $user = User::query()->where('email', '=', $email)->first();
+        if (!$user) {
+            return false;
+        }
         return password_verify($value, $user->password);
     }
 

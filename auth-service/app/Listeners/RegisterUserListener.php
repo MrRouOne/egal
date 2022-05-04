@@ -21,7 +21,7 @@ class RegisterUserListener extends AbstractListener
     {
         parent::handle($event);
 
-        $attributes = $event->getAttributes();
+        $attributes = $event->attributes;
         if (!$attributes['password']) {
             throw new EmptyPasswordException();
         }

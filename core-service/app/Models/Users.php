@@ -41,7 +41,6 @@ class Users extends EgalModel
     protected $primaryKey = 'id';
     public $incrementing = false;
 
-
     /**
      * @return BelongsToMany
      */

@@ -67,8 +67,7 @@ class User extends BaseUser
     protected function password(): Attribute
     {
         return new Attribute(
-            get: fn($value) => ucfirst($value),
-            set: fn($value) => password_hash($value, PASSWORD_BCRYPT)
+            set: fn($value): string => password_hash($value, PASSWORD_BCRYPT)
         );
     }
 
@@ -78,7 +77,7 @@ class User extends BaseUser
     protected function createdAt(): Attribute
     {
         return new Attribute(
-            get: fn($value) => date_format(date_create($value), "Y-d-m"),
+            get: fn($value): string => date_format(date_create($value), "Y-d-m"),
         );
     }
 
@@ -88,18 +87,14 @@ class User extends BaseUser
     protected function updatedAt(): Attribute
     {
         return new Attribute(
-            get: fn($value) => date_format(date_create($value), "Y-d-m"),
+            get: fn($value): string => date_format(date_create($value), "Y-d-m"),
         );
     }
 
-    /**
-     * @return User
-     */
-    public static function actionRegister(): User
+    public static function actionRegister(array $attributes = [])
     {
-        $user = new static();
-        $user->save();
-        return $user;
+
+        return static::actionCreate($attributes);
     }
 
     /**
@@ -118,8 +113,7 @@ class User extends BaseUser
             "email" => $email
         ];
 
-        $validate = new ValidateHelper;
-        $validate->validate($data, [
+        ValidateHelper::validate($data, [
             "user" => new UserRule(),
             "password" => new PasswordVerifyRule,
         ]);
@@ -127,8 +121,8 @@ class User extends BaseUser
         $umt = new UserMasterToken();
         $umt->setSigningKey(config('app.service_key'));
         $umt->setAuthIdentification($data['user']->getAuthIdentifier());
-
-        $data['user']->setAttribute('last_entry', date("Y-d-m h:m:s"));
+        $count = count($data['user']['last_entry']);
+        $data['user']->setAttribute("last_entry->$count", date("Y-d-m h:m:s"));
         $data['user']->save();
 
 

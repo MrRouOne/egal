@@ -36,25 +36,4 @@ class CourseUsers extends EgalModel
         'created' => CourseUsersCreatedEvent::class,
     ];
 
-//    /**
-//     * @param int $course_id
-//     * @param int $user_id
-//     * @return array
-//     * @throws ObjectNotFoundException
-//     */
-//    public static function getItemByUserAndCourse(int $course_id, int $user_id): array
-//    {
-//        $instance = new static();
-//        $instance->makeIsInstanceForAction();
-//
-//        $item = $instance->newQuery()
-//            ->makeModelIsInstanceForAction()
-//            ->where(['user_id' => $user_id, 'course_id' => $course_id])->get();
-//
-//        if (!$item) {
-//            throw ObjectNotFoundException::make($course_id);
-//        }
-//
-//        return $item->toArray();
-//    }
 }

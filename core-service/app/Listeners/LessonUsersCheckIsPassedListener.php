@@ -2,16 +2,13 @@
 
 namespace App\Listeners;
 
-use App\Events\LessonUsersUpdatingEvent;
 use App\Exceptions\AlreadyCompleteException;
 use App\Helpers\AbstractEvent;
 use App\Helpers\AbstractListener;
 use App\Helpers\ValidateHelper;
 use App\Models\LessonUsers;
 use App\Rules\IsPassedRule;
-use Egal\Model\Exceptions\ObjectNotFoundException;
 use Egal\Model\Exceptions\ValidateException;
-use Illuminate\Support\Facades\Validator;
 
 class LessonUsersCheckIsPassedListener extends AbstractListener
 {
@@ -25,14 +22,12 @@ class LessonUsersCheckIsPassedListener extends AbstractListener
         parent::handle($event);
         $attributes = $event->getModel()->getAttributes();
 
-        $validate = new ValidateHelper;
-        $validate->validate($attributes, [
+        ValidateHelper::validate($attributes, [
             "is_passed" => [new IsPassedRule()],
         ]);
 
-        if (LessonUsers::query()->find($attributes['id'])['is_passed']) {
-            $exception = new AlreadyCompleteException();
-            throw $exception;
+        if (LessonUsers::query()->findOrFail($attributes['id'])['is_passed']) {
+            throw new AlreadyCompleteException();
         }
     }
 }
