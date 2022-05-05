@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Collection;
 use Staudenmeir\EloquentHasManyDeep\HasManyDeep;
 use Staudenmeir\EloquentHasManyDeep\HasRelationships;
+use function PHPUnit\Framework\isNull;
 
 /**
  * @property $id            {@property-type field}          {@primary-key}
@@ -120,7 +121,7 @@ class User extends BaseUser
         $umt = new UserMasterToken();
         $umt->setSigningKey(config('app.service_key'));
         $umt->setAuthIdentification($data['user']->getAuthIdentifier());
-        $count = count($data['user']['last_entry']);
+        $count = isNull($data['user']['last_entry']) ? 0 : count($data['user']['last_entry']);
         $data['user']->setAttribute("last_entry->$count", date("Y-d-m h:m:s"));
         $data['user']->save();
 
