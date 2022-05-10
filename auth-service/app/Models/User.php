@@ -35,7 +35,7 @@ use function PHPUnit\Framework\isNull;
  * @action login                        {@statuses-access guest}
  * @action loginToService               {@statuses-access guest}
  * @action refreshUserMasterToken       {@statuses-access guest}
- * @action getItems                     {@statuses-access guest|logged}
+ * @action getItems                     {@statuses-access logged}         {@roles-access admin}
  */
 class User extends BaseUser
 {

@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @property $updated_at {@property-type field}
  *
  * @action getMetadata {@statuses-access logged}    {@roles-access admin}
- * @action getItem {@statuses-access logged|guest}  {@roles-access admin}
+ * @action getItem {@statuses-access logged}        {@roles-access admin}
  * @action getItems {@statuses-access logged}       {@roles-access admin}
  * @action create {@statuses-access logged}         {@roles-access admin}       {@services-access core-service}
  * @action update {@statuses-access logged}         {@roles-access admin}
