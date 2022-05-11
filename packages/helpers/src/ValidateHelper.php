@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Helpers;
+namespace MrRouOne\Helpers;
 
 use Egal\Model\Exceptions\ValidateException;
 use Illuminate\Support\Facades\Validator;

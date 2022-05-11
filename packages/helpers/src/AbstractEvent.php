@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Helpers;
+namespace MrRouOne\Helpers;
 
 use Egal\Core\Events\Event;
 use Egal\Model\Model;

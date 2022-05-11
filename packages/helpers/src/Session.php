@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Helpers;
+namespace MrRouOne\Helpers;
 
 abstract class Session
 {
