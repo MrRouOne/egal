@@ -1,0 +1,14 @@
+version: "3.6"
+
+services:
+  core-service:
+    depends_on:
+      - rabbitmq
+      - database
+
+  auth-service:
+    depends_on:
+      - rabbitmq
+      - database
+      - core-service
+

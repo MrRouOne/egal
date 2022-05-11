@@ -1,0 +1,121 @@
+[2022-05-04 01:51:11] production.ERROR: Cannot assign null to property App\Providers\DebugModelsServiceProvider::$dir of type string {"exception":"[object] (TypeError(code: 0): Cannot assign null to property App\\Providers\\DebugModelsServiceProvider::$dir of type string at /app/app/Providers/DebugModelsServiceProvider.php:24)
+[stacktrace]
+#0 /app/app/Providers/DebugModelsServiceProvider.php(17): App\\Providers\\DebugModelsServiceProvider->setDir()
+#1 /app/vendor/laravel/lumen-framework/src/Application.php(223): App\\Providers\\DebugModelsServiceProvider->__construct(Object(Egal\\Core\\Application))
+#2 /app/bootstrap/app.php(70): Laravel\\Lumen\\Application->register('App\\\\Providers\\\\D...')
+#3 /app/artisan(18): require('/app/bootstrap/...')
+#4 {main}
+"}
+[2022-05-04 01:51:13] production.ERROR: Cannot assign null to property App\Providers\DebugModelsServiceProvider::$dir of type string {"exception":"[object] (TypeError(code: 0): Cannot assign null to property App\\Providers\\DebugModelsServiceProvider::$dir of type string at /app/app/Providers/DebugModelsServiceProvider.php:24)
+[stacktrace]
+#0 /app/app/Providers/DebugModelsServiceProvider.php(17): App\\Providers\\DebugModelsServiceProvider->setDir()
+#1 /app/vendor/laravel/lumen-framework/src/Application.php(223): App\\Providers\\DebugModelsServiceProvider->__construct(Object(Egal\\Core\\Application))
+#2 /app/bootstrap/app.php(70): Laravel\\Lumen\\Application->register('App\\\\Providers\\\\D...')
+#3 /app/artisan(18): require('/app/bootstrap/...')
+#4 {main}
+"}
+[2022-05-04 01:54:30] production.ERROR: scandir(DebugModels/): Failed to open directory: No such file or directory {"exception":"[object] (ErrorException(code: 0): scandir(DebugModels/): Failed to open directory: No such file or directory at /app/app/Providers/DebugModelsServiceProvider.php:42)
+[stacktrace]
+#0 /app/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(47): Laravel\\Lumen\\Application->handleError(2, 'scandir(DebugMo...', '/app/app/Provid...', 42)
+#1 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'scandir(DebugMo...', '/app/app/Provid...', 42)
+#2 /app/app/Providers/DebugModelsServiceProvider.php(42): scandir('DebugModels/')
+#3 /app/app/Providers/DebugModelsServiceProvider.php(19): App\\Providers\\DebugModelsServiceProvider->scanModels('DebugModels/')
+#4 /app/vendor/laravel/lumen-framework/src/Application.php(223): App\\Providers\\DebugModelsServiceProvider->__construct(Object(Egal\\Core\\Application))
+#5 /app/bootstrap/app.php(70): Laravel\\Lumen\\Application->register('App\\\\Providers\\\\D...')
+#6 /app/artisan(18): require('/app/bootstrap/...')
+#7 {main}
+"}
+[2022-05-04 01:54:32] production.ERROR: scandir(DebugModels/): Failed to open directory: No such file or directory {"exception":"[object] (ErrorException(code: 0): scandir(DebugModels/): Failed to open directory: No such file or directory at /app/app/Providers/DebugModelsServiceProvider.php:42)
+[stacktrace]
+#0 /app/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(47): Laravel\\Lumen\\Application->handleError(2, 'scandir(DebugMo...', '/app/app/Provid...', 42)
+#1 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'scandir(DebugMo...', '/app/app/Provid...', 42)
+#2 /app/app/Providers/DebugModelsServiceProvider.php(42): scandir('DebugModels/')
+#3 /app/app/Providers/DebugModelsServiceProvider.php(19): App\\Providers\\DebugModelsServiceProvider->scanModels('DebugModels/')
+#4 /app/vendor/laravel/lumen-framework/src/Application.php(223): App\\Providers\\DebugModelsServiceProvider->__construct(Object(Egal\\Core\\Application))
+#5 /app/bootstrap/app.php(70): Laravel\\Lumen\\Application->register('App\\\\Providers\\\\D...')
+#6 /app/artisan(18): require('/app/bootstrap/...')
+#7 {main}
+"}
+[2022-05-04 02:11:09] production.ERROR: scandir(DebugModels/): Failed to open directory: No such file or directory {"exception":"[object] (ErrorException(code: 0): scandir(DebugModels/): Failed to open directory: No such file or directory at /app/app/Providers/DebugModelsServiceProvider.php:42)
+[stacktrace]
+#0 /app/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(47): Laravel\\Lumen\\Application->handleError(2, 'scandir(DebugMo...', '/app/app/Provid...', 42)
+#1 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'scandir(DebugMo...', '/app/app/Provid...', 42)
+#2 /app/app/Providers/DebugModelsServiceProvider.php(42): scandir('DebugModels/')
+#3 /app/app/Providers/DebugModelsServiceProvider.php(19): App\\Providers\\DebugModelsServiceProvider->scanModels('DebugModels/')
+#4 /app/vendor/laravel/lumen-framework/src/Application.php(223): App\\Providers\\DebugModelsServiceProvider->__construct(Object(Egal\\Core\\Application))
+#5 /app/bootstrap/app.php(70): Laravel\\Lumen\\Application->register('App\\\\Providers\\\\D...')
+#6 /app/artisan(18): require('/app/bootstrap/...')
+#7 {main}
+"}
+[2022-05-04 02:11:11] production.ERROR: scandir(DebugModels/): Failed to open directory: No such file or directory {"exception":"[object] (ErrorException(code: 0): scandir(DebugModels/): Failed to open directory: No such file or directory at /app/app/Providers/DebugModelsServiceProvider.php:42)
+[stacktrace]
+#0 /app/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(47): Laravel\\Lumen\\Application->handleError(2, 'scandir(DebugMo...', '/app/app/Provid...', 42)
+#1 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'scandir(DebugMo...', '/app/app/Provid...', 42)
+#2 /app/app/Providers/DebugModelsServiceProvider.php(42): scandir('DebugModels/')
+#3 /app/app/Providers/DebugModelsServiceProvider.php(19): App\\Providers\\DebugModelsServiceProvider->scanModels('DebugModels/')
+#4 /app/vendor/laravel/lumen-framework/src/Application.php(223): App\\Providers\\DebugModelsServiceProvider->__construct(Object(Egal\\Core\\Application))
+#5 /app/bootstrap/app.php(70): Laravel\\Lumen\\Application->register('App\\\\Providers\\\\D...')
+#6 /app/artisan(18): require('/app/bootstrap/...')
+#7 {main}
+"}
+
+
+[2022-05-04 05:08:54] production.INFO: Event [App\Events\CourseUsersCreatingEvent] was fired with model [App\Models\CourseUsers]. [Dirty: true]. Serialized model [753d4004-6298-438e-981e-cf3666b3ca151]
+[2022-05-04 05:08:54] production.INFO: Listener [App\Listeners\CourseUsersValidateUniqueListener] event [App\Events\CourseUsersCreatingEvent]
+[2022-05-04 05:08:54] production.INFO: Listener [App\Listeners\CourseUsersCheckIdListener] event [App\Events\CourseUsersCreatingEvent]
+[2022-05-04 05:08:54] production.INFO: Listener [App\Listeners\CourseUsersCheckCapacityListener] event [App\Events\CourseUsersCreatingEvent]
+[2022-05-04 05:08:54] production.INFO: Event [App\Events\CourseUsersCreatedEvent] was fired with model [App\Models\CourseUsers]. [Dirty: true]. Serialized model [753d4004-6298-438e-981e-cf3666b3ca1511]
+[2022-05-04 05:08:54] production.INFO: Listener [App\Listeners\CourseUsersUpdateCapacityListener] event [App\Events\CourseUsersCreatedEvent]
+[2022-05-04 05:08:54] production.INFO: Listener [App\Listeners\CourseUsersRecordToLessonsListener] event [App\Events\CourseUsersCreatedEvent]
+
+
+[2022-05-04 05:10:52] production.INFO: Event [App\Events\CourseUsersCreatingEvent] was fired with model [App\Models\CourseUsers]. [Dirty: true]. Serialized model [{"user_id":"753d4004-6298-438e-981e-cf3666b3ca15","course_id":1}]
+[2022-05-04 05:10:52] production.INFO: Listener [App\Listeners\CourseUsersValidateUniqueListener] event [App\Events\CourseUsersCreatingEvent]
+[2022-05-04 05:11:10] production.INFO: Event [App\Events\LessonUsersUpdatingEvent] was fired with model [App\Models\LessonUsers]. [Dirty: true]. Serialized model [{"id":1,"user_id":"753d4004-6298-438e-981e-cf3666b3ca15","lesson_id":2,"is_passed":true}]
+[2022-05-04 05:11:10] production.INFO: Listener [App\Listeners\LessonUsersCheckIdListener] event [App\Events\LessonUsersUpdatingEvent]
+[2022-05-04 05:11:10] production.INFO: Listener [App\Listeners\LessonUsersCheckFinishCourseListener] event [App\Events\LessonUsersUpdatingEvent]
+[2022-05-04 05:11:10] production.INFO: Listener [App\Listeners\LessonUsersCheckIsPassedListener] event [App\Events\LessonUsersUpdatingEvent]
+[2022-05-04 05:11:10] production.INFO: Listener [App\Listeners\LessonUsersCheckFieldsListener] event [App\Events\LessonUsersUpdatingEvent]
+[2022-05-04 05:11:10] production.INFO: Event [App\Events\LessonUsersUpdatedEvent] was fired with model [App\Models\LessonUsers]. [Changes: true]. Serialized model [{"id":1,"user_id":"753d4004-6298-438e-981e-cf3666b3ca15","lesson_id":2,"is_passed":true}]
+[2022-05-04 05:11:10] production.INFO: Listener [App\Listeners\LessonUsersUpdatePercentListener] event [App\Events\LessonUsersUpdatedEvent]
+
+
+
+[2022-05-04 05:11:30] production.INFO: Event [App\Events\LessonUsersUpdatingEvent] was fired with model [App\Models\LessonUsers]. [Dirty: true]. Serialized model [{"id":2,"user_id":"753d4004-6298-438e-981e-cf3666b3ca15","lesson_id":7,"is_passed":true}]  
+[2022-05-04 05:11:30] production.INFO: Listener [App\Listeners\LessonUsersCheckIdListener] event [App\Events\LessonUsersUpdatingEvent]  
+[2022-05-04 05:11:30] production.INFO: Listener [App\Listeners\LessonUsersCheckFinishCourseListener] event [App\Events\LessonUsersUpdatingEvent]  
+[2022-05-04 05:11:30] production.INFO: Listener [App\Listeners\LessonUsersCheckIsPassedListener] event [App\Events\LessonUsersUpdatingEvent]  
+[2022-05-04 05:11:30] production.INFO: Listener [App\Listeners\LessonUsersCheckFieldsListener] event [App\Events\LessonUsersUpdatingEvent]  
+[2022-05-04 05:11:30] production.INFO: Event [App\Events\LessonUsersUpdatedEvent] was fired with model [App\Models\LessonUsers]. [Changes: true]. Serialized model [{"id":2,"user_id":"753d4004-6298-438e-981e-cf3666b3ca15","lesson_id":7,"is_passed":true}]  
+[2022-05-04 05:11:30] production.INFO: Listener [App\Listeners\LessonUsersUpdatePercentListener] event [App\Events\LessonUsersUpdatedEvent]  
+[2022-05-04 13:10:55] production.ERROR: stream_socket_client(): Unable to connect to tcp://project-rabbitmq:5672 (Connection refused) {"exception":"[object] (PhpAmqpLib\\Exception\\AMQPIOException(code: 0): stream_socket_client(): Unable to connect to tcp://project-rabbitmq:5672 (Connection refused) at /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108)
+[stacktrace]
+#0 /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(253): PhpAmqpLib\\Wire\\IO\\StreamIO->connect()
+#1 /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AMQPLazyConnection.php(12): PhpAmqpLib\\Connection\\AbstractConnection->connect()
+#2 /app/vendor/egal/framework/src/Core/Bus/RabbitMQBus.php(61): PhpAmqpLib\\Connection\\AMQPLazyConnection->channel()
+#3 /app/vendor/egal/framework/src/Core/Bus/BusCreator.php(23): Egal\\Core\\Bus\\RabbitMQBus->__construct(Array)
+#4 /app/vendor/egal/framework/src/Core/ServiceProvider.php(56): Egal\\Core\\Bus\\BusCreator::createBus()
+#5 /app/vendor/illuminate/container/Container.php(873): Egal\\Core\\ServiceProvider::Egal\\Core\\{closure}(Object(Egal\\Core\\Application), Array)
+#6 /app/vendor/illuminate/container/Container.php(758): Illuminate\\Container\\Container->build(Object(Closure))
+#7 /app/vendor/illuminate/container/Container.php(694): Illuminate\\Container\\Container->resolve('Egal\\\\Core\\\\Bus\\\\B...', Array)
+#8 /app/vendor/laravel/lumen-framework/src/Application.php(300): Illuminate\\Container\\Container->make('Egal\\\\Core\\\\Bus\\\\B...', Array)
+#9 /app/vendor/laravel/lumen-framework/src/helpers.php(42): Laravel\\Lumen\\Application->make('Egal\\\\Core\\\\Bus\\\\B...', Array)
+#10 /app/vendor/egal/framework/src/Core/Bus/Bus.php(28): app('Egal\\\\Core\\\\Bus\\\\B...')
+#11 /app/vendor/egal/framework/src/Core/Commands/EgalRunCommand.php(25): Egal\\Core\\Bus\\Bus::instance()
+#12 /app/vendor/illuminate/container/BoundMethod.php(36): Egal\\Core\\Commands\\EgalRunCommand->handle()
+#13 /app/vendor/illuminate/container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#14 /app/vendor/illuminate/container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#15 /app/vendor/illuminate/container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Egal\\Core\\Application), Array, Object(Closure))
+#16 /app/vendor/illuminate/container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Egal\\Core\\Application), Array, Array, NULL)
+#17 /app/vendor/illuminate/console/Command.php(136): Illuminate\\Container\\Container->call(Array)
+#18 /app/vendor/egal/framework/src/Core/Commands/EgalRunCommand.php(42): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#19 /app/vendor/symfony/console/Command/Command.php(298): Egal\\Core\\Commands\\EgalRunCommand->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#20 /app/vendor/illuminate/console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#21 /app/vendor/symfony/console/Application.php(1015): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#22 /app/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Egal\\Core\\Commands\\EgalRunCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#23 /app/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 /app/vendor/illuminate/console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 /app/vendor/laravel/lumen-framework/src/Console/Kernel.php(116): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /app/artisan(35): Laravel\\Lumen\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 {main}
+"} 

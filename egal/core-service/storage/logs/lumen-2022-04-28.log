@@ -1,0 +1,197 @@
+[2022-04-28 15:39:07] production.ERROR: Class "App\Providers\DebugModelsServiceProvider" not found {"exception":"[object] (Error(code: 0): Class \"App\\Providers\\DebugModelsServiceProvider\" not found at /app/vendor/laravel/lumen-framework/src/Application.php:223)
+[stacktrace]
+#0 /app/bootstrap/app.php(70): Laravel\\Lumen\\Application->register('App\\\\Providers\\\\D...')
+#1 /app/artisan(18): require('/app/bootstrap/...')
+#2 {main}
+"} 
+[2022-04-28 15:46:23] production.ERROR: A facade root has not been set. {"exception":"[object] (RuntimeException(code: 0): A facade root has not been set. at /app/vendor/illuminate/support/Facades/Facade.php:258)
+[stacktrace]
+#0 /app/vendor/egal/framework/src/Model/ModelManager.php(75): Illuminate\\Support\\Facades\\Facade::__callStatic('environment', Array)
+#1 /app/vendor/egal/framework/src/Model/ModelManager.php(22): Egal\\Model\\ModelManager->scanModels()
+#2 /app/vendor/egal/framework/src/Model/ServiceProvider.php(39): Egal\\Model\\ModelManager->__construct()
+#3 /app/vendor/illuminate/container/Container.php(873): Egal\\Model\\ServiceProvider->Egal\\Model\\{closure}(Object(Egal\\Core\\Application), Array)
+#4 /app/vendor/illuminate/container/Container.php(758): Illuminate\\Container\\Container->build(Object(Closure))
+#5 /app/vendor/illuminate/container/Container.php(694): Illuminate\\Container\\Container->resolve('Egal\\\\Model\\\\Mode...', Array)
+#6 /app/vendor/laravel/lumen-framework/src/Application.php(300): Illuminate\\Container\\Container->make('Egal\\\\Model\\\\Mode...', Array)
+#7 /app/vendor/laravel/lumen-framework/src/helpers.php(42): Laravel\\Lumen\\Application->make('Egal\\\\Model\\\\Mode...', Array)
+#8 /app/vendor/egal/framework/src/Model/ModelManager.php(27): app('Egal\\\\Model\\\\Mode...')
+#9 /app/vendor/egal/framework/src/Model/ModelManager.php(63): Egal\\Model\\ModelManager::getInstance()
+#10 /app/vendor/egal/framework/src/Model/ServiceProvider.php(42): Egal\\Model\\ModelManager::loadModel('Egal\\\\Model\\\\Mode...')
+#11 /app/vendor/laravel/lumen-framework/src/Application.php(233): Egal\\Model\\ServiceProvider->register()
+#12 /app/vendor/egal/framework/src/Core/ServiceProvider.php(47): Laravel\\Lumen\\Application->register(Object(Egal\\Model\\ServiceProvider))
+#13 /app/vendor/laravel/lumen-framework/src/Application.php(233): Egal\\Core\\ServiceProvider->register()
+#14 /app/bootstrap/app.php(68): Laravel\\Lumen\\Application->register(Object(Egal\\Core\\ServiceProvider))
+#15 /app/artisan(18): require('/app/bootstrap/...')
+#16 {main}
+"} 
+[2022-04-28 16:08:41] production.ERROR: A facade root has not been set. {"exception":"[object] (RuntimeException(code: 0): A facade root has not been set. at /app/vendor/illuminate/support/Facades/Facade.php:258)
+[stacktrace]
+#0 /app/app/Helpers/ModelManagerHelper.php(77): Illuminate\\Support\\Facades\\Facade::__callStatic('environment', Array)
+#1 /app/app/Helpers/ModelManagerHelper.php(23): App\\Helpers\\ModelManagerHelper->scanModels()
+#2 /app/app/Providers/DebugModelsServiceProvider.php(39): App\\Helpers\\ModelManagerHelper->__construct()
+#3 /app/vendor/illuminate/container/Container.php(873): App\\Providers\\DebugModelsServiceProvider->App\\Providers\\{closure}(Object(Egal\\Core\\Application), Array)
+#4 /app/vendor/illuminate/container/Container.php(758): Illuminate\\Container\\Container->build(Object(Closure))
+#5 /app/vendor/illuminate/container/Container.php(694): Illuminate\\Container\\Container->resolve('App\\\\Helpers\\\\Mod...', Array)
+#6 /app/vendor/laravel/lumen-framework/src/Application.php(300): Illuminate\\Container\\Container->make('App\\\\Helpers\\\\Mod...', Array)
+#7 /app/vendor/laravel/lumen-framework/src/helpers.php(42): Laravel\\Lumen\\Application->make('App\\\\Helpers\\\\Mod...', Array)
+#8 /app/app/Helpers/ModelManagerHelper.php(28): app('App\\\\Helpers\\\\Mod...')
+#9 /app/app/Helpers/ModelManagerHelper.php(64): App\\Helpers\\ModelManagerHelper::getInstance()
+#10 /app/app/Providers/DebugModelsServiceProvider.php(42): App\\Helpers\\ModelManagerHelper::loadModel('App\\\\Helpers\\\\Mod...')
+#11 /app/vendor/laravel/lumen-framework/src/Application.php(233): App\\Providers\\DebugModelsServiceProvider->register()
+#12 /app/bootstrap/app.php(70): Laravel\\Lumen\\Application->register(Object(App\\Providers\\DebugModelsServiceProvider))
+#13 /app/artisan(18): require('/app/bootstrap/...')
+#14 {main}
+"} 
+[2022-04-28 16:10:03] production.ERROR: A facade root has not been set. {"exception":"[object] (RuntimeException(code: 0): A facade root has not been set. at /app/vendor/illuminate/support/Facades/Facade.php:258)
+[stacktrace]
+#0 /app/app/Helpers/ModelManagerHelper.php(75): Illuminate\\Support\\Facades\\Facade::__callStatic('environment', Array)
+#1 /app/app/Helpers/ModelManagerHelper.php(21): App\\Helpers\\ModelManagerHelper->scanModels()
+#2 /app/app/Providers/DebugModelsServiceProvider.php(39): App\\Helpers\\ModelManagerHelper->__construct()
+#3 /app/vendor/illuminate/container/Container.php(873): App\\Providers\\DebugModelsServiceProvider->App\\Providers\\{closure}(Object(Egal\\Core\\Application), Array)
+#4 /app/vendor/illuminate/container/Container.php(758): Illuminate\\Container\\Container->build(Object(Closure))
+#5 /app/vendor/illuminate/container/Container.php(694): Illuminate\\Container\\Container->resolve('App\\\\Helpers\\\\Mod...', Array)
+#6 /app/vendor/laravel/lumen-framework/src/Application.php(300): Illuminate\\Container\\Container->make('App\\\\Helpers\\\\Mod...', Array)
+#7 /app/vendor/laravel/lumen-framework/src/helpers.php(42): Laravel\\Lumen\\Application->make('App\\\\Helpers\\\\Mod...', Array)
+#8 /app/app/Helpers/ModelManagerHelper.php(26): app('App\\\\Helpers\\\\Mod...')
+#9 /app/app/Helpers/ModelManagerHelper.php(62): App\\Helpers\\ModelManagerHelper::getInstance()
+#10 /app/app/Providers/DebugModelsServiceProvider.php(42): App\\Helpers\\ModelManagerHelper::loadModel('App\\\\Helpers\\\\Mod...')
+#11 /app/vendor/laravel/lumen-framework/src/Application.php(233): App\\Providers\\DebugModelsServiceProvider->register()
+#12 /app/bootstrap/app.php(70): Laravel\\Lumen\\Application->register(Object(App\\Providers\\DebugModelsServiceProvider))
+#13 /app/artisan(18): require('/app/bootstrap/...')
+#14 {main}
+"} 
+[2022-04-28 16:10:25] production.ERROR: A facade root has not been set. {"exception":"[object] (RuntimeException(code: 0): A facade root has not been set. at /app/vendor/illuminate/support/Facades/Facade.php:258)
+[stacktrace]
+#0 /app/app/Helpers/ModelManagerHelper.php(75): Illuminate\\Support\\Facades\\Facade::__callStatic('environment', Array)
+#1 /app/app/Helpers/ModelManagerHelper.php(21): App\\Helpers\\ModelManagerHelper->scanModels()
+#2 /app/app/Providers/DebugModelsServiceProvider.php(39): App\\Helpers\\ModelManagerHelper->__construct()
+#3 /app/vendor/illuminate/container/Container.php(873): App\\Providers\\DebugModelsServiceProvider->App\\Providers\\{closure}(Object(Egal\\Core\\Application), Array)
+#4 /app/vendor/illuminate/container/Container.php(758): Illuminate\\Container\\Container->build(Object(Closure))
+#5 /app/vendor/illuminate/container/Container.php(694): Illuminate\\Container\\Container->resolve('App\\\\Helpers\\\\Mod...', Array)
+#6 /app/vendor/laravel/lumen-framework/src/Application.php(300): Illuminate\\Container\\Container->make('App\\\\Helpers\\\\Mod...', Array)
+#7 /app/vendor/laravel/lumen-framework/src/helpers.php(42): Laravel\\Lumen\\Application->make('App\\\\Helpers\\\\Mod...', Array)
+#8 /app/app/Helpers/ModelManagerHelper.php(26): app('App\\\\Helpers\\\\Mod...')
+#9 /app/app/Helpers/ModelManagerHelper.php(62): App\\Helpers\\ModelManagerHelper::getInstance()
+#10 /app/app/Providers/DebugModelsServiceProvider.php(42): App\\Helpers\\ModelManagerHelper::loadModel('App\\\\Helpers\\\\Mod...')
+#11 /app/vendor/laravel/lumen-framework/src/Application.php(233): App\\Providers\\DebugModelsServiceProvider->register()
+#12 /app/bootstrap/app.php(70): Laravel\\Lumen\\Application->register(Object(App\\Providers\\DebugModelsServiceProvider))
+#13 /app/artisan(18): require('/app/bootstrap/...')
+#14 {main}
+"} 
+[2022-04-28 16:10:40] production.ERROR: A facade root has not been set. {"exception":"[object] (RuntimeException(code: 0): A facade root has not been set. at /app/vendor/illuminate/support/Facades/Facade.php:258)
+[stacktrace]
+#0 /app/app/Helpers/ModelManagerHelper.php(75): Illuminate\\Support\\Facades\\Facade::__callStatic('environment', Array)
+#1 /app/app/Helpers/ModelManagerHelper.php(21): App\\Helpers\\ModelManagerHelper->scanModels()
+#2 /app/app/Providers/DebugModelsServiceProvider.php(39): App\\Helpers\\ModelManagerHelper->__construct()
+#3 /app/vendor/illuminate/container/Container.php(873): App\\Providers\\DebugModelsServiceProvider->App\\Providers\\{closure}(Object(Egal\\Core\\Application), Array)
+#4 /app/vendor/illuminate/container/Container.php(758): Illuminate\\Container\\Container->build(Object(Closure))
+#5 /app/vendor/illuminate/container/Container.php(694): Illuminate\\Container\\Container->resolve('App\\\\Helpers\\\\Mod...', Array)
+#6 /app/vendor/laravel/lumen-framework/src/Application.php(300): Illuminate\\Container\\Container->make('App\\\\Helpers\\\\Mod...', Array)
+#7 /app/vendor/laravel/lumen-framework/src/helpers.php(42): Laravel\\Lumen\\Application->make('App\\\\Helpers\\\\Mod...', Array)
+#8 /app/app/Helpers/ModelManagerHelper.php(26): app('App\\\\Helpers\\\\Mod...')
+#9 /app/app/Helpers/ModelManagerHelper.php(62): App\\Helpers\\ModelManagerHelper::getInstance()
+#10 /app/app/Providers/DebugModelsServiceProvider.php(42): App\\Helpers\\ModelManagerHelper::loadModel('App\\\\Helpers\\\\Mod...')
+#11 /app/vendor/laravel/lumen-framework/src/Application.php(233): App\\Providers\\DebugModelsServiceProvider->register()
+#12 /app/bootstrap/app.php(70): Laravel\\Lumen\\Application->register(Object(App\\Providers\\DebugModelsServiceProvider))
+#13 /app/artisan(18): require('/app/bootstrap/...')
+#14 {main}
+"} 
+[2022-04-28 16:11:08] production.ERROR: App\Helpers\ModelManagerHelper::getInstance(): Return value must be of type Egal\Model\ModelManager, App\Helpers\ModelManagerHelper returned {"exception":"[object] (TypeError(code: 0): App\\Helpers\\ModelManagerHelper::getInstance(): Return value must be of type Egal\\Model\\ModelManager, App\\Helpers\\ModelManagerHelper returned at /app/app/Helpers/ModelManagerHelper.php:26)
+[stacktrace]
+#0 /app/app/Helpers/ModelManagerHelper.php(62): App\\Helpers\\ModelManagerHelper::getInstance()
+#1 /app/app/Providers/DebugModelsServiceProvider.php(42): App\\Helpers\\ModelManagerHelper::loadModel('App\\\\Helpers\\\\Mod...')
+#2 /app/vendor/laravel/lumen-framework/src/Application.php(233): App\\Providers\\DebugModelsServiceProvider->register()
+#3 /app/bootstrap/app.php(70): Laravel\\Lumen\\Application->register(Object(App\\Providers\\DebugModelsServiceProvider))
+#4 /app/artisan(18): require('/app/bootstrap/...')
+#5 {main}
+"} 
+[2022-04-28 16:11:41] production.ERROR: Class "App\Helpers\ModelManagerHelper" not found {"exception":"[object] (Error(code: 0): Class \"App\\Helpers\\ModelManagerHelper\" not found at /app/app/Providers/DebugModelsServiceProvider.php:42)
+[stacktrace]
+#0 /app/vendor/laravel/lumen-framework/src/Application.php(233): App\\Providers\\DebugModelsServiceProvider->register()
+#1 /app/bootstrap/app.php(70): Laravel\\Lumen\\Application->register(Object(App\\Providers\\DebugModelsServiceProvider))
+#2 /app/artisan(18): require('/app/bootstrap/...')
+#3 {main}
+"} 
+[2022-04-28 16:11:57] production.ERROR: Class "App\Helpers\ModelManagerHelper" not found {"exception":"[object] (Error(code: 0): Class \"App\\Helpers\\ModelManagerHelper\" not found at /app/app/Providers/DebugModelsServiceProvider.php:42)
+[stacktrace]
+#0 /app/vendor/laravel/lumen-framework/src/Application.php(233): App\\Providers\\DebugModelsServiceProvider->register()
+#1 /app/bootstrap/app.php(70): Laravel\\Lumen\\Application->register(Object(App\\Providers\\DebugModelsServiceProvider))
+#2 /app/artisan(18): require('/app/bootstrap/...')
+#3 {main}
+"} 
+[2022-04-28 16:15:02] production.ERROR: Class "App\DebugModels\CourseUsers" does not exist {"exception":"[object] (ReflectionException(code: -1): Class \"App\\DebugModels\\CourseUsers\" does not exist at /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php:71)
+[stacktrace]
+#0 /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php(71): ReflectionClass->__construct('App\\\\DebugModels...')
+#1 /app/app/Helpers/ModelManagerHelper.php(103): Egal\\Model\\Metadata\\ModelMetadata->__construct('App\\\\DebugModels...')
+#2 /app/app/Helpers/ModelManagerHelper.php(20): App\\Helpers\\ModelManagerHelper->scanModels()
+#3 /app/app/Providers/DebugModelsServiceProvider.php(39): App\\Helpers\\ModelManagerHelper->__construct()
+#4 /app/vendor/illuminate/container/Container.php(873): App\\Providers\\DebugModelsServiceProvider->App\\Providers\\{closure}(Object(Egal\\Core\\Application), Array)
+#5 /app/vendor/illuminate/container/Container.php(758): Illuminate\\Container\\Container->build(Object(Closure))
+#6 /app/vendor/illuminate/container/Container.php(694): Illuminate\\Container\\Container->resolve('App\\\\Helpers\\\\Mod...', Array)
+#7 /app/vendor/laravel/lumen-framework/src/Application.php(300): Illuminate\\Container\\Container->make('App\\\\Helpers\\\\Mod...', Array)
+#8 /app/vendor/laravel/lumen-framework/src/helpers.php(42): Laravel\\Lumen\\Application->make('App\\\\Helpers\\\\Mod...', Array)
+#9 /app/app/Helpers/ModelManagerHelper.php(25): app('App\\\\Helpers\\\\Mod...')
+#10 /app/app/Helpers/ModelManagerHelper.php(61): App\\Helpers\\ModelManagerHelper::getInstance()
+#11 /app/app/Providers/DebugModelsServiceProvider.php(42): App\\Helpers\\ModelManagerHelper::loadModel('App\\\\Helpers\\\\Mod...')
+#12 /app/vendor/laravel/lumen-framework/src/Application.php(233): App\\Providers\\DebugModelsServiceProvider->register()
+#13 /app/bootstrap/app.php(70): Laravel\\Lumen\\Application->register(Object(App\\Providers\\DebugModelsServiceProvider))
+#14 /app/artisan(18): require('/app/bootstrap/...')
+#15 {main}
+"} 
+[2022-04-28 16:17:35] production.ERROR: Class "App\DebugModels\gg" does not exist {"exception":"[object] (ReflectionException(code: -1): Class \"App\\DebugModels\\gg\" does not exist at /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php:71)
+[stacktrace]
+#0 /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php(71): ReflectionClass->__construct('App\\\\DebugModels...')
+#1 /app/app/Helpers/ModelManagerHelper.php(103): Egal\\Model\\Metadata\\ModelMetadata->__construct('App\\\\DebugModels...')
+#2 /app/app/Helpers/ModelManagerHelper.php(20): App\\Helpers\\ModelManagerHelper->scanModels()
+#3 /app/app/Providers/DebugModelsServiceProvider.php(39): App\\Helpers\\ModelManagerHelper->__construct()
+#4 /app/vendor/illuminate/container/Container.php(873): App\\Providers\\DebugModelsServiceProvider->App\\Providers\\{closure}(Object(Egal\\Core\\Application), Array)
+#5 /app/vendor/illuminate/container/Container.php(758): Illuminate\\Container\\Container->build(Object(Closure))
+#6 /app/vendor/illuminate/container/Container.php(694): Illuminate\\Container\\Container->resolve('App\\\\Helpers\\\\Mod...', Array)
+#7 /app/vendor/laravel/lumen-framework/src/Application.php(300): Illuminate\\Container\\Container->make('App\\\\Helpers\\\\Mod...', Array)
+#8 /app/vendor/laravel/lumen-framework/src/helpers.php(42): Laravel\\Lumen\\Application->make('App\\\\Helpers\\\\Mod...', Array)
+#9 /app/app/Helpers/ModelManagerHelper.php(25): app('App\\\\Helpers\\\\Mod...')
+#10 /app/app/Helpers/ModelManagerHelper.php(61): App\\Helpers\\ModelManagerHelper::getInstance()
+#11 /app/app/Providers/DebugModelsServiceProvider.php(42): App\\Helpers\\ModelManagerHelper::loadModel('App\\\\Helpers\\\\Mod...')
+#12 /app/vendor/laravel/lumen-framework/src/Application.php(233): App\\Providers\\DebugModelsServiceProvider->register()
+#13 /app/bootstrap/app.php(70): Laravel\\Lumen\\Application->register(Object(App\\Providers\\DebugModelsServiceProvider))
+#14 /app/artisan(18): require('/app/bootstrap/...')
+#15 {main}
+"} 
+[2022-04-28 16:19:35] production.ERROR: Class "App\DebugModels\gg" does not exist {"exception":"[object] (ReflectionException(code: -1): Class \"App\\DebugModels\\gg\" does not exist at /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php:71)
+[stacktrace]
+#0 /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php(71): ReflectionClass->__construct('App\\\\DebugModels...')
+#1 /app/app/Helpers/ModelManagerHelper.php(103): Egal\\Model\\Metadata\\ModelMetadata->__construct('App\\\\DebugModels...')
+#2 /app/app/Helpers/ModelManagerHelper.php(20): App\\Helpers\\ModelManagerHelper->scanModels()
+#3 /app/app/Providers/DebugModelsServiceProvider.php(39): App\\Helpers\\ModelManagerHelper->__construct()
+#4 /app/vendor/illuminate/container/Container.php(873): App\\Providers\\DebugModelsServiceProvider->App\\Providers\\{closure}(Object(Egal\\Core\\Application), Array)
+#5 /app/vendor/illuminate/container/Container.php(758): Illuminate\\Container\\Container->build(Object(Closure))
+#6 /app/vendor/illuminate/container/Container.php(694): Illuminate\\Container\\Container->resolve('App\\\\Helpers\\\\Mod...', Array)
+#7 /app/vendor/laravel/lumen-framework/src/Application.php(300): Illuminate\\Container\\Container->make('App\\\\Helpers\\\\Mod...', Array)
+#8 /app/vendor/laravel/lumen-framework/src/helpers.php(42): Laravel\\Lumen\\Application->make('App\\\\Helpers\\\\Mod...', Array)
+#9 /app/app/Helpers/ModelManagerHelper.php(25): app('App\\\\Helpers\\\\Mod...')
+#10 /app/app/Helpers/ModelManagerHelper.php(61): App\\Helpers\\ModelManagerHelper::getInstance()
+#11 /app/app/Providers/DebugModelsServiceProvider.php(42): App\\Helpers\\ModelManagerHelper::loadModel('App\\\\Helpers\\\\Mod...')
+#12 /app/vendor/laravel/lumen-framework/src/Application.php(233): App\\Providers\\DebugModelsServiceProvider->register()
+#13 /app/bootstrap/app.php(70): Laravel\\Lumen\\Application->register(Object(App\\Providers\\DebugModelsServiceProvider))
+#14 /app/artisan(18): require('/app/bootstrap/...')
+#15 {main}
+"} 
+[2022-04-28 16:20:01] production.ERROR: Class "App\DebugModels\GG" does not exist {"exception":"[object] (ReflectionException(code: -1): Class \"App\\DebugModels\\GG\" does not exist at /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php:71)
+[stacktrace]
+#0 /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php(71): ReflectionClass->__construct('App\\\\DebugModels...')
+#1 /app/app/Helpers/ModelManagerHelper.php(103): Egal\\Model\\Metadata\\ModelMetadata->__construct('App\\\\DebugModels...')
+#2 /app/app/Helpers/ModelManagerHelper.php(20): App\\Helpers\\ModelManagerHelper->scanModels()
+#3 /app/app/Providers/DebugModelsServiceProvider.php(39): App\\Helpers\\ModelManagerHelper->__construct()
+#4 /app/vendor/illuminate/container/Container.php(873): App\\Providers\\DebugModelsServiceProvider->App\\Providers\\{closure}(Object(Egal\\Core\\Application), Array)
+#5 /app/vendor/illuminate/container/Container.php(758): Illuminate\\Container\\Container->build(Object(Closure))
+#6 /app/vendor/illuminate/container/Container.php(694): Illuminate\\Container\\Container->resolve('App\\\\Helpers\\\\Mod...', Array)
+#7 /app/vendor/laravel/lumen-framework/src/Application.php(300): Illuminate\\Container\\Container->make('App\\\\Helpers\\\\Mod...', Array)
+#8 /app/vendor/laravel/lumen-framework/src/helpers.php(42): Laravel\\Lumen\\Application->make('App\\\\Helpers\\\\Mod...', Array)
+#9 /app/app/Helpers/ModelManagerHelper.php(25): app('App\\\\Helpers\\\\Mod...')
+#10 /app/app/Helpers/ModelManagerHelper.php(61): App\\Helpers\\ModelManagerHelper::getInstance()
+#11 /app/app/Providers/DebugModelsServiceProvider.php(42): App\\Helpers\\ModelManagerHelper::loadModel('App\\\\Helpers\\\\Mod...')
+#12 /app/vendor/laravel/lumen-framework/src/Application.php(233): App\\Providers\\DebugModelsServiceProvider->register()
+#13 /app/bootstrap/app.php(70): Laravel\\Lumen\\Application->register(Object(App\\Providers\\DebugModelsServiceProvider))
+#14 /app/artisan(18): require('/app/bootstrap/...')
+#15 {main}
+"} 

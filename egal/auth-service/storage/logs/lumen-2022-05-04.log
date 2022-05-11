@@ -1,0 +1,362 @@
+[2022-05-04 01:51:12] production.ERROR: scandir(DebugModels/): Failed to open directory: No such file or directory {"exception":"[object] (ErrorException(code: 0): scandir(DebugModels/): Failed to open directory: No such file or directory at /app/app/Providers/DebugModelsServiceProvider.php:42)
+[stacktrace]
+#0 /app/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(47): Laravel\\Lumen\\Application->handleError(2, 'scandir(DebugMo...', '/app/app/Provid...', 42)
+#1 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'scandir(DebugMo...', '/app/app/Provid...', 42)
+#2 /app/app/Providers/DebugModelsServiceProvider.php(42): scandir('DebugModels/')
+#3 /app/app/Providers/DebugModelsServiceProvider.php(19): App\\Providers\\DebugModelsServiceProvider->scanModels('DebugModels/')
+#4 /app/vendor/laravel/lumen-framework/src/Application.php(223): App\\Providers\\DebugModelsServiceProvider->__construct(Object(Egal\\Core\\Application))
+#5 /app/bootstrap/app.php(72): Laravel\\Lumen\\Application->register('App\\\\Providers\\\\D...')
+#6 /app/artisan(18): require('/app/bootstrap/...')
+#7 {main}
+"}
+[2022-05-04 01:51:14] production.ERROR: scandir(DebugModels/): Failed to open directory: No such file or directory {"exception":"[object] (ErrorException(code: 0): scandir(DebugModels/): Failed to open directory: No such file or directory at /app/app/Providers/DebugModelsServiceProvider.php:42)
+[stacktrace]
+#0 /app/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(47): Laravel\\Lumen\\Application->handleError(2, 'scandir(DebugMo...', '/app/app/Provid...', 42)
+#1 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'scandir(DebugMo...', '/app/app/Provid...', 42)
+#2 /app/app/Providers/DebugModelsServiceProvider.php(42): scandir('DebugModels/')
+#3 /app/app/Providers/DebugModelsServiceProvider.php(19): App\\Providers\\DebugModelsServiceProvider->scanModels('DebugModels/')
+#4 /app/vendor/laravel/lumen-framework/src/Application.php(223): App\\Providers\\DebugModelsServiceProvider->__construct(Object(Egal\\Core\\Application))
+#5 /app/bootstrap/app.php(72): Laravel\\Lumen\\Application->register('App\\\\Providers\\\\D...')
+#6 /app/artisan(18): require('/app/bootstrap/...')
+#7 {main}
+"}
+[2022-05-04 01:54:28] production.ERROR: scandir(DebugModels/): Failed to open directory: No such file or directory {"exception":"[object] (ErrorException(code: 0): scandir(DebugModels/): Failed to open directory: No such file or directory at /app/app/Providers/DebugModelsServiceProvider.php:42)
+[stacktrace]
+#0 /app/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(47): Laravel\\Lumen\\Application->handleError(2, 'scandir(DebugMo...', '/app/app/Provid...', 42)
+#1 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'scandir(DebugMo...', '/app/app/Provid...', 42)
+#2 /app/app/Providers/DebugModelsServiceProvider.php(42): scandir('DebugModels/')
+#3 /app/app/Providers/DebugModelsServiceProvider.php(19): App\\Providers\\DebugModelsServiceProvider->scanModels('DebugModels/')
+#4 /app/vendor/laravel/lumen-framework/src/Application.php(223): App\\Providers\\DebugModelsServiceProvider->__construct(Object(Egal\\Core\\Application))
+#5 /app/bootstrap/app.php(72): Laravel\\Lumen\\Application->register('App\\\\Providers\\\\D...')
+#6 /app/artisan(18): require('/app/bootstrap/...')
+#7 {main}
+"}
+[2022-05-04 01:54:30] production.ERROR: scandir(DebugModels/): Failed to open directory: No such file or directory {"exception":"[object] (ErrorException(code: 0): scandir(DebugModels/): Failed to open directory: No such file or directory at /app/app/Providers/DebugModelsServiceProvider.php:42)
+[stacktrace]
+#0 /app/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(47): Laravel\\Lumen\\Application->handleError(2, 'scandir(DebugMo...', '/app/app/Provid...', 42)
+#1 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'scandir(DebugMo...', '/app/app/Provid...', 42)
+#2 /app/app/Providers/DebugModelsServiceProvider.php(42): scandir('DebugModels/')
+#3 /app/app/Providers/DebugModelsServiceProvider.php(19): App\\Providers\\DebugModelsServiceProvider->scanModels('DebugModels/')
+#4 /app/vendor/laravel/lumen-framework/src/Application.php(223): App\\Providers\\DebugModelsServiceProvider->__construct(Object(Egal\\Core\\Application))
+#5 /app/bootstrap/app.php(72): Laravel\\Lumen\\Application->register('App\\\\Providers\\\\D...')
+#6 /app/artisan(18): require('/app/bootstrap/...')
+#7 {main}
+"}
+[2022-05-04 02:11:07] production.ERROR: scandir(DebugModels/): Failed to open directory: No such file or directory {"exception":"[object] (ErrorException(code: 0): scandir(DebugModels/): Failed to open directory: No such file or directory at /app/app/Providers/DebugModelsServiceProvider.php:42)
+[stacktrace]
+#0 /app/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(47): Laravel\\Lumen\\Application->handleError(2, 'scandir(DebugMo...', '/app/app/Provid...', 42)
+#1 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'scandir(DebugMo...', '/app/app/Provid...', 42)
+#2 /app/app/Providers/DebugModelsServiceProvider.php(42): scandir('DebugModels/')
+#3 /app/app/Providers/DebugModelsServiceProvider.php(19): App\\Providers\\DebugModelsServiceProvider->scanModels('DebugModels/')
+#4 /app/vendor/laravel/lumen-framework/src/Application.php(223): App\\Providers\\DebugModelsServiceProvider->__construct(Object(Egal\\Core\\Application))
+#5 /app/bootstrap/app.php(72): Laravel\\Lumen\\Application->register('App\\\\Providers\\\\D...')
+#6 /app/artisan(18): require('/app/bootstrap/...')
+#7 {main}
+"}
+[2022-05-04 02:11:08] production.ERROR: scandir(DebugModels/): Failed to open directory: No such file or directory {"exception":"[object] (ErrorException(code: 0): scandir(DebugModels/): Failed to open directory: No such file or directory at /app/app/Providers/DebugModelsServiceProvider.php:42)
+[stacktrace]
+#0 /app/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(47): Laravel\\Lumen\\Application->handleError(2, 'scandir(DebugMo...', '/app/app/Provid...', 42)
+#1 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'scandir(DebugMo...', '/app/app/Provid...', 42)
+#2 /app/app/Providers/DebugModelsServiceProvider.php(42): scandir('DebugModels/')
+#3 /app/app/Providers/DebugModelsServiceProvider.php(19): App\\Providers\\DebugModelsServiceProvider->scanModels('DebugModels/')
+#4 /app/vendor/laravel/lumen-framework/src/Application.php(223): App\\Providers\\DebugModelsServiceProvider->__construct(Object(Egal\\Core\\Application))
+#5 /app/bootstrap/app.php(72): Laravel\\Lumen\\Application->register('App\\\\Providers\\\\D...')
+#6 /app/artisan(18): require('/app/bootstrap/...')
+#7 {main}
+"}
+[2022-05-04 02:43:46] production.INFO: Event App\Events\CreateUserEvent was fired with model: App\Models\User(Changes: , Dirty: )
+Serialized model:  [[]]
+[2022-05-04 02:43:46] production.INFO: Listener: App\Listeners\RegisterUserListener. Event: App\Events\CreateUserEvent
+[2022-05-04 02:44:58] production.INFO: Event App\Events\CreateUserEvent was fired with model: App\Models\User(Changes: , Dirty: )
+Serialized model:  [[]]
+[2022-05-04 02:44:58] production.INFO: Listener: App\Listeners\RegisterUserListener. Event: App\Events\CreateUserEvent
+[2022-05-04 02:47:37] production.INFO: Event App\Events\CreateUserEvent was fired with model: App\Models\User(Changes: , Dirty: )
+Serialized model:  [[]]
+[2022-05-04 02:47:37] production.INFO: Listener: App\Listeners\RegisterUserListener. Event: App\Events\CreateUserEvent
+[2022-05-04 02:50:12] production.INFO: Event App\Events\CreateUserEvent was fired with model: App\Models\User(Changes: , Dirty: )
+Serialized model:  [[]]
+[2022-05-04 02:50:12] production.INFO: Listener: App\Listeners\RegisterUserListener. Event: App\Events\CreateUserEvent
+[2022-05-04 02:50:43] production.INFO: Event App\Events\CreateUserEvent was fired with model: App\Models\User(Changes: , Dirty: )
+Serialized model:  [[]]
+[2022-05-04 02:51:18] production.INFO: Event App\Events\CreateUserEvent was fired with model: App\Models\User(Changes: , Dirty: )
+Serialized model:  [[]]
+[2022-05-04 02:51:18] production.INFO: Listener: App\Listeners\RegisterUserListener. Event: App\Events\CreateUserEvent
+[2022-05-04 03:18:18] production.INFO: Event App\Events\CreateUserEvent was fired with model: App\Models\User(Changes: , Dirty: )
+Serialized model:  [[]]
+[2022-05-04 03:19:16] production.INFO: Event App\Events\CreateUserEvent was fired with model: App\Models\User(Changes: , Dirty: )
+Serialized model:  [[]]
+[2022-05-04 03:19:16] production.INFO: Listener: App\Listeners\RegisterUserListener. Event: App\Events\CreateUserEvent
+[2022-05-04 03:20:39] production.INFO: Event App\Events\CreateUserEvent was fired with model: App\Models\User(Changes: , Dirty: )
+Serialized model:  [[]]
+[2022-05-04 03:20:39] production.INFO: Listener: App\Listeners\RegisterUserListener. Event: App\Events\CreateUserEvent
+[2022-05-04 04:33:25] production.INFO: Changes .
+[2022-05-04 04:33:25] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]
+[2022-05-04 04:35:09] production.INFO: Changes .
+[2022-05-04 04:35:09] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]
+[2022-05-04 04:41:48] production.INFO: Event [App\Events\CreateUserEvent] was fired with model [App\Models\User].
+[2022-05-04 04:41:48] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]
+[2022-05-04 04:42:00] production.INFO: Event [App\Events\CreateUserEvent] was fired with model [App\Models\User].
+[2022-05-04 04:42:00] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]
+[2022-05-04 04:42:26] production.INFO: Event [App\Events\CreateUserEvent] was fired with model [App\Models\User].gg
+[2022-05-04 04:42:26] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]
+[2022-05-04 04:43:08] production.INFO: Event [App\Events\CreateUserEvent] was fired with model [App\Models\User].
+gg
+[2022-05-04 04:43:08] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]
+[2022-05-04 04:44:42] production.INFO: Changes .
+[2022-05-04 04:44:42] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]
+[2022-05-04 04:44:42] production.INFO: Changes .
+[2022-05-04 04:44:42] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]
+[2022-05-04 04:46:25] production.INFO: Changes .
+[2022-05-04 04:46:25] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]
+
+[2022-05-04 04:47:35] production.INFO: Event [App\Events\CreateUserEvent] was fired with model [App\Models\User].
+Changes .Dirty  .
+[2022-05-04 04:47:35] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]
+[2022-05-04 04:53:50] production.INFO: Event [App\Events\CreateUserEvent] was fired with model [App\Models\User].
+[2022-05-04 04:53:50] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]
+[2022-05-04 04:54:39] production.INFO: Event [App\Events\CreateUserEvent] was fired with model [App\Models\User]. [Dirty: true]
+[2022-05-04 04:54:39] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]
+[2022-05-04 04:55:18] production.INFO: Event [App\Events\CreateUserEvent] was fired with model [App\Models\User]. [Dirty: true]
+[2022-05-04 04:55:18] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]
+
+[2022-05-04 05:00:57] production.INFO: Event [App\Events\CreateUserEvent] was fired with model [App\Models\User]. [Dirty: true]. Serialized model [[]]  
+[2022-05-04 05:00:57] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]  
+[2022-05-04 05:02:27] production.INFO: Event [App\Events\CreateUserEvent] was fired with model [App\Models\User]. [Dirty: true]. Serialized model [[]]  
+[2022-05-04 05:02:27] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]  
+[2022-05-04 05:16:38] production.INFO: Event [App\Events\CreateUserEvent] was fired with model [App\DebugModels\UserDebug]. [Dirty: true]. Serialized model [[]]  
+[2022-05-04 05:16:38] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]  
+[2022-05-04 05:34:03] production.ERROR: scandir(/app/DebugModels/): Failed to open directory: No such file or directory {"exception":"[object] (ErrorException(code: 0): scandir(/app/DebugModels/): Failed to open directory: No such file or directory at /app/app/Providers/DebugModelsServiceProvider.php:43)
+[stacktrace]
+#0 /app/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(47): Laravel\\Lumen\\Application->handleError(2, 'scandir(/app/De...', '/app/app/Provid...', 43)
+#1 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'scandir(/app/De...', '/app/app/Provid...', 43)
+#2 /app/app/Providers/DebugModelsServiceProvider.php(43): scandir('/app/DebugModel...')
+#3 /app/app/Providers/DebugModelsServiceProvider.php(19): App\\Providers\\DebugModelsServiceProvider->scanModels('/app/DebugModel...')
+#4 /app/vendor/laravel/lumen-framework/src/Application.php(223): App\\Providers\\DebugModelsServiceProvider->__construct(Object(Egal\\Core\\Application))
+#5 /app/bootstrap/app.php(72): Laravel\\Lumen\\Application->register('App\\\\Providers\\\\D...')
+#6 /app/artisan(18): require('/app/bootstrap/...')
+#7 {main}
+"} 
+[2022-05-04 05:34:05] production.ERROR: scandir(/app/DebugModels/): Failed to open directory: No such file or directory {"exception":"[object] (ErrorException(code: 0): scandir(/app/DebugModels/): Failed to open directory: No such file or directory at /app/app/Providers/DebugModelsServiceProvider.php:43)
+[stacktrace]
+#0 /app/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(47): Laravel\\Lumen\\Application->handleError(2, 'scandir(/app/De...', '/app/app/Provid...', 43)
+#1 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'scandir(/app/De...', '/app/app/Provid...', 43)
+#2 /app/app/Providers/DebugModelsServiceProvider.php(43): scandir('/app/DebugModel...')
+#3 /app/app/Providers/DebugModelsServiceProvider.php(19): App\\Providers\\DebugModelsServiceProvider->scanModels('/app/DebugModel...')
+#4 /app/vendor/laravel/lumen-framework/src/Application.php(223): App\\Providers\\DebugModelsServiceProvider->__construct(Object(Egal\\Core\\Application))
+#5 /app/bootstrap/app.php(72): Laravel\\Lumen\\Application->register('App\\\\Providers\\\\D...')
+#6 /app/artisan(18): require('/app/bootstrap/...')
+#7 {main}
+"} 
+[2022-05-04 05:47:24] production.ERROR: Cannot assign null to property App\Providers\DebugModelsServiceProvider::$debugMode of type bool {"exception":"[object] (TypeError(code: 0): Cannot assign null to property App\\Providers\\DebugModelsServiceProvider::$debugMode of type bool at /app/app/Providers/DebugModelsServiceProvider.php:29)
+[stacktrace]
+#0 /app/app/Providers/DebugModelsServiceProvider.php(18): App\\Providers\\DebugModelsServiceProvider->setDebugModel()
+#1 /app/vendor/laravel/lumen-framework/src/Application.php(223): App\\Providers\\DebugModelsServiceProvider->__construct(Object(Egal\\Core\\Application))
+#2 /app/bootstrap/app.php(72): Laravel\\Lumen\\Application->register('App\\\\Providers\\\\D...')
+#3 /app/artisan(18): require('/app/bootstrap/...')
+#4 {main}
+"} 
+[2022-05-04 05:47:26] production.ERROR: Cannot assign null to property App\Providers\DebugModelsServiceProvider::$debugMode of type bool {"exception":"[object] (TypeError(code: 0): Cannot assign null to property App\\Providers\\DebugModelsServiceProvider::$debugMode of type bool at /app/app/Providers/DebugModelsServiceProvider.php:29)
+[stacktrace]
+#0 /app/app/Providers/DebugModelsServiceProvider.php(18): App\\Providers\\DebugModelsServiceProvider->setDebugModel()
+#1 /app/vendor/laravel/lumen-framework/src/Application.php(223): App\\Providers\\DebugModelsServiceProvider->__construct(Object(Egal\\Core\\Application))
+#2 /app/bootstrap/app.php(72): Laravel\\Lumen\\Application->register('App\\\\Providers\\\\D...')
+#3 /app/artisan(18): require('/app/bootstrap/...')
+#4 {main}
+"} 
+[2022-05-04 05:48:40] production.ERROR: scandir(DebugModels/): Failed to open directory: No such file or directory {"exception":"[object] (ErrorException(code: 0): scandir(DebugModels/): Failed to open directory: No such file or directory at /app/app/Providers/DebugModelsServiceProvider.php:45)
+[stacktrace]
+#0 /app/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(47): Laravel\\Lumen\\Application->handleError(2, 'scandir(DebugMo...', '/app/app/Provid...', 45)
+#1 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'scandir(DebugMo...', '/app/app/Provid...', 45)
+#2 /app/app/Providers/DebugModelsServiceProvider.php(45): scandir('DebugModels/')
+#3 /app/app/Providers/DebugModelsServiceProvider.php(19): App\\Providers\\DebugModelsServiceProvider->scanModels('DebugModels/')
+#4 /app/vendor/laravel/lumen-framework/src/Application.php(223): App\\Providers\\DebugModelsServiceProvider->__construct(Object(Egal\\Core\\Application))
+#5 /app/bootstrap/app.php(72): Laravel\\Lumen\\Application->register('App\\\\Providers\\\\D...')
+#6 /app/artisan(18): require('/app/bootstrap/...')
+#7 {main}
+"} 
+[2022-05-04 05:48:42] production.ERROR: scandir(DebugModels/): Failed to open directory: No such file or directory {"exception":"[object] (ErrorException(code: 0): scandir(DebugModels/): Failed to open directory: No such file or directory at /app/app/Providers/DebugModelsServiceProvider.php:45)
+[stacktrace]
+#0 /app/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(47): Laravel\\Lumen\\Application->handleError(2, 'scandir(DebugMo...', '/app/app/Provid...', 45)
+#1 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'scandir(DebugMo...', '/app/app/Provid...', 45)
+#2 /app/app/Providers/DebugModelsServiceProvider.php(45): scandir('DebugModels/')
+#3 /app/app/Providers/DebugModelsServiceProvider.php(19): App\\Providers\\DebugModelsServiceProvider->scanModels('DebugModels/')
+#4 /app/vendor/laravel/lumen-framework/src/Application.php(223): App\\Providers\\DebugModelsServiceProvider->__construct(Object(Egal\\Core\\Application))
+#5 /app/bootstrap/app.php(72): Laravel\\Lumen\\Application->register('App\\\\Providers\\\\D...')
+#6 /app/artisan(18): require('/app/bootstrap/...')
+#7 {main}
+"} 
+[2022-05-04 05:50:46] production.INFO: Event [App\Events\CreateUserEvent] was fired with model [App\DebugModels\UserDebug]. [Dirty: true]. Serialized model [[]]  
+[2022-05-04 05:50:46] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]  
+[2022-05-04 05:51:01] production.INFO: Event [App\Events\CreateUserEvent] was fired with model [App\DebugModels\UserDebug]. [Dirty: true]. Serialized model [[]]  
+[2022-05-04 05:51:01] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]  
+[2022-05-04 13:10:55] production.ERROR: stream_socket_client(): Unable to connect to tcp://project-rabbitmq:5672 (Connection refused) {"exception":"[object] (PhpAmqpLib\\Exception\\AMQPIOException(code: 0): stream_socket_client(): Unable to connect to tcp://project-rabbitmq:5672 (Connection refused) at /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108)
+[stacktrace]
+#0 /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(253): PhpAmqpLib\\Wire\\IO\\StreamIO->connect()
+#1 /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AMQPLazyConnection.php(12): PhpAmqpLib\\Connection\\AbstractConnection->connect()
+#2 /app/vendor/egal/framework/src/Core/Bus/RabbitMQBus.php(62): PhpAmqpLib\\Connection\\AMQPLazyConnection->channel()
+#3 /app/vendor/egal/framework/src/Core/Bus/BusCreator.php(23): Egal\\Core\\Bus\\RabbitMQBus->__construct(Array)
+#4 /app/vendor/egal/framework/src/Core/ServiceProvider.php(56): Egal\\Core\\Bus\\BusCreator::createBus()
+#5 /app/vendor/illuminate/container/Container.php(873): Egal\\Core\\ServiceProvider::Egal\\Core\\{closure}(Object(Egal\\Core\\Application), Array)
+#6 /app/vendor/illuminate/container/Container.php(758): Illuminate\\Container\\Container->build(Object(Closure))
+#7 /app/vendor/illuminate/container/Container.php(694): Illuminate\\Container\\Container->resolve('Egal\\\\Core\\\\Bus\\\\B...', Array)
+#8 /app/vendor/laravel/lumen-framework/src/Application.php(300): Illuminate\\Container\\Container->make('Egal\\\\Core\\\\Bus\\\\B...', Array)
+#9 /app/vendor/laravel/lumen-framework/src/helpers.php(42): Laravel\\Lumen\\Application->make('Egal\\\\Core\\\\Bus\\\\B...', Array)
+#10 /app/vendor/egal/framework/src/Core/Bus/Bus.php(28): app('Egal\\\\Core\\\\Bus\\\\B...')
+#11 /app/vendor/egal/framework/src/Core/Commands/EgalRunCommand.php(25): Egal\\Core\\Bus\\Bus::instance()
+#12 /app/vendor/illuminate/container/BoundMethod.php(36): Egal\\Core\\Commands\\EgalRunCommand->handle()
+#13 /app/vendor/illuminate/container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#14 /app/vendor/illuminate/container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#15 /app/vendor/illuminate/container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Egal\\Core\\Application), Array, Object(Closure))
+#16 /app/vendor/illuminate/container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Egal\\Core\\Application), Array, Array, NULL)
+#17 /app/vendor/illuminate/console/Command.php(136): Illuminate\\Container\\Container->call(Array)
+#18 /app/vendor/egal/framework/src/Core/Commands/EgalRunCommand.php(42): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#19 /app/vendor/symfony/console/Command/Command.php(298): Egal\\Core\\Commands\\EgalRunCommand->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#20 /app/vendor/illuminate/console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#21 /app/vendor/symfony/console/Application.php(1015): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#22 /app/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Egal\\Core\\Commands\\EgalRunCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#23 /app/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 /app/vendor/illuminate/console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 /app/vendor/laravel/lumen-framework/src/Console/Kernel.php(116): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /app/artisan(35): Laravel\\Lumen\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 {main}
+"} 
+[2022-05-04 13:41:23] production.INFO: Event [App\Events\CreateUserEvent] was fired with model [App\Models\User]. [Dirty: true]. Serialized model [[]]  
+[2022-05-04 13:41:23] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]  
+[2022-05-04 13:41:49] production.ERROR: Class "\app\app\DebugModels\UserDebug" does not exist {"exception":"[object] (ReflectionException(code: -1): Class \"\\app\\app\\DebugModels\\UserDebug\" does not exist at /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php:71)
+[stacktrace]
+#0 /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php(71): ReflectionClass->__construct('\\\\app\\\\app\\\\DebugM...')
+#1 /app/vendor/egal/framework/src/Model/ModelManager.php(69): Egal\\Model\\Metadata\\ModelMetadata->__construct('\\\\app\\\\app\\\\DebugM...')
+#2 /app/app/Providers/DebugModelsServiceProvider.php(65): Egal\\Model\\ModelManager::loadModel('\\\\app\\\\app\\\\DebugM...')
+#3 /app/vendor/laravel/lumen-framework/src/Application.php(233): App\\Providers\\DebugModelsServiceProvider->register()
+#4 /app/bootstrap/app.php(72): Laravel\\Lumen\\Application->register(Object(App\\Providers\\DebugModelsServiceProvider))
+#5 /app/artisan(18): require('/app/bootstrap/...')
+#6 {main}
+"} 
+[2022-05-04 13:41:52] production.ERROR: Class "\app\app\DebugModels\UserDebug" does not exist {"exception":"[object] (ReflectionException(code: -1): Class \"\\app\\app\\DebugModels\\UserDebug\" does not exist at /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php:71)
+[stacktrace]
+#0 /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php(71): ReflectionClass->__construct('\\\\app\\\\app\\\\DebugM...')
+#1 /app/vendor/egal/framework/src/Model/ModelManager.php(69): Egal\\Model\\Metadata\\ModelMetadata->__construct('\\\\app\\\\app\\\\DebugM...')
+#2 /app/app/Providers/DebugModelsServiceProvider.php(65): Egal\\Model\\ModelManager::loadModel('\\\\app\\\\app\\\\DebugM...')
+#3 /app/vendor/laravel/lumen-framework/src/Application.php(233): App\\Providers\\DebugModelsServiceProvider->register()
+#4 /app/bootstrap/app.php(72): Laravel\\Lumen\\Application->register(Object(App\\Providers\\DebugModelsServiceProvider))
+#5 /app/artisan(18): require('/app/bootstrap/...')
+#6 {main}
+"} 
+[2022-05-04 13:43:50] production.ERROR: scandir(/app/DebugModels/): Failed to open directory: No such file or directory {"exception":"[object] (ErrorException(code: 0): scandir(/app/DebugModels/): Failed to open directory: No such file or directory at /app/app/Providers/DebugModelsServiceProvider.php:30)
+[stacktrace]
+#0 /app/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(47): Laravel\\Lumen\\Application->handleError(2, 'scandir(/app/De...', '/app/app/Provid...', 30)
+#1 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'scandir(/app/De...', '/app/app/Provid...', 30)
+#2 /app/app/Providers/DebugModelsServiceProvider.php(30): scandir('/app/DebugModel...')
+#3 /app/app/Providers/DebugModelsServiceProvider.php(17): App\\Providers\\DebugModelsServiceProvider->scanModels('/app/DebugModel...')
+#4 /app/vendor/laravel/lumen-framework/src/Application.php(223): App\\Providers\\DebugModelsServiceProvider->__construct(Object(Egal\\Core\\Application))
+#5 /app/bootstrap/app.php(72): Laravel\\Lumen\\Application->register('App\\\\Providers\\\\D...')
+#6 /app/artisan(18): require('/app/bootstrap/...')
+#7 {main}
+"} 
+[2022-05-04 13:43:52] production.ERROR: scandir(/app/DebugModels/): Failed to open directory: No such file or directory {"exception":"[object] (ErrorException(code: 0): scandir(/app/DebugModels/): Failed to open directory: No such file or directory at /app/app/Providers/DebugModelsServiceProvider.php:30)
+[stacktrace]
+#0 /app/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(47): Laravel\\Lumen\\Application->handleError(2, 'scandir(/app/De...', '/app/app/Provid...', 30)
+#1 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'scandir(/app/De...', '/app/app/Provid...', 30)
+#2 /app/app/Providers/DebugModelsServiceProvider.php(30): scandir('/app/DebugModel...')
+#3 /app/app/Providers/DebugModelsServiceProvider.php(17): App\\Providers\\DebugModelsServiceProvider->scanModels('/app/DebugModel...')
+#4 /app/vendor/laravel/lumen-framework/src/Application.php(223): App\\Providers\\DebugModelsServiceProvider->__construct(Object(Egal\\Core\\Application))
+#5 /app/bootstrap/app.php(72): Laravel\\Lumen\\Application->register('App\\\\Providers\\\\D...')
+#6 /app/artisan(18): require('/app/bootstrap/...')
+#7 {main}
+"} 
+[2022-05-04 13:45:03] production.ERROR: Class "\app\app\DebugModels\UserDebug" does not exist {"exception":"[object] (ReflectionException(code: -1): Class \"\\app\\app\\DebugModels\\UserDebug\" does not exist at /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php:71)
+[stacktrace]
+#0 /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php(71): ReflectionClass->__construct('\\\\app\\\\app\\\\DebugM...')
+#1 /app/vendor/egal/framework/src/Model/ModelManager.php(69): Egal\\Model\\Metadata\\ModelMetadata->__construct('\\\\app\\\\app\\\\DebugM...')
+#2 /app/app/Providers/DebugModelsServiceProvider.php(67): Egal\\Model\\ModelManager::loadModel('\\\\app\\\\app\\\\DebugM...')
+#3 /app/vendor/laravel/lumen-framework/src/Application.php(233): App\\Providers\\DebugModelsServiceProvider->register()
+#4 /app/bootstrap/app.php(72): Laravel\\Lumen\\Application->register(Object(App\\Providers\\DebugModelsServiceProvider))
+#5 /app/artisan(18): require('/app/bootstrap/...')
+#6 {main}
+"} 
+[2022-05-04 13:45:06] production.ERROR: Class "\app\app\DebugModels\UserDebug" does not exist {"exception":"[object] (ReflectionException(code: -1): Class \"\\app\\app\\DebugModels\\UserDebug\" does not exist at /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php:71)
+[stacktrace]
+#0 /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php(71): ReflectionClass->__construct('\\\\app\\\\app\\\\DebugM...')
+#1 /app/vendor/egal/framework/src/Model/ModelManager.php(69): Egal\\Model\\Metadata\\ModelMetadata->__construct('\\\\app\\\\app\\\\DebugM...')
+#2 /app/app/Providers/DebugModelsServiceProvider.php(67): Egal\\Model\\ModelManager::loadModel('\\\\app\\\\app\\\\DebugM...')
+#3 /app/vendor/laravel/lumen-framework/src/Application.php(233): App\\Providers\\DebugModelsServiceProvider->register()
+#4 /app/bootstrap/app.php(72): Laravel\\Lumen\\Application->register(Object(App\\Providers\\DebugModelsServiceProvider))
+#5 /app/artisan(18): require('/app/bootstrap/...')
+#6 {main}
+"} 
+[2022-05-04 13:46:37] production.ERROR: Class "\app\app\DebugModels\UserDebug" does not exist {"exception":"[object] (ReflectionException(code: -1): Class \"\\app\\app\\DebugModels\\UserDebug\" does not exist at /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php:71)
+[stacktrace]
+#0 /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php(71): ReflectionClass->__construct('\\\\app\\\\app\\\\DebugM...')
+#1 /app/vendor/egal/framework/src/Model/ModelManager.php(69): Egal\\Model\\Metadata\\ModelMetadata->__construct('\\\\app\\\\app\\\\DebugM...')
+#2 /app/app/Providers/DebugModelsServiceProvider.php(66): Egal\\Model\\ModelManager::loadModel('\\\\app\\\\app\\\\DebugM...')
+#3 /app/vendor/laravel/lumen-framework/src/Application.php(233): App\\Providers\\DebugModelsServiceProvider->register()
+#4 /app/bootstrap/app.php(72): Laravel\\Lumen\\Application->register(Object(App\\Providers\\DebugModelsServiceProvider))
+#5 /app/artisan(18): require('/app/bootstrap/...')
+#6 {main}
+"} 
+[2022-05-04 13:46:40] production.ERROR: Class "\app\app\DebugModels\UserDebug" does not exist {"exception":"[object] (ReflectionException(code: -1): Class \"\\app\\app\\DebugModels\\UserDebug\" does not exist at /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php:71)
+[stacktrace]
+#0 /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php(71): ReflectionClass->__construct('\\\\app\\\\app\\\\DebugM...')
+#1 /app/vendor/egal/framework/src/Model/ModelManager.php(69): Egal\\Model\\Metadata\\ModelMetadata->__construct('\\\\app\\\\app\\\\DebugM...')
+#2 /app/app/Providers/DebugModelsServiceProvider.php(66): Egal\\Model\\ModelManager::loadModel('\\\\app\\\\app\\\\DebugM...')
+#3 /app/vendor/laravel/lumen-framework/src/Application.php(233): App\\Providers\\DebugModelsServiceProvider->register()
+#4 /app/bootstrap/app.php(72): Laravel\\Lumen\\Application->register(Object(App\\Providers\\DebugModelsServiceProvider))
+#5 /app/artisan(18): require('/app/bootstrap/...')
+#6 {main}
+"} 
+[2022-05-04 13:47:53] production.ERROR: Class "\app\app\DebugModels\UserDebug" does not exist {"exception":"[object] (ReflectionException(code: -1): Class \"\\app\\app\\DebugModels\\UserDebug\" does not exist at /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php:71)
+[stacktrace]
+#0 /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php(71): ReflectionClass->__construct('\\\\app\\\\app\\\\DebugM...')
+#1 /app/vendor/egal/framework/src/Model/ModelManager.php(69): Egal\\Model\\Metadata\\ModelMetadata->__construct('\\\\app\\\\app\\\\DebugM...')
+#2 /app/app/Providers/DebugModelsServiceProvider.php(66): Egal\\Model\\ModelManager::loadModel('\\\\app\\\\app\\\\DebugM...')
+#3 /app/vendor/laravel/lumen-framework/src/Application.php(233): App\\Providers\\DebugModelsServiceProvider->register()
+#4 /app/bootstrap/app.php(72): Laravel\\Lumen\\Application->register(Object(App\\Providers\\DebugModelsServiceProvider))
+#5 /app/artisan(18): require('/app/bootstrap/...')
+#6 {main}
+"} 
+[2022-05-04 13:47:56] production.ERROR: Class "\app\app\DebugModels\UserDebug" does not exist {"exception":"[object] (ReflectionException(code: -1): Class \"\\app\\app\\DebugModels\\UserDebug\" does not exist at /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php:71)
+[stacktrace]
+#0 /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php(71): ReflectionClass->__construct('\\\\app\\\\app\\\\DebugM...')
+#1 /app/vendor/egal/framework/src/Model/ModelManager.php(69): Egal\\Model\\Metadata\\ModelMetadata->__construct('\\\\app\\\\app\\\\DebugM...')
+#2 /app/app/Providers/DebugModelsServiceProvider.php(66): Egal\\Model\\ModelManager::loadModel('\\\\app\\\\app\\\\DebugM...')
+#3 /app/vendor/laravel/lumen-framework/src/Application.php(233): App\\Providers\\DebugModelsServiceProvider->register()
+#4 /app/bootstrap/app.php(72): Laravel\\Lumen\\Application->register(Object(App\\Providers\\DebugModelsServiceProvider))
+#5 /app/artisan(18): require('/app/bootstrap/...')
+#6 {main}
+"} 
+[2022-05-04 13:48:30] production.ERROR: Class "\app\app\DebugModels\UserDebug" does not exist {"exception":"[object] (ReflectionException(code: -1): Class \"\\app\\app\\DebugModels\\UserDebug\" does not exist at /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php:71)
+[stacktrace]
+#0 /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php(71): ReflectionClass->__construct('\\\\app\\\\app\\\\DebugM...')
+#1 /app/vendor/egal/framework/src/Model/ModelManager.php(69): Egal\\Model\\Metadata\\ModelMetadata->__construct('\\\\app\\\\app\\\\DebugM...')
+#2 /app/app/Providers/DebugModelsServiceProvider.php(67): Egal\\Model\\ModelManager::loadModel('\\\\app\\\\app\\\\DebugM...')
+#3 /app/vendor/laravel/lumen-framework/src/Application.php(233): App\\Providers\\DebugModelsServiceProvider->register()
+#4 /app/bootstrap/app.php(72): Laravel\\Lumen\\Application->register(Object(App\\Providers\\DebugModelsServiceProvider))
+#5 /app/artisan(18): require('/app/bootstrap/...')
+#6 {main}
+"} 
+[2022-05-04 13:48:32] production.ERROR: Class "\app\app\DebugModels\UserDebug" does not exist {"exception":"[object] (ReflectionException(code: -1): Class \"\\app\\app\\DebugModels\\UserDebug\" does not exist at /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php:71)
+[stacktrace]
+#0 /app/vendor/egal/framework/src/Model/Metadata/ModelMetadata.php(71): ReflectionClass->__construct('\\\\app\\\\app\\\\DebugM...')
+#1 /app/vendor/egal/framework/src/Model/ModelManager.php(69): Egal\\Model\\Metadata\\ModelMetadata->__construct('\\\\app\\\\app\\\\DebugM...')
+#2 /app/app/Providers/DebugModelsServiceProvider.php(67): Egal\\Model\\ModelManager::loadModel('\\\\app\\\\app\\\\DebugM...')
+#3 /app/vendor/laravel/lumen-framework/src/Application.php(233): App\\Providers\\DebugModelsServiceProvider->register()
+#4 /app/bootstrap/app.php(72): Laravel\\Lumen\\Application->register(Object(App\\Providers\\DebugModelsServiceProvider))
+#5 /app/artisan(18): require('/app/bootstrap/...')
+#6 {main}
+"} 
+[2022-05-04 13:49:50] production.INFO: Event [App\Events\CreateUserEvent] was fired with model [App\DebugModels\UserDebug]. [Dirty: true]. Serialized model [[]]  
+[2022-05-04 13:49:50] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]  
+[2022-05-04 13:51:05] production.INFO: Event [App\Events\CreateUserEvent] was fired with model [App\DebugModels\UserDebug]. [Dirty: true]. Serialized model [[]]  
+[2022-05-04 13:51:05] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]  
+[2022-05-04 13:51:13] production.INFO: Event [App\Events\CreateUserEvent] was fired with model [App\Models\User]. [Dirty: true]. Serialized model [[]]  
+[2022-05-04 13:51:13] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]  
+[2022-05-04 13:51:18] production.INFO: Event [App\Events\CreateUserEvent] was fired with model [App\Models\User]. [Dirty: true]. Serialized model [[]]  
+[2022-05-04 13:51:18] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]  
+[2022-05-04 13:51:29] production.INFO: Event [App\Events\CreateUserEvent] was fired with model [App\DebugModels\UserDebug]. [Dirty: true]. Serialized model [[]]  
+[2022-05-04 13:51:29] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]  
+[2022-05-04 13:55:05] production.INFO: Event [App\Events\CreateUserEvent] was fired with model [App\DebugModels\UserDebug]. [Dirty: true]. Serialized model [[]]  
+[2022-05-04 13:55:05] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]  
+[2022-05-04 13:55:58] production.INFO: Event [App\Events\CreateUserEvent] was fired with model [App\DebugModels\UserDebug]. [Dirty: true]. Serialized model [[]]  
+[2022-05-04 13:55:58] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]  
+[2022-05-04 13:56:03] production.INFO: Event [App\Events\CreateUserEvent] was fired with model [App\DebugModels\UserUsDebug]. [Dirty: true]. Serialized model [[]]  
+[2022-05-04 13:56:03] production.INFO: Listener [App\Listeners\RegisterUserListener] event [App\Events\CreateUserEvent]  
