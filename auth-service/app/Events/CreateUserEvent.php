@@ -2,9 +2,9 @@
 
 namespace App\Events;
 
-use App\Helpers\AbstractEvent;
-use App\Helpers\Session;
+use MrRouOne\Helpers\Session;
 use App\Models\User;
+use MrRouOne\Helpers\AbstractEvent;
 
 class CreateUserEvent extends AbstractEvent
 {

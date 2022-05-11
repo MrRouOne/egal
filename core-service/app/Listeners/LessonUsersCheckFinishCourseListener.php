@@ -2,9 +2,9 @@
 
 namespace App\Listeners;
 
-use App\Helpers\AbstractEvent;
-use App\Helpers\AbstractListener;
-use App\Helpers\ValidateHelper;
+use MrRouOne\Helpers\AbstractEvent;
+use MrRouOne\Helpers\AbstractListener;
+use MrRouOne\Helpers\ValidateHelper;
 use App\Models\Courses;
 use App\Models\Lessons;
 use App\Rules\EndDateRule;

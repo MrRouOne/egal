@@ -2,7 +2,7 @@
 
 namespace App\Events;
 
-use App\Helpers\AbstractEvent;
+use MrRouOne\Helpers\AbstractEvent;
 use App\Models\LessonUsers;
 
 class LessonUsersUpdatedEvent extends AbstractEvent

@@ -3,8 +3,8 @@
 namespace App\Listeners;
 
 use App\Exceptions\ForbiddenFieldsException;
-use App\Helpers\AbstractEvent;
-use App\Helpers\AbstractListener;
+use MrRouOne\Helpers\AbstractEvent;
+use MrRouOne\Helpers\AbstractListener;
 use App\Models\LessonUsers;
 
 class LessonUsersCheckFieldsListener extends AbstractListener

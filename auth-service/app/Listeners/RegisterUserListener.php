@@ -3,10 +3,10 @@
 namespace App\Listeners;
 
 use App\Exceptions\EmptyPasswordException;
-use App\Helpers\AbstractEvent;
-use App\Helpers\AbstractListener;
+use MrRouOne\Helpers\AbstractEvent;
+use MrRouOne\Helpers\AbstractListener;
 use Egal\Model\Exceptions\ValidateException;
-use App\Helpers\ValidateHelper;
+use MrRouOne\Helpers\ValidateHelper;
 use Illuminate\Support\Str;
 use Egal\Core\Communication\Request;
 

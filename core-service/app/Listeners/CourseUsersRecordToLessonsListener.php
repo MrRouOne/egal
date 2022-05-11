@@ -2,8 +2,8 @@
 
 namespace App\Listeners;
 
-use App\Helpers\AbstractEvent;
-use App\Helpers\AbstractListener;
+use MrRouOne\Helpers\AbstractEvent;
+use MrRouOne\Helpers\AbstractListener;
 use App\Models\Lessons;
 use App\Models\LessonUsers;
 

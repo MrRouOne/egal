@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "903f679bfa15f37c0084177ab433a805",
+    "content-hash": "73e09c4d397943de5c033ddd33f93d5a",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -58,16 +58,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.222.8",
+            "version": "3.222.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "c0344f5d8b1fa3238f96dcc60ff4edbeabbffcae"
+                "reference": "cb1db65be035cc90de1019391bc3a57ca3cb1762"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/c0344f5d8b1fa3238f96dcc60ff4edbeabbffcae",
-                "reference": "c0344f5d8b1fa3238f96dcc60ff4edbeabbffcae",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/cb1db65be035cc90de1019391bc3a57ca3cb1762",
+                "reference": "cb1db65be035cc90de1019391bc3a57ca3cb1762",
                 "shasum": ""
             },
             "require": {
@@ -143,9 +143,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.222.8"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.222.9"
             },
-            "time": "2022-05-09T18:17:25+00:00"
+            "time": "2022-05-10T18:14:43+00:00"
         },
         {
             "name": "brick/math",
@@ -6816,6 +6816,68 @@
             "time": "2022-01-20T13:18:17+00:00"
         },
         {
+            "name": "mrrouone/debugmodels",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MrRouOne/debugmodels.git",
+                "reference": "90d0a54982fb60db2697759569897c35d7acc9e7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MrRouOne/debugmodels/zipball/90d0a54982fb60db2697759569897c35d7acc9e7",
+                "reference": "90d0a54982fb60db2697759569897c35d7acc9e7",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MrRouOne\\DebugModels\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "support": {
+                "issues": "https://github.com/MrRouOne/debugmodels/issues",
+                "source": "https://github.com/MrRouOne/debugmodels/tree/master"
+            },
+            "time": "2022-05-11T06:02:40+00:00"
+        },
+        {
+            "name": "mrrouone/helpers",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MrRouOne/helpers.git",
+                "reference": "568d329f7abe8f8b974a6dd92cf18ead05124f15"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MrRouOne/helpers/zipball/568d329f7abe8f8b974a6dd92cf18ead05124f15",
+                "reference": "568d329f7abe8f8b974a6dd92cf18ead05124f15",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MrRouOne\\Helpers\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "support": {
+                "issues": "https://github.com/MrRouOne/helpers/issues",
+                "source": "https://github.com/MrRouOne/helpers/tree/master"
+            },
+            "time": "2022-05-11T04:25:53+00:00"
+        },
+        {
             "name": "myclabs/deep-copy",
             "version": "1.11.0",
             "source": {
@@ -8546,7 +8608,10 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "mrrouone/debugmodels": 20,
+        "mrrouone/helpers": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
@@ -8554,5 +8619,5 @@
         "ext-json": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }

@@ -1,8 +1,8 @@
-[2022-04-23 12:12:52] production.ERROR: stream_socket_client(): Unable to connect to tcp://project-rabbitmq:5672 (Connection refused) {"exception":"[object] (PhpAmqpLib\\Exception\\AMQPIOException(code: 0): stream_socket_client(): Unable to connect to tcp://project-rabbitmq:5672 (Connection refused) at /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108)
+[2022-05-11 04:15:20] production.ERROR: stream_socket_client(): Unable to connect to tcp://project-rabbitmq:5672 (Connection refused) {"exception":"[object] (PhpAmqpLib\\Exception\\AMQPIOException(code: 0): stream_socket_client(): Unable to connect to tcp://project-rabbitmq:5672 (Connection refused) at /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108)
 [stacktrace]
 #0 /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(253): PhpAmqpLib\\Wire\\IO\\StreamIO->connect()
 #1 /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AMQPLazyConnection.php(12): PhpAmqpLib\\Connection\\AbstractConnection->connect()
-#2 /app/vendor/egal/framework/src/Core/Bus/RabbitMQBus.php(62): PhpAmqpLib\\Connection\\AMQPLazyConnection->channel()
+#2 /app/vendor/egal/framework/src/Core/Bus/RabbitMQBus.php(61): PhpAmqpLib\\Connection\\AMQPLazyConnection->channel()
 #3 /app/vendor/egal/framework/src/Core/Bus/BusCreator.php(23): Egal\\Core\\Bus\\RabbitMQBus->__construct(Array)
 #4 /app/vendor/egal/framework/src/Core/ServiceProvider.php(56): Egal\\Core\\Bus\\BusCreator::createBus()
 #5 /app/vendor/illuminate/container/Container.php(873): Egal\\Core\\ServiceProvider::Egal\\Core\\{closure}(Object(Egal\\Core\\Application), Array)
@@ -29,57 +29,11 @@
 #26 /app/artisan(35): Laravel\\Lumen\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #27 {main}
 "} 
-[2022-04-23 12:20:58] production.ERROR: Class "PhpAmqpLib\Exception\AMQPConnectionClosedException" not found {"exception":"[object] (Error(code: 0): Class \"PhpAmqpLib\\Exception\\AMQPConnectionClosedException\" not found at /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:235)
-[stacktrace]
-#0 /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(408): PhpAmqpLib\\Wire\\IO\\StreamIO->write('\\x01\\x00\\x01\\x00\\x00\\x00\\v\\x00\\x14\\x00(\\x00\\x00\\x00\\x00...')
-#1 /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(536): PhpAmqpLib\\Connection\\AbstractConnection->write('\\x01\\x00\\x01\\x00\\x00\\x00\\v\\x00\\x14\\x00(\\x00\\x00\\x00\\x00...')
-#2 /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php(248): PhpAmqpLib\\Connection\\AbstractConnection->send_channel_method_frame(1, Array, Object(PhpAmqpLib\\Wire\\AMQPWriter))
-#3 /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AMQPChannel.php(198): PhpAmqpLib\\Channel\\AbstractChannel->send_method_frame(Array, Object(PhpAmqpLib\\Wire\\AMQPWriter))
-#4 /app/vendor/egal/framework/src/Core/Bus/RabbitMQBus.php(297): PhpAmqpLib\\Channel\\AMQPChannel->close()
-#5 /app/vendor/egal/framework/src/Core/Bus/RabbitMQBus.php(108): Egal\\Core\\Bus\\RabbitMQBus->__call('close', Array)
-#6 /app/vendor/egal/framework/src/Core/Commands/EgalRunCommand.php(32): Egal\\Core\\Bus\\RabbitMQBus->stopProcessingMessages()
-#7 /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPConnectionClosedException.php(8): Egal\\Core\\Commands\\EgalRunCommand->stop(15, Array)
-#8 /app/vendor/composer/ClassLoader.php(571): include('/app/vendor/php...')
-#9 /app/vendor/composer/ClassLoader.php(428): Composer\\Autoload\\includeFile('/app/vendor/com...')
-#10 /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php(266): Composer\\Autoload\\ClassLoader->loadClass('PhpAmqpLib\\\\Exce...')
-#11 /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(408): PhpAmqpLib\\Wire\\IO\\StreamIO->write('\\x01\\x00\\x00\\x00\\x00\\x00\\x04\\x00\
-\\x003\\xCE')
-#12 /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(536): PhpAmqpLib\\Connection\\AbstractConnection->write('\\x01\\x00\\x00\\x00\\x00\\x00\\x04\\x00\
-\\x003\\xCE')
-#13 /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php(248): PhpAmqpLib\\Connection\\AbstractConnection->send_channel_method_frame(0, Array, '')
-#14 /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(788): PhpAmqpLib\\Channel\\AbstractChannel->send_method_frame(Array)
-#15 /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(777): PhpAmqpLib\\Connection\\AbstractConnection->x_close_ok()
-#16 [internal function]: PhpAmqpLib\\Connection\\AbstractConnection->connection_close(Object(PhpAmqpLib\\Wire\\AMQPReader))
-#17 /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php(217): call_user_func(Array, Object(PhpAmqpLib\\Wire\\AMQPReader))
-#18 /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php(374): PhpAmqpLib\\Channel\\AbstractChannel->dispatch('10,50', '\\x01@KCONNECTION_F...', NULL)
-#19 /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(696): PhpAmqpLib\\Channel\\AbstractChannel->wait()
-#20 /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php(235): PhpAmqpLib\\Connection\\AbstractConnection->wait_channel(1, 0)
-#21 /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php(352): PhpAmqpLib\\Channel\\AbstractChannel->next_frame(0)
-#22 /app/vendor/egal/framework/src/Core/Bus/RabbitMQBus.php(297): PhpAmqpLib\\Channel\\AbstractChannel->wait()
-#23 /app/vendor/egal/framework/src/Core/Bus/RabbitMQBus.php(102): Egal\\Core\\Bus\\RabbitMQBus->__call('wait', Array)
-#24 /app/vendor/egal/framework/src/Core/Commands/EgalRunCommand.php(26): Egal\\Core\\Bus\\RabbitMQBus->processMessages()
-#25 /app/vendor/illuminate/container/BoundMethod.php(36): Egal\\Core\\Commands\\EgalRunCommand->handle()
-#26 /app/vendor/illuminate/container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#27 /app/vendor/illuminate/container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
-#28 /app/vendor/illuminate/container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Egal\\Core\\Application), Array, Object(Closure))
-#29 /app/vendor/illuminate/container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Egal\\Core\\Application), Array, Array, NULL)
-#30 /app/vendor/illuminate/console/Command.php(136): Illuminate\\Container\\Container->call(Array)
-#31 /app/vendor/egal/framework/src/Core/Commands/EgalRunCommand.php(42): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
-#32 /app/vendor/symfony/console/Command/Command.php(298): Egal\\Core\\Commands\\EgalRunCommand->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
-#33 /app/vendor/illuminate/console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
-#34 /app/vendor/symfony/console/Application.php(1015): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
-#35 /app/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Egal\\Core\\Commands\\EgalRunCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
-#36 /app/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
-#37 /app/vendor/illuminate/console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
-#38 /app/vendor/laravel/lumen-framework/src/Console/Kernel.php(116): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
-#39 /app/artisan(35): Laravel\\Lumen\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
-#40 {main}
-"} 
-[2022-04-23 12:22:03] production.ERROR: stream_socket_client(): Unable to connect to tcp://project-rabbitmq:5672 (Connection refused) {"exception":"[object] (PhpAmqpLib\\Exception\\AMQPIOException(code: 0): stream_socket_client(): Unable to connect to tcp://project-rabbitmq:5672 (Connection refused) at /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108)
+[2022-05-11 04:31:02] production.ERROR: stream_socket_client(): Unable to connect to tcp://project-rabbitmq:5672 (Connection refused) {"exception":"[object] (PhpAmqpLib\\Exception\\AMQPIOException(code: 0): stream_socket_client(): Unable to connect to tcp://project-rabbitmq:5672 (Connection refused) at /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:108)
 [stacktrace]
 #0 /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php(253): PhpAmqpLib\\Wire\\IO\\StreamIO->connect()
 #1 /app/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AMQPLazyConnection.php(12): PhpAmqpLib\\Connection\\AbstractConnection->connect()
-#2 /app/vendor/egal/framework/src/Core/Bus/RabbitMQBus.php(62): PhpAmqpLib\\Connection\\AMQPLazyConnection->channel()
+#2 /app/vendor/egal/framework/src/Core/Bus/RabbitMQBus.php(61): PhpAmqpLib\\Connection\\AMQPLazyConnection->channel()
 #3 /app/vendor/egal/framework/src/Core/Bus/BusCreator.php(23): Egal\\Core\\Bus\\RabbitMQBus->__construct(Array)
 #4 /app/vendor/egal/framework/src/Core/ServiceProvider.php(56): Egal\\Core\\Bus\\BusCreator::createBus()
 #5 /app/vendor/illuminate/container/Container.php(873): Egal\\Core\\ServiceProvider::Egal\\Core\\{closure}(Object(Egal\\Core\\Application), Array)
@@ -105,4 +59,57 @@
 #25 /app/vendor/laravel/lumen-framework/src/Console/Kernel.php(116): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #26 /app/artisan(35): Laravel\\Lumen\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #27 {main}
+"} 
+[2022-05-11 06:50:57] production.INFO: Event [App\Events\CourseUsersCreatingEvent] was fired with model [App\Models\CourseUsers]. [Dirty: true]. Serialized model [{"user_id":"bf628eb4-e5f4-4e11-bd43-d34fdf3510e4","course_id":6}]  
+[2022-05-11 06:50:57] production.INFO: Listener [App\Listeners\CourseUsersValidateUniqueListener] event [App\Events\CourseUsersCreatingEvent]  
+[2022-05-11 06:50:57] production.INFO: Listener [App\Listeners\CourseUsersCheckIdListener] event [App\Events\CourseUsersCreatingEvent]  
+[2022-05-11 06:50:57] production.INFO: Listener [App\Listeners\CourseUsersCheckCapacityListener] event [App\Events\CourseUsersCreatingEvent]  
+[2022-05-11 06:50:57] production.INFO: Event [App\Events\CourseUsersCreatedEvent] was fired with model [App\Models\CourseUsers]. [Dirty: true]. Serialized model [{"user_id":"bf628eb4-e5f4-4e11-bd43-d34fdf3510e4","course_id":6,"id":1}]  
+[2022-05-11 06:50:57] production.INFO: Listener [App\Listeners\CourseUsersUpdateCapacityListener] event [App\Events\CourseUsersCreatedEvent]  
+[2022-05-11 06:50:57] production.INFO: Listener [App\Listeners\CourseUsersRecordToLessonsListener] event [App\Events\CourseUsersCreatedEvent]  
+[2022-05-11 06:51:10] production.INFO: Event [App\Events\LessonUsersUpdatingEvent] was fired with model [App\Models\LessonUsers]. [Dirty: true]. Serialized model [{"id":1,"user_id":"bf628eb4-e5f4-4e11-bd43-d34fdf3510e4","lesson_id":26,"is_passed":true}]  
+[2022-05-11 06:51:10] production.INFO: Listener [App\Listeners\LessonUsersCheckIdListener] event [App\Events\LessonUsersUpdatingEvent]  
+[2022-05-11 06:51:10] production.INFO: Listener [App\Listeners\LessonUsersCheckFinishCourseListener] event [App\Events\LessonUsersUpdatingEvent]  
+[2022-05-11 06:51:10] production.INFO: Listener [App\Listeners\LessonUsersCheckIsPassedListener] event [App\Events\LessonUsersUpdatingEvent]  
+[2022-05-11 06:51:10] production.INFO: Listener [App\Listeners\LessonUsersCheckFieldsListener] event [App\Events\LessonUsersUpdatingEvent]  
+[2022-05-11 06:51:10] production.INFO: Event [App\Events\LessonUsersUpdatedEvent] was fired with model [App\Models\LessonUsers]. [Changes: true]. Serialized model [{"id":1,"user_id":"bf628eb4-e5f4-4e11-bd43-d34fdf3510e4","lesson_id":26,"is_passed":true}]  
+[2022-05-11 06:51:10] production.INFO: Listener [App\Listeners\LessonUsersUpdatePercentListener] event [App\Events\LessonUsersUpdatedEvent]  
+[2022-05-11 06:51:18] production.INFO: Event [App\Events\LessonUsersUpdatingEvent] was fired with model [App\Models\LessonUsers]. [Dirty: true]. Serialized model [{"id":2,"user_id":"bf628eb4-e5f4-4e11-bd43-d34fdf3510e4","lesson_id":27,"is_passed":true}]  
+[2022-05-11 06:51:18] production.INFO: Listener [App\Listeners\LessonUsersCheckIdListener] event [App\Events\LessonUsersUpdatingEvent]  
+[2022-05-11 06:51:18] production.INFO: Listener [App\Listeners\LessonUsersCheckFinishCourseListener] event [App\Events\LessonUsersUpdatingEvent]  
+[2022-05-11 06:51:18] production.INFO: Listener [App\Listeners\LessonUsersCheckIsPassedListener] event [App\Events\LessonUsersUpdatingEvent]  
+[2022-05-11 06:51:18] production.INFO: Listener [App\Listeners\LessonUsersCheckFieldsListener] event [App\Events\LessonUsersUpdatingEvent]  
+[2022-05-11 06:51:18] production.INFO: Event [App\Events\LessonUsersUpdatedEvent] was fired with model [App\Models\LessonUsers]. [Changes: true]. Serialized model [{"id":2,"user_id":"bf628eb4-e5f4-4e11-bd43-d34fdf3510e4","lesson_id":27,"is_passed":true}]  
+[2022-05-11 06:51:18] production.INFO: Listener [App\Listeners\LessonUsersUpdatePercentListener] event [App\Events\LessonUsersUpdatedEvent]  
+[2022-05-11 06:54:21] production.ERROR: Class "App\Providers\DebugModelsServiceProvider" not found {"exception":"[object] (Error(code: 0): Class \"App\\Providers\\DebugModelsServiceProvider\" not found at /app/vendor/laravel/lumen-framework/src/Application.php:223)
+[stacktrace]
+#0 /app/bootstrap/app.php(70): Laravel\\Lumen\\Application->register('App\\\\Providers\\\\D...')
+#1 /app/artisan(18): require('/app/bootstrap/...')
+#2 {main}
+"} 
+[2022-05-11 06:54:23] production.ERROR: Class "App\Providers\DebugModelsServiceProvider" not found {"exception":"[object] (Error(code: 0): Class \"App\\Providers\\DebugModelsServiceProvider\" not found at /app/vendor/laravel/lumen-framework/src/Application.php:223)
+[stacktrace]
+#0 /app/bootstrap/app.php(70): Laravel\\Lumen\\Application->register('App\\\\Providers\\\\D...')
+#1 /app/artisan(18): require('/app/bootstrap/...')
+#2 {main}
+"} 
+[2022-05-11 06:56:53] production.ERROR: Trying to access array offset on value of type null {"exception":"[object] (ErrorException(code: 0): Trying to access array offset on value of type null at /app/vendor/mrrouone/debugmodels/src/DebugModelsServiceProvider.php:24)
+[stacktrace]
+#0 /app/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(47): Laravel\\Lumen\\Application->handleError(2, 'Trying to acces...', '/app/vendor/mrr...', 24)
+#1 /app/vendor/mrrouone/debugmodels/src/DebugModelsServiceProvider.php(24): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'Trying to acces...', '/app/vendor/mrr...', 24)
+#2 /app/vendor/mrrouone/debugmodels/src/DebugModelsServiceProvider.php(17): MrRouOne\\DebugModels\\DebugModelsServiceProvider->setRoot()
+#3 /app/vendor/laravel/lumen-framework/src/Application.php(223): MrRouOne\\DebugModels\\DebugModelsServiceProvider->__construct(Object(Egal\\Core\\Application))
+#4 /app/bootstrap/app.php(70): Laravel\\Lumen\\Application->register('MrRouOne\\\\DebugM...')
+#5 /app/artisan(18): require('/app/bootstrap/...')
+#6 {main}
+"} 
+[2022-05-11 06:56:55] production.ERROR: Trying to access array offset on value of type null {"exception":"[object] (ErrorException(code: 0): Trying to access array offset on value of type null at /app/vendor/mrrouone/debugmodels/src/DebugModelsServiceProvider.php:24)
+[stacktrace]
+#0 /app/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(47): Laravel\\Lumen\\Application->handleError(2, 'Trying to acces...', '/app/vendor/mrr...', 24)
+#1 /app/vendor/mrrouone/debugmodels/src/DebugModelsServiceProvider.php(24): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'Trying to acces...', '/app/vendor/mrr...', 24)
+#2 /app/vendor/mrrouone/debugmodels/src/DebugModelsServiceProvider.php(17): MrRouOne\\DebugModels\\DebugModelsServiceProvider->setRoot()
+#3 /app/vendor/laravel/lumen-framework/src/Application.php(223): MrRouOne\\DebugModels\\DebugModelsServiceProvider->__construct(Object(Egal\\Core\\Application))
+#4 /app/bootstrap/app.php(70): Laravel\\Lumen\\Application->register('MrRouOne\\\\DebugM...')
+#5 /app/artisan(18): require('/app/bootstrap/...')
+#6 {main}
 "} 

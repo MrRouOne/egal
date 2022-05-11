@@ -3,9 +3,9 @@
 namespace App\Listeners;
 
 use App\Exceptions\AlreadyCompleteException;
-use App\Helpers\AbstractEvent;
-use App\Helpers\AbstractListener;
-use App\Helpers\ValidateHelper;
+use MrRouOne\Helpers\AbstractEvent;
+use MrRouOne\Helpers\AbstractListener;
+use MrRouOne\Helpers\ValidateHelper;
 use App\Models\LessonUsers;
 use App\Rules\IsPassedRule;
 use Egal\Model\Exceptions\ValidateException;

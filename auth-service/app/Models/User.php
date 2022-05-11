@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use App\Events\CreateUserEvent;
-use App\Helpers\ValidateHelper;
+use MrRouOne\Helpers\ValidateHelper;
 use App\Rules\PasswordVerifyRule;
 use App\Rules\UserRule;
 use Egal\Auth\Tokens\UserMasterRefreshToken;
@@ -42,6 +42,7 @@ class User extends BaseUser
     use HasFactory;
     use HasRelationships;
 
+    protected $table = 'users';
     protected $hidden = [
         'password',
     ];

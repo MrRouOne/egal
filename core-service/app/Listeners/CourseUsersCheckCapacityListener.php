@@ -2,12 +2,10 @@
 
 namespace App\Listeners;
 
-use App\Events\CourseUsersCreatingEvent;
 use App\Exceptions\CapacityException;
-use App\Helpers\AbstractEvent;
-use App\Helpers\AbstractListener;
+use MrRouOne\Helpers\AbstractEvent;
+use MrRouOne\Helpers\AbstractListener;
 use App\Models\Courses;
-use Egal\Model\Exceptions\ObjectNotFoundException;
 
 class CourseUsersCheckCapacityListener extends AbstractListener
 {
